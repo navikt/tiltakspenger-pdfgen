@@ -1,0 +1,21 @@
+{{#> tpts/partials/innvilgelseBase}}
+    <div class="mainContent">
+        <h2>Du får tiltakspenger</h2>
+        {{> tpts/partials/fnr personalia }}
+
+        <div>
+            <p>
+                Du får tiltakspenger fra {{fradato}} til og med {{tildato}} fordi du går på tiltak
+            </p>
+            <p>
+                Vedtaket er gjort etter forskrift om tiltakspenger, §§ 8, 9, 10, 11.
+            </p>
+        </div>
+
+        {{#if fritekst}}
+            <p class="fritekst">{{fritekst}}</p>
+        {{/if}}
+
+    </div>
+
+{{/tpts/partials/innvilgelseBase}}
