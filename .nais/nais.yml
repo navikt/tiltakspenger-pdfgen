@@ -15,9 +15,9 @@ spec:
     application:
       enabled: false
   liveness:
-    path: /isalive
+    path: /is_alive
   readiness:
-    path: /isready
+    path: /is_ready
   prometheus:
     enabled: true
     path: /metrics
