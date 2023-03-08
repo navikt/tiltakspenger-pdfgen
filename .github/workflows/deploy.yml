@@ -20,10 +20,6 @@ jobs:
           distribution: 'temurin'
           java-version: 17
 
-      - uses: gradle/gradle-build-action@v2
-        with:
-          arguments: build --info installDist
-
       - name: Set up Docker Buildx
         if: github.ref == 'refs/heads/main'
         uses: docker/setup-buildx-action@v2
@@ -68,7 +64,6 @@ jobs:
           CLUSTER: dev-gcp
           RESOURCE: .nais/nais.yml
           VAR: image=${{ env.IMAGE }},name=${{ github.event.repository.name }}
-          VARS: .nais/vars/dev.yml
 
   deploy-prod:
     name: Deploy to NAIS prod
@@ -83,4 +78,3 @@ jobs:
           CLUSTER: prod-gcp
           RESOURCE: .nais/nais.yml
           VAR: image=${{ env.IMAGE }},name=${{ github.event.repository.name }}
-          VARS: .nais/vars/prod.yml
