@@ -37,9 +37,9 @@ jobs:
           cache-to: type=gha,mode=max
 
   deploy-dev:
-    name: Deploy to NAIS dev
+    name: Deploy to dev
     needs: build
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -48,12 +48,11 @@ jobs:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: dev-gcp
           RESOURCE: .nais/nais.yml
-          VAR: image=${{ env.IMAGE }},name=${{ github.repository }}
 
   deploy-prod:
-    name: Deploy to NAIS prod
-    needs: deploy-dev
-    if: github.ref == 'refs/heads/main'
+    name: Deploy to dev
+    needs: build
+    if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -62,4 +61,3 @@ jobs:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: prod-gcp
           RESOURCE: .nais/nais.yml
-          VAR: image=${{ env.IMAGE }},name=${{ github.repository }}
