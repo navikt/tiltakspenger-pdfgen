@@ -3,38 +3,31 @@ name: Build, push, and deploy
 on: push
 
 env:
-  IMAGE: ghcr.io/${{ github.repository }}:${{ github.sha }}
-  PRINT_PAYLOAD: true
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  IMAGE_BASE: ghcr.io/${{ github.repository }}
+  CLUSTER: dev-fss
 
 jobs:
-  build:
-    name: Test, build and push
+  kompiler:
     runs-on: ubuntu-latest
     steps:
-      - name: Docker build and push
+      - name: Sjekk ut kode
         uses: actions/checkout@v3
+      - name: Hent tag
+        run: echo "TAG=$(date +'%Y%m%d%H%M%S')-$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_ENV
+      - name: Lag image-navn
+        run: |
+          echo "IMAGE=$IMAGE_BASE:$TAG" >> $GITHUB_ENV
+      - name: Bygg, tag og test om image kjører
+        run: |
+          docker build --tag ${IMAGE} --tag ${IMAGE_BASE}:latest .
+          ./up.sh ${IMAGE_BASE}:latest
+      - name:  push Docker image
+        run: |
+          echo "${{ secrets.GH_ACCESS_TOKEN }}" | docker login --username "x-access-token" --password-stdin ghcr.io
 
-      - name: Set up Docker Buildx
-        if: github.ref == 'refs/heads/main'
-        uses: docker/setup-buildx-action@v2
-
-      - name: Login to GitHub Docker Registry
-        if: github.ref == 'refs/heads/main'
-        uses: docker/login-action@v2
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Docker build and push
-        if: github.ref == 'refs/heads/main'
-        uses: docker/build-push-action@v4
-        with:
-          context: .
-          tags: ${{ env.IMAGE }}
-          push: true
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+          docker push ${IMAGE_BASE}:latest
+          docker push ${IMAGE}
 
   deploy-dev:
     name: Deploy to NAIS dev
