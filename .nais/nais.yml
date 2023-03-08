@@ -15,9 +15,13 @@ spec:
     application:
       enabled: false
   liveness:
-    path: /is_alive
+    path: internal/is_alive
+    initialDelay: 5
+    timeout: 10
   readiness:
-    path: /is_ready
+    path: internal/is_ready
+    initialDelay: 5
+    timeout: 10
   prometheus:
     enabled: true
     path: /metrics
