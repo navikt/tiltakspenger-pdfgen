@@ -1,58 +1,38 @@
-name: Build, push, and deploy
+name: Bygg og deploy ved push til master
 
-on: push
+on:
+  # Trigger the workflow on push or pull request,
+  # but only for the master branch
+  push:
+    branches:
+      - main
 
 env:
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  IMAGE_BASE: ghcr.io/${{ github.repository }}
-  CLUSTER: dev-fss
+  IMAGE: docker.pkg.github.com/${{ github.repository }}/tiltakspenger-pdfgen:${{ github.sha }}
 
 jobs:
-  kompiler:
+  build:
+    name: Build and push Docker container
     runs-on: ubuntu-latest
     steps:
-      - name: Sjekk ut kode
-        uses: actions/checkout@v3
-      - name: Hent tag
-        run: echo "TAG=$(date +'%Y%m%d%H%M%S')-$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_ENV
-      - name: Lag image-navn
+      - uses: actions/checkout@v2
+      - name: Build and publish Docker image
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "IMAGE=$IMAGE_BASE:$TAG" >> $GITHUB_ENV
-      - name: Bygg, tag og test om image kjører
-        run: |
-          docker build --tag ${IMAGE} --tag ${IMAGE_BASE}:latest .
-          ./up.sh ${IMAGE_BASE}:latest
-      - name:  push Docker image
-        run: |
-          echo "${{ secrets.GH_ACCESS_TOKEN }}" | docker login --username "x-access-token" --password-stdin ghcr.io
-
-          docker push ${IMAGE_BASE}:latest
+          docker login docker.pkg.github.com -u ${GITHUB_REPOSITORY} -p ${GITHUB_TOKEN}
+          docker build --pull --tag ${IMAGE} .
           docker push ${IMAGE}
 
-  deploy-dev:
-    name: Deploy to NAIS dev
+  deploy_to_dev:
+    name: Deploy to dev
     needs: build
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
       - uses: nais/deploy/actions/deploy@v1
         env:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
-          CLUSTER: dev-gcp
+          CLUSTER: dev-fss
           RESOURCE: .nais/nais.yml
-          VAR: image=${{ env.IMAGE }},name=${{ github.event.repository.name }}
-
-  deploy-prod:
-    name: Deploy to NAIS prod
-    needs: deploy-dev
-    if: github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: nais/deploy/actions/deploy@v1
-        env:
-          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
-          CLUSTER: prod-gcp
-          RESOURCE: .nais/nais.yml
-          VAR: image=${{ env.IMAGE }},name=${{ github.event.repository.name }}
