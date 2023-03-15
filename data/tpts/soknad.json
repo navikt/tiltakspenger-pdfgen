@@ -1,0 +1,53 @@
+{
+  "deltarIKvp": true,
+  "periodeMedKvp": {
+    "fra": "2023-01-01",
+    "til": "2023-01-02"
+  },
+  "deltarIIntroprogrammet": true,
+  "periodeMedIntroprogrammet": {
+    "fra": "2024-01-01",
+    "til": "2024-01-02"
+  },
+  "borPåInstitusjon": true,
+  "institusjonstype" : "fengsel",
+  "tiltak": {
+    "type": "foo",
+    "periode": {
+      "fra": "2025-01-01",
+      "til": "2025-01-02"
+    },
+    "antallDagerIUken": 5
+  },
+  "mottarEllerSøktPensjonsordning": true,
+  "pensjon": {
+    "utbetaler": "Noen som betaler ut pensjon",
+    "periode": {
+      "fra": "2026-01-01",
+      "til": "2026-01-02"
+    }
+  },
+  "mottarEllerSøktEtterlønn": true,
+  "etterlønn": {
+    "utbetaler": "Noen som betaler ut pensjon",
+    "periode": {
+      "fra": "2027-01-01",
+      "til": "2027-01-02"
+    }
+  },
+  "søkerOmBarnetillegg": true,
+  "barnSøktBarnetilleggFor": [
+    {
+      "fornavn": "Anna",
+      "etternavn": "Filledokke",
+      "fdato": "2020-05-05",
+      "bostedsland": "NO"
+    },
+    {
+      "fornavn": "Titten",
+      "etternavn": "Tei",
+      "fdato": "2018-04-09",
+      "bostedsland": "NO"
+    }
+  ]
+}
