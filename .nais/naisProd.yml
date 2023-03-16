@@ -11,6 +11,10 @@ spec:
 # Hvis det trengs en ingress så må den lages så den er ulik for dev og prod
   ingresses:
     - https://tiltakspenger-pdfgen.intern.nav.no
+  accessPolicy:
+    inbound:
+      rules:
+        - application: tiltakspenger-soknad-api
   azure:
     application:
       enabled: false
