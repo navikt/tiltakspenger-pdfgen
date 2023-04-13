@@ -1,0 +1,185 @@
+{{> tpts/partials/soknadTabellBase }}
+    <div class="mainContent">
+        <table>
+            <thead>
+                <tr>
+                    <td class="tr50">Kvp</td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Deltar i Kvp</td>
+                    <td>{{#if deltarIKvp}} Ja {{else}} Nei {{/if}}</td>
+                </tr>
+                {{#if periodeMedKvp}}
+                    <tr>
+                        <td>Fra</td>
+                        <td>{{periodeMedKvp.fra}}</td>
+                    </tr>
+                    <tr>
+                        <td>Til</td>
+                        <td>{{periodeMedKvp.til}}</td>
+                    </tr>
+                {{/if}}
+            </tbody>
+
+            <thead>
+            <tr>
+                <td class="tr50">Introprogrammet</td>
+                <td></td>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Deltar i Introprogrammet</td>
+                    <td>{{#if deltarIIntroprogrammet}} Ja {{else}} Nei {{/if}}</td>
+                </tr>
+                {{#if periodeMedIntroprogrammet}}
+                    <tr>
+                        <td>Fra</td>
+                        <td>{{periodeMedIntroprogrammet.fra}}</td>
+                    </tr>
+                    <tr>
+                        <td>Til</td>
+                        <td>{{periodeMedIntroprogrammet.til}}</td>
+                    </tr>
+                {{/if}}
+            </tbody>
+
+            <thead>
+            <tr>
+                <td class="tr50">Institusjon</td>
+                <td></td>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Bor på institusjon</td>
+                    <td>{{#if borPåInstitusjon}} Ja {{else}} Nei {{/if}}</td>
+                </tr>
+                {{#if institusjonstype}}
+                    <tr>
+                        <td>Institusjonstype</td>
+                        <td>{{institusjonstype}}</td>
+                    </tr>
+                {{/if}}
+            </tbody>
+
+            <thead>
+            <tr>
+                <td class="tr50">Tiltak</td>
+                <td></td>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Tiltak</td>
+                    <td>{{tiltak.type}}</td>
+                </tr>
+                {{#if tiltak.periode}}
+                    <tr>
+                        <td>Fra</td>
+                        <td>{{tiltak.periode.fra}}</td>
+                    </tr>
+                    <tr>
+                        <td>Til</td>
+                        <td>{{tiltak.periode.til}}</td>
+                    </tr>
+                {{/if}}
+                <tr>
+                    <td>Antall dager i uken</td>
+                    <td>{{tiltak.antallDagerIUken}}</td>
+                </tr>
+            </tbody>
+
+            <thead>
+            <tr>
+                <td class="tr50">Pensjon</td>
+                <td></td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Mottar eller har søkt pensjon</td>
+                <td>{{#if mottarEllerSøktPensjonsordning}} Ja {{else}} Nei {{/if}}</td>
+            </tr>
+            {{#if pensjon}}
+                <tr>
+                    <td>Utbetaler</td>
+                    <td>{{pensjon.utbetaler}}</td>
+                </tr>
+                <tr>
+                    <td>Fra</td>
+                    <td>{{pensjon.periode.fra}}</td>
+                </tr>
+                <tr>
+                    <td>Til</td>
+                    <td>{{pensjon.periode.til}}</td>
+                </tr>
+            {{/if}}
+            </tbody>
+
+            <thead>
+            <tr>
+                <td class="tr50">Etterlønn</td>
+                <td></td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Mottar eller har søkt etterlønn</td>
+                <td>{{#if mottarEllerSøktEtterlønn}} Ja {{else}} Nei {{/if}}</td>
+            </tr>
+            {{#if etterlønn}}
+                <tr>
+                    <td>Utbetaler</td>
+                    <td>{{etterlønn.utbetaler}}</td>
+                </tr>
+                <tr>
+                    <td>Fra</td>
+                    <td>{{etterlønn.periode.fra}}</td>
+                </tr>
+                <tr>
+                    <td>Til</td>
+                    <td>{{etterlønn.periode.til}}</td>
+                </tr>
+            {{/if}}
+            </tbody>
+
+            <thead>
+            <tr>
+                <td class="tr50">Barnetillegg</td>
+                <td></td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Søker om barnetillegg</td>
+                <td>{{#if søkerOmBarnetillegg}} Ja {{else}} Nei {{/if}}</td>
+            </tr>
+            {{#if barnSøktBarnetilleggFor}}
+                {{#each barnSøktBarnetilleggFor}}
+                    <tr>
+                        <td>Fornavn</td>
+                        <td>{{this.fornavn}}</td>
+                    </tr>
+                    <tr>
+                        <td>Etternavn</td>
+                        <td>{{this.etternavn}}</td>
+                    </tr>
+                    <tr>
+                        <td>Fødselsdato</td>
+                        <td>{{this.fdato}}</td>
+                    </tr>
+                    <tr>
+                        <td>Bostedsland</td>
+                        <td>{{this.bostedsland}}</td>
+                    </tr>
+                {{/each}}
+            {{/if}}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
