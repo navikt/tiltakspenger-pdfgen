@@ -10,16 +10,16 @@
             <tbody>
                 <tr>
                     <td>Deltar i Kvp</td>
-                    <td>{{#if deltarIKvp}} Ja {{else}} Nei {{/if}}</td>
+                    <td>{{#if kvalifiseringsprogram.deltar}} Ja {{else}} Nei {{/if}}</td>
                 </tr>
-                {{#if periodeMedKvp}}
+                {{#if kvalifiseringsprogram.periode}}
                     <tr>
                         <td>Fra</td>
-                        <td>{{periodeMedKvp.fra}}</td>
+                        <td>{{kvalifiseringsprogram.periode.fra}}</td>
                     </tr>
                     <tr>
                         <td>Til</td>
-                        <td>{{periodeMedKvp.til}}</td>
+                        <td>{{kvalifiseringsprogram.periode.til}}</td>
                     </tr>
                 {{/if}}
             </tbody>
@@ -33,16 +33,16 @@
             <tbody>
                 <tr>
                     <td>Deltar i Introprogrammet</td>
-                    <td>{{#if deltarIIntroprogrammet}} Ja {{else}} Nei {{/if}}</td>
+                    <td>{{#if introduksjonsprogram.deltar}} Ja {{else}} Nei {{/if}}</td>
                 </tr>
-                {{#if periodeMedIntroprogrammet}}
+                {{#if introduksjonsprogram.periode}}
                     <tr>
                         <td>Fra</td>
-                        <td>{{periodeMedIntroprogrammet.fra}}</td>
+                        <td>{{introduksjonsprogram.periode.fra}}</td>
                     </tr>
                     <tr>
                         <td>Til</td>
-                        <td>{{periodeMedIntroprogrammet.til}}</td>
+                        <td>{{introduksjonsprogram.periode.til}}</td>
                     </tr>
                 {{/if}}
             </tbody>
@@ -56,12 +56,16 @@
             <tbody>
                 <tr>
                     <td>Bor på institusjon</td>
-                    <td>{{#if borPåInstitusjon}} Ja {{else}} Nei {{/if}}</td>
+                    <td>{{#if institusjonsopphold.borPåInstitusjon}} Ja {{else}} Nei {{/if}}</td>
                 </tr>
-                {{#if institusjonstype}}
+                {{#if institusjonsopphold.periode}}
                     <tr>
-                        <td>Institusjonstype</td>
-                        <td>{{institusjonstype}}</td>
+                        <td>Fra</td>
+                        <td>{{institusjonsopphold.periode.fra}}</td>
+                    </tr>
+                    <tr>
+                        <td>Til</td>
+                        <td>{{institusjonsopphold.periode.til}}</td>
                     </tr>
                 {{/if}}
             </tbody>
@@ -75,7 +79,7 @@
             <tbody>
                 <tr>
                     <td>Tiltak</td>
-                    <td>{{tiltak.type}}</td>
+                    <td>{{tiltak.aktivitetId}}</td>
                 </tr>
                 {{#if tiltak.periode}}
                     <tr>
@@ -87,10 +91,6 @@
                         <td>{{tiltak.periode.til}}</td>
                     </tr>
                 {{/if}}
-                <tr>
-                    <td>Antall dager i uken</td>
-                    <td>{{tiltak.antallDagerIUken}}</td>
-                </tr>
             </tbody>
 
             <thead>
@@ -102,20 +102,20 @@
             <tbody>
             <tr>
                 <td>Mottar eller har søkt pensjon</td>
-                <td>{{#if mottarEllerSøktPensjonsordning}} Ja {{else}} Nei {{/if}}</td>
+                <td>{{#if pensjonsordning.mottarEllerSøktPensjonsordning}} Ja {{else}} Nei {{/if}}</td>
             </tr>
-            {{#if pensjon}}
+            {{#if pensjonsordning.mottarEllerSøktPensjonsordning}}
                 <tr>
                     <td>Utbetaler</td>
-                    <td>{{pensjon.utbetaler}}</td>
+                    <td>{{pensjonsordning.utbetaler}}</td>
                 </tr>
                 <tr>
                     <td>Fra</td>
-                    <td>{{pensjon.periode.fra}}</td>
+                    <td>{{pensjonsordning.periode.fra}}</td>
                 </tr>
                 <tr>
                     <td>Til</td>
-                    <td>{{pensjon.periode.til}}</td>
+                    <td>{{pensjonsordning.periode.til}}</td>
                 </tr>
             {{/if}}
             </tbody>
@@ -129,9 +129,9 @@
             <tbody>
             <tr>
                 <td>Mottar eller har søkt etterlønn</td>
-                <td>{{#if mottarEllerSøktEtterlønn}} Ja {{else}} Nei {{/if}}</td>
+                <td>{{#if etterlønn.mottarEllerSøktEtterlønn}} Ja {{else}} Nei {{/if}}</td>
             </tr>
-            {{#if etterlønn}}
+            {{#if etterlønn.mottarEllerSøktEtterlønn}}
                 <tr>
                     <td>Utbetaler</td>
                     <td>{{etterlønn.utbetaler}}</td>
@@ -156,9 +156,9 @@
             <tbody>
             <tr>
                 <td>Søker om barnetillegg</td>
-                <td>{{#if søkerOmBarnetillegg}} Ja {{else}} Nei {{/if}}</td>
+                <td>{{#if barnetillegg.søkerOmBarnetillegg}} Ja {{else}} Nei {{/if}}</td>
             </tr>
-            {{#if barnSøktBarnetilleggFor}}
+            {{#if barnetillegg.manueltRegistrerteBarnSøktBarnetilleggFor}}
                 {{#each barnSøktBarnetilleggFor}}
                     <tr>
                         <td>Fornavn</td>
@@ -170,11 +170,27 @@
                     </tr>
                     <tr>
                         <td>Fødselsdato</td>
-                        <td>{{this.fdato}}</td>
+                        <td>{{this.fødselsdato}}</td>
                     </tr>
                     <tr>
                         <td>Bostedsland</td>
                         <td>{{this.bostedsland}}</td>
+                    </tr>
+                {{/each}}
+            {{/if}}
+            {{#if barnetillegg.registrerteBarnSøktBarnetilleggFor}}
+                {{#each barnSøktBarnetilleggFor}}
+                    <tr>
+                        <td>Fornavn</td>
+                        <td>{{this.fornavn}}</td>
+                    </tr>
+                    <tr>
+                        <td>Etternavn</td>
+                        <td>{{this.etternavn}}</td>
+                    </tr>
+                    <tr>
+                        <td>Fødselsdato</td>
+                        <td>{{this.fødselsdato}}</td>
                     </tr>
                 {{/each}}
             {{/if}}

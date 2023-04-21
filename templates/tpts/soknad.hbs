@@ -9,7 +9,7 @@
 
         <span class="felles tittel">Tiltak</span>
         <p class="felles ledetekst">Tiltak</p>
-        <p class="felles verdi">{{tiltak.type}}</p>
+        <p class="felles verdi">{{tiltak.aktivitetId}}</p>
 
         <p class="felles ledetekst">Fra dato</p>
         <p class="felles verdi">{{tiltak.periode.fra}}</p>
@@ -19,36 +19,36 @@
 
         <span class="felles tittel">Kvalifiseringsprogram, introduksjonsprogram og institusjonsopphold</span>
         <p class="felles ledetekst">Kvalifiseringsprogrammet</p>
-        {{#if deltarIKvp}}
-            <p class="felles verdi">Ja, jeg deltar i kvalifiseringsprogrammet i perioden {{periodeMedKvp.fra}} - {{periodeMedKvp.til}}</p>
+        {{#if kvalifiseringsprogram.deltar}}
+            <p class="felles verdi">Ja, jeg deltar i kvalifiseringsprogrammet i perioden {{kvalifiseringsprogram.periode.fra}} - {{kvalifiseringsprogram.periode.til}}</p>
         {{else}}
             <p class="felles verdi">Nei, jeg deltar ikke i kvalifiseringsprogrammet i perioden jeg deltar på tiltaket</p>
         {{/if}}
 
         <p class="felles ledetekst">Introduksjonsprogrammet</p>
-        {{#if deltarIIntroprogrammet}}
-            <p class="felles verdi">Ja, jeg deltar i introduksjonsprogrammet i perioden {{periodeMedIntroprogrammet.fra}} - {{periodeMedIntroprogrammet.til}}</p>
+        {{#if introduksjonsprogram.deltar}}
+            <p class="felles verdi">Ja, jeg deltar i introduksjonsprogrammet i perioden {{introduksjonsprogram.periode.fra}} - {{introduksjonsprogram.periode.til}}</p>
         {{else}}
             <p class="felles verdi">Nei, jeg deltar ikke i introduksjonsprogrammet i perioden jeg deltar på tiltaket</p>
         {{/if}}
 
         <p class="felles ledetekst">Opphold på institusjon</p>
-        {{#if borPåInstitusjon}}
-            <p class="felles verdi">Ja, jeg bor på institusjon med fri kost og losji i perioden jeg går på tiltak</p>
+        {{#if institusjonsopphold.borPåInstitusjon}}
+            <p class="felles verdi">Ja, jeg bor på institusjon med fri kost og losji i perioden {{institusjonsopphold.periode.fra}} - {{institusjonsopphold.periode.til}}</p>
         {{else}}
             <p class="felles verdi">Nei, jeg bor ikke på institusjon med fri kost og losji i perioden jeg går på tiltak</p>
         {{/if}}
 
         <span class="felles tittel">Andre utbetalinger</span>
         <p class="felles ledetekst">Pensjonsordninger</p>
-        {{#if mottarEllerSøktPensjonsordning}}
-            <p class="felles verdi">Ja, jeg mottar pensjon fra {{pensjon.utbetaler}} i perioden {{pensjon.periode.fra}} - {{pensjon.periode.til}}</p>
+        {{#if pensjonsordning.mottarEllerSøktPensjonsordning}}
+            <p class="felles verdi">Ja, jeg mottar pensjon fra {{pensjonsordning.utbetaler}} i perioden {{pensjonsordning.periode.fra}} - {{pensjonsordning.periode.til}}</p>
         {{else}}
             <p class="felles verdi">Nei, jeg har verken søkt om eller mottar utbetalinger fra en pensjonsordning</p>
         {{/if}}
 
         <p class="felles ledetekst">Etterlønn</p>
-        {{#if mottarEllerSøktEtterlønn}}
+        {{#if etterlønn.mottarEllerSøktEtterlønn}}
             <p class="felles verdi">Ja, jeg mottar etterlønn fra {{etterlønn.utbetaler}} i perioden {{etterlønn.periode.fra}} - {{etterlønn.periode.til}}</p>
         {{else}}
             <p class="felles verdi">Nei, jeg har verken søkt eller mottar etterlønn fra en arbeidsgiver</p>
@@ -56,17 +56,25 @@
 
         <span class="felles tittel">Barnetillegg</span>
         <p class="felles ledetekst">Barnetillegg</p>
-        {{#if søkerOmBarnetillegg}}
+        {{#if barnetillegg.søkerOmBarnetillegg}}
             <p class="felles verdi">Ja, jeg søker om barnetillegg for følgende barn</p>
         {{else}}
             <p class="felles verdi">Nei, jeg søker ikke om barnetillegg</p>
         {{/if}}
 
-        {{#each barnSøktBarnetilleggFor}}
+        {{#each barnetillegg.manueltRegistrerteBarnSøktBarnetilleggFor}}
             {{#if this.fornavn}}
-                <p class="felles verdi">{{this.fornavn}} {{this.mellomnavn}} {{this.etternavn}} født {{this.fdato}}</p>
+                <p class="felles verdi">{{this.fornavn}} {{this.mellomnavn}} {{this.etternavn}} født {{this.fødselsdato}}</p>
             {{else}}
-                <p class="felles verdi">Barn født {{this.fdato}}</p>
+                <p class="felles verdi">Barn født {{this.fødselsdato}}</p>
+            {{/if}}
+        {{/each}}
+
+        {{#each barnetillegg.registrerteBarnSøktBarnetilleggFor}}
+            {{#if this.fornavn}}
+                <p class="felles verdi">{{this.fornavn}} {{this.mellomnavn}} {{this.etternavn}} født {{this.fødselsdato}}</p>
+            {{else}}
+                <p class="felles verdi">Barn født {{this.fødselsdato}}</p>
             {{/if}}
         {{/each}}
     </div>
