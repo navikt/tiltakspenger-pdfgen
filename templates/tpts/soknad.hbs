@@ -15,6 +15,44 @@
             <p class="felles opplysning">{{person.adresse}}</p>
         </div>
      </div>
+     <hr class="separator" />
+    <div class="tiltaksperiode">
+        <h3>Perioden du søker tiltakspenger for</h3>
+        <p>{{iso_to_date tiltak.periode.fra}} - {{iso_to_date tiltak.periode.til}}</p>
+    </div>
+    <div class="common-section">
+        <h3>Kvalifiseringsprogrammet</h3>
+        {{#if kvalifiseringsprogram.deltar}}
+            <p>Ja, jeg deltar i kvalifiseringsprogrammet i perioden {{iso_to_date kvalifiseringsprogram.periode.fra}} - {{iso_to_date kvalifiseringsprogram.periode.til}}</p>
+        {{else}}
+            <p>Nei, jeg deltar ikke i kvalifiseringsprogrammet i perioden jeg deltar på tiltaket</p>
+        {{/if}}
+    </div>
+    <div class="common-section">
+        <h3>Introduksjonsprogrammet</h3>
+        {{#if kvalifiseringsprogram.deltar}}
+            <p>Ja, jeg deltar i introduksjonsprogrammet i perioden {{iso_to_date introduksjonsprogram.periode.fra}} - {{iso_to_date introduksjonsprogram.periode.til}}</p>
+        {{else}}
+            <p>Nei, jeg deltar ikke i introduksjonsprogrammet i perioden jeg deltar på tiltaket</p>
+        {{/if}}
+    </div>
+    <div class="common-section">
+        <h3>Institusjonsopphold</h3>
+        {{#if institusjonsopphold.borPåInstitusjon}}
+            <p>Ja, jeg bor på institusjon med fri kost og losji i perioden {{iso_to_date institusjonsopphold.periode.fra}} - {{iso_to_date institusjonsopphold.periode.til}}</p>
+        {{else}}
+            <p>Nei, jeg bor ikke på institusjon med fri kost og losji i perioden jeg deltar på tiltaket</p>
+        {{/if}}
+    </div>
+    <div class="common-section">
+        <h3>Tiltak</h3>
+        <p>Tiltakstype - Testarrangør</p>
+        <ul>
+            <li>
+                <p>Startdato <b>{{iso_to_date tiltak.periode.fra}}</b> - Sluttdato <b>{{iso_to_date tiltak.periode.til}}</b></p>
+            </li>
+        </ul>
+    </div>
 
         <span class="felles tittel">Om deg</span>
         <p class="felles ledetekst">Navn</p>
