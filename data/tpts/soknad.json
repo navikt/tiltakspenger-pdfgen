@@ -4,10 +4,7 @@
   "person": {
     "ident": "12345678901",
     "fornavn": "GREI",
-    "etternavn": "ASTERISK",
-    "adresse": "ROSENKRANTZ VEI 33C",
-    "postnummer": "1234",
-    "poststed": "TESTSTED"
+    "etternavn": "ASTERISK"
   },
   "kvalifiseringsprogram": {
     "deltar": true,
@@ -32,6 +29,8 @@
   },
   "tiltak": {
     "aktivitetId": "123",
+    "tiltakstype": "Gruppe AMO",
+    "tiltakarrangør": "Testarrangør",
     "søkerHeleTiltaksperioden": false,
     "periode": {
       "fra": "2024-01-01",

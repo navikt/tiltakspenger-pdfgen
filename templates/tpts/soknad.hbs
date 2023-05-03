@@ -1,7 +1,10 @@
 {{> tpts/partials/soknadBase }}
     <div class="mainContent">
-         <span class="felles tittel">Søknad om tiltakspenger</span>
-         <div class="header">
+         <div class="felles header">
+            <img src="{{image "Navlogo.png"}}" class="navlogo" />
+            <span class="tittel">Søknad om tiltakspenger</span>
+         </div>
+         <div class="personalia-header">
              <div class="personalia">
                 <div class="person-ikon">
                     <svg width="18px" height="18px" viewBox="0 0 24 24" fill="none"
@@ -12,8 +15,6 @@
                 <div class="person-opplysninger">
                     <p class="opplysning"><b>{{person.fornavn}} {{person.etternavn}}</b></p>
                     <p class="opplysning"><b>{{person.ident}}</b></p>
-                    <p class="opplysning">{{person.adresse}}</p>
-                    <p class="opplysning">{{person.postnummer}} {{person.poststed}}</p>
                 </div>
              </div>
              <div class="sendt-til-nav">
@@ -22,86 +23,102 @@
              </div>
          </div>
          <hr class="separator" />
+         <div class="spørsmålsbesvarelser">
         <div class="tiltaksperiode">
             <h3>Perioden du søker tiltakspenger for</h3>
-            <p>{{iso_to_date tiltak.periode.fra}} - {{iso_to_date tiltak.periode.til}}</p>
+            <p class="svar">{{iso_to_long_date tiltak.periode.fra}} - {{iso_to_long_date tiltak.periode.til}}</p>
         </div>
         <div class="common-section">
             <h3>Kvalifiseringsprogrammet</h3>
+            <div class="svar">
             {{#if kvalifiseringsprogram.deltar}}
                 <p>Ja, jeg deltar i kvalifiseringsprogrammet i perioden {{iso_to_date kvalifiseringsprogram.periode.fra}} - {{iso_to_date kvalifiseringsprogram.periode.til}}</p>
             {{else}}
                 <p>Nei, jeg deltar ikke i kvalifiseringsprogrammet i perioden jeg deltar på tiltaket</p>
             {{/if}}
+            </div>
         </div>
         <div class="common-section">
             <h3>Introduksjonsprogrammet</h3>
-            {{#if introduksjonsprogram.deltar}}
-                <p>Ja, jeg deltar i introduksjonsprogrammet i perioden {{iso_to_date introduksjonsprogram.periode.fra}} - {{iso_to_date introduksjonsprogram.periode.til}}</p>
-            {{else}}
-                <p>Nei, jeg deltar ikke i introduksjonsprogrammet i perioden jeg deltar på tiltaket</p>
-            {{/if}}
+            <div class="svar">
+                {{#if introduksjonsprogram.deltar}}
+                    <p>Ja, jeg deltar i introduksjonsprogrammet i perioden {{iso_to_date introduksjonsprogram.periode.fra}} - {{iso_to_date introduksjonsprogram.periode.til}}</p>
+                {{else}}
+                    <p>Nei, jeg deltar ikke i introduksjonsprogrammet i perioden jeg deltar på tiltaket</p>
+                {{/if}}
+            </div>
         </div>
         <div class="common-section">
             <h3>Institusjonsopphold</h3>
-            {{#if institusjonsopphold.borPåInstitusjon}}
+            <div class="svar">
+                {{#if institusjonsopphold.borPåInstitusjon}}
                 <p>Ja, jeg bor på institusjon med fri kost og losji i perioden {{iso_to_date institusjonsopphold.periode.fra}} - {{iso_to_date institusjonsopphold.periode.til}}</p>
-            {{else}}
+                {{else}}
                 <p>Nei, jeg bor ikke på institusjon med fri kost og losji i perioden jeg deltar på tiltaket</p>
-            {{/if}}
+                {{/if}}
+            </div>
         </div>
         <div class="common-section">
             <h3>Tiltak</h3>
-            <p>Tiltakstype - Testarrangør</p>
-            <ul>
-                <li>
-                    <p>Startdato <b>{{iso_to_date tiltak.periode.fra}}</b> - Sluttdato <b>{{iso_to_date tiltak.periode.til}}</b></p>
-                </li>
-            </ul>
+            <div class="svar">
+                <p>{{tiltak.tiltakstype}} - Testarrangør</p>
+                <ul>
+                    <li>
+                        <p>Startdato <b>{{iso_to_date tiltak.periode.fra}}</b> - Sluttdato <b>{{iso_to_date tiltak.periode.til}}</b></p>
+                    </li>
+                </ul>
+            </div>
         </div>
          <div class="common-section">
             <h3>Pensjonsordninger</h3>
-            {{#if pensjonsordning.mottarEllerSøktPensjonsordning}}
-                <p>Ja, jeg har nylig søkt om eller mottar utbetalinger fra en pensjonsordning</p>
-            {{else}}
-                <p>Jeg mottar ingen utbetalinger fra en pensjonsordning</p>
-            {{/if}}
+            <div class="svar">
+                {{#if pensjonsordning.mottarEllerSøktPensjonsordning}}
+                    <p>Ja, jeg har nylig søkt om eller mottar utbetalinger fra en pensjonsordning</p>
+                {{else}}
+                    <p>Jeg mottar ingen utbetalinger fra en pensjonsordning</p>
+                {{/if}}
+            </div>
         </div>
         <div class="common-section">
             <h3>Etterlønn</h3>
+            <div class="svar">
             {{#if etterlønn.mottarEllerSøktEtterlønn}}
                 <p>Ja, jeg har nylig søkt om eller mottar etterlønn</p>
             {{else}}
                 <p>Jeg mottar ingen etterlønn</p>
             {{/if}}
+            </div>
         </div>
         <div class="common-section">
             <h3>Barnetillegg</h3>
-            {{#if barnetillegg.søkerOmBarnetillegg}}
-                <p>Ja, jeg søker om barnetillegg for følgende barn</p>
-            {{else}}
-                <p>Nei, jeg søker ikke om barnetillegg</p>
-            {{/if}}
+            <div class="svar">
+                {{#if barnetillegg.søkerOmBarnetillegg}}
+                    <p>Ja, jeg søker om barnetillegg for følgende barn</p>
+                {{else}}
+                    <p>Nei, jeg søker ikke om barnetillegg</p>
+                {{/if}}
 
-            <ul>
-                {{#each barnetillegg.manueltRegistrerteBarnSøktBarnetilleggFor}}
-                    {{#if this.fornavn}}
-                        <li><b>{{this.fornavn}} {{this.mellomnavn}} {{this.etternavn}}</b> født {{iso_to_date this.fødselsdato}}</li>
-                    {{else}}
-                        <li>Barn født {{iso_to_date this.fødselsdato}}</li>
-                    {{/if}}
-                {{/each}}
-            </ul>
+                <ul>
+                    {{#each barnetillegg.manueltRegistrerteBarnSøktBarnetilleggFor}}
+                        {{#if this.fornavn}}
+                            <li><b>{{this.fornavn}} {{this.mellomnavn}} {{this.etternavn}}</b> født {{iso_to_date this.fødselsdato}}</li>
+                        {{else}}
+                            <li>Barn født {{iso_to_date this.fødselsdato}}</li>
+                        {{/if}}
+                    {{/each}}
+                </ul>
 
-            <ul>
-                {{#each barnetillegg.registrerteBarnSøktBarnetilleggFor}}
-                    {{#if this.fornavn}}
-                        <li><b>{{this.fornavn}} {{this.mellomnavn}} {{this.etternavn}}</b> født {{iso_to_date this.fødselsdato}}</li>
-                    {{else}}
-                        <li>Barn født {{iso_to_date this.fødselsdato}}</li>
-                    {{/if}}
-                {{/each}}
-            </ul>
+                <ul>
+                    {{#each barnetillegg.registrerteBarnSøktBarnetilleggFor}}
+                        {{#if this.fornavn}}
+                            <li><b>{{this.fornavn}} {{this.mellomnavn}} {{this.etternavn}}</b> født {{iso_to_date this.fødselsdato}}</li>
+                        {{else}}
+                            <li>Barn født {{iso_to_date this.fødselsdato}}</li>
+                        {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
         </div>
     </div>
 </body>
