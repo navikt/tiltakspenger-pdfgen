@@ -1,7 +1,7 @@
 {
   "acr": "Level4",
   "timestamp": "2025-01-01T12:00:00.000000Z",
-  "person": {
+  "personopplysninger": {
     "ident": "12345678901",
     "fornavn": "GREI",
     "etternavn": "ASTERISK"
@@ -29,8 +29,8 @@
   },
   "tiltak": {
     "aktivitetId": "123",
-    "tiltakstype": "Gruppe AMO",
-    "tiltakarrangør": "Testarrangør",
+    "type": "Gruppe AMO",
+    "arrangør": "Testarrangør",
     "søkerHeleTiltaksperioden": false,
     "periode": {
       "fra": "2024-01-01",

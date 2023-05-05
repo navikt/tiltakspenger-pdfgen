@@ -13,8 +13,8 @@
                     </path></svg>
                 </div>
                 <div class="person-opplysninger">
-                    <p class="opplysning"><b>{{person.fornavn}} {{person.etternavn}}</b></p>
-                    <p class="opplysning"><b>{{person.ident}}</b></p>
+                    <p class="opplysning"><b>{{personopplysninger.fornavn}} {{personopplysninger.etternavn}}</b></p>
+                    <p class="opplysning"><b>{{personopplysninger.ident}}</b></p>
                 </div>
              </div>
              <div class="sendt-til-nav">
@@ -61,7 +61,7 @@
         <div class="common-section">
             <h3>Tiltak</h3>
             <div class="svar">
-                <p>{{tiltak.tiltakstype}} - Testarrangør</p>
+                <p>{{tiltak.type}} - {{tiltak.arrangør}}</p>
                 <ul>
                     <li>
                         <p>Startdato <b>{{iso_to_date tiltak.periode.fra}}</b> - Sluttdato <b>{{iso_to_date tiltak.periode.til}}</b></p>
