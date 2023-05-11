@@ -54,6 +54,11 @@
       "til": "2027-01-01"
     }
   },
+  "vedleggsnavn": [
+    "test1.pdf",
+    "test2.png",
+    "test3.jpeg"
+  ],
   "barnetillegg": {
     "manueltRegistrerteBarnSøktBarnetilleggFor": [
       {
