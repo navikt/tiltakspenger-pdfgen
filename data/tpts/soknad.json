@@ -29,7 +29,8 @@
   },
   "tiltak": {
     "aktivitetId": "123",
-    "type": "Gruppe AMO",
+    "type": "ARBTREN",
+    "typeNavn": "Arbeidstrening",
     "arrangør": "Testarrangør",
     "søkerHeleTiltaksperioden": false,
     "periode": {
@@ -72,7 +73,7 @@
         "fødselsdato": "2027-01-01"
       }
     ],
-    "ønskerÅSøkeBarnetilleggForAndreBarn": true,
-    "harBekreftetAlleOpplysninger": true,
-  }
+    "ønskerÅSøkeBarnetilleggForAndreBarn": true
+  },
+  "harBekreftetAlleOpplysninger": true
 }
