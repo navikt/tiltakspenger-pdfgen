@@ -1,6 +1,6 @@
 {
   "acr": "Level4",
-  "timestamp": "2025-01-01T12:00:00.000000Z",
+  "innsendingTidspunkt": "2025-01-01T12:00:00.000000Z",
   "personopplysninger": {
     "ident": "12345678901",
     "fornavn": "GREI",
@@ -29,7 +29,8 @@
   },
   "tiltak": {
     "aktivitetId": "123",
-    "type": "Gruppe AMO",
+    "type": "ARBTREN",
+    "typeNavn": "Arbeidstrening",
     "arrangør": "Testarrangør",
     "søkerHeleTiltaksperioden": false,
     "periode": {
@@ -72,7 +73,7 @@
         "fødselsdato": "2027-01-01"
       }
     ],
-    "ønskerÅSøkeBarnetilleggForAndreBarn": true,
-    "harBekreftetAlleOpplysninger": true,
-  }
+    "ønskerÅSøkeBarnetilleggForAndreBarn": true
+  },
+  "harBekreftetAlleOpplysninger": true
 }

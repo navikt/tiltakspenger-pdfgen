@@ -19,7 +19,7 @@
              </div>
              <div class="sendt-til-nav">
                 <p class="opplysning"><b>Sendt til NAV</b></p>
-                <p class="opplysning">{{iso_to_nor_datetime timestamp}}</p>
+                <p class="opplysning">{{iso_to_nor_datetime innsendingTidspunkt}}</p>
              </div>
          </div>
          <hr class="separator" />
@@ -61,7 +61,7 @@
         <div class="common-section">
             <h3>Tiltak</h3>
             <div class="svar">
-                <p>{{tiltak.type}} - {{tiltak.arrangør}}</p>
+                <p>{{tiltak.typeNavn}} - {{tiltak.arrangør}}</p>
                 <ul>
                     <li>
                         <p>Startdato <b>{{iso_to_date tiltak.periode.fra}}</b> - Sluttdato <b>{{iso_to_date tiltak.periode.til}}</b></p>
