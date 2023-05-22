@@ -36,6 +36,10 @@
     "periode": {
       "fra": "2024-01-01",
       "til": "2024-01-02"
+    },
+    "arenaRegistrertPeriode": {
+      "fra": "2025-01-01",
+      "til": "2025-01-02"
     }
   },
   "pensjonsordning": {

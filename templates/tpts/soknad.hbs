@@ -63,9 +63,15 @@
             <div class="svar">
                 <p>{{tiltak.typeNavn}} - {{tiltak.arrangør}}</p>
                 <ul>
+                    {{#if tiltak.arenaRegistrertPeriode}}
+                    <li>
+                        <p>Startdato <b>{{iso_to_date tiltak.arenaRegistrertPeriode.fra}}</b> - Sluttdato <b>{{iso_to_date tiltak.arenaRegistrertPeriode.til}}</b></p>
+                    </li>
+                    {{else}}
                     <li>
                         <p>Startdato <b>{{iso_to_date tiltak.periode.fra}}</b> - Sluttdato <b>{{iso_to_date tiltak.periode.til}}</b></p>
                     </li>
+                    {{/if}}
                 </ul>
             </div>
         </div>
