@@ -185,6 +185,17 @@
                 </ul>
             </div>
         </div>
+        <div class="common-section">
+            <h3>Bekreftelse</h3>
+            <div class="svar">
+                {{#if harBekreftetÅSvareSåGodtManKan}}
+                    <p>Jeg vil svare så godt jeg kan på spørsmålene i søknaden.</p>
+                {{/if}}
+                {{#if harBekreftetAlleOpplysninger}}
+                    <p>Jeg har lest all informasjonen jeg har fått i søknaden og bekrefter at opplysningene jeg har gitt er korrekte.</p>
+                {{/if}}
+            </div>
+        </div>
         {{#if vedleggsnavn.length}}
             <div class="common-section">
                 <h3>Dine opplastede vedlegg</h3>
