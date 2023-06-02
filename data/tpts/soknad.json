@@ -42,20 +42,50 @@
       "til": "2025-01-02"
     }
   },
-  "pensjonsordning": {
-    "utbetaler": "Test",
-    "mottarEllerSøktPensjonsordning": true,
+  "mottarAndreUtbetalinger":true,
+  "sykepenger": {
+    "mottar": true,
     "periode": {
-      "fra": "2026-01-01",
-      "til": "2026-01-01"
+      "fra": "2024-01-01",
+      "til": "2024-01-02"
     }
   },
-  "etterlønn": {
-    "utbetaler": "Test",
-    "mottarEllerSøktEtterlønn": true,
+  "gjenlevendepensjon": {
+    "mottar": true,
     "periode": {
-      "fra": "2027-01-01",
-      "til": "2027-01-01"
+      "fra": "2024-01-01",
+      "til": "2024-01-02"
+    }
+  },
+  "alderspensjon": {
+    "mottar": true,
+    "fraDato": "2024-01-01"
+  },
+  "supplerendestønadover67": {
+    "mottar": true,
+    "periode": {
+      "fra": "2024-01-01",
+      "til": "2024-01-02"
+    }
+  },
+  "supplerendestønadflyktninger": {
+    "mottar": true,
+    "periode": {
+      "fra": "2024-01-01",
+      "til": "2024-01-02"
+    }
+  },
+  "pensjonsordning": {
+      "mottar" : false
+  },
+  "etterlønn": {
+    "mottar": false
+  },
+  "jobbsjansen": {
+    "mottar": true,
+    "periode": {
+      "fra": "2024-01-01",
+      "til": "2024-01-02"
     }
   },
   "vedleggsnavn": [

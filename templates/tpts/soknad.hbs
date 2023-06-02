@@ -31,11 +31,11 @@
         <div class="common-section">
             <h3>Kvalifiseringsprogrammet</h3>
             <div class="svar">
-            {{#if kvalifiseringsprogram.deltar}}
-                <p>Ja, jeg deltar i kvalifiseringsprogrammet i perioden {{iso_to_long_date kvalifiseringsprogram.periode.fra}} - {{iso_to_long_date kvalifiseringsprogram.periode.til}}</p>
-            {{else}}
-                <p>Nei, jeg deltar ikke i kvalifiseringsprogrammet i perioden jeg deltar på tiltaket</p>
-            {{/if}}
+                {{#if kvalifiseringsprogram.deltar}}
+                    <p>Ja, jeg deltar i kvalifiseringsprogrammet i perioden {{iso_to_long_date kvalifiseringsprogram.periode.fra}} - {{iso_to_long_date kvalifiseringsprogram.periode.til}}</p>
+                {{else}}
+                    <p>Nei, jeg deltar ikke i kvalifiseringsprogrammet i perioden jeg deltar på tiltaket</p>
+                {{/if}}
             </div>
         </div>
         <div class="common-section">
@@ -75,24 +75,84 @@
                 </ul>
             </div>
         </div>
-         <div class="common-section">
+        <div class="common-section">
+            <h3>Sykepenger</h3>
+            <div class="svar">
+                {{#if sykepenger.mottar}}
+                    <p>Ja, jeg mottar sykepenger i perioden {{iso_to_long_date sykepenger.periode.fra}} - {{iso_to_long_date sykepenger.periode.til}}</p>
+                {{else}}
+                    <p>Nei, jeg mottar ikke sykepenger i perioden jeg deltar på tiltaket</p>
+                {{/if}}
+            </div>
+        </div>
+        <div class="common-section">
+            <h3>Gjenlevendepensjon</h3>
+            <div class="svar">
+                {{#if gjenlevendepensjon.mottar}}
+                    <p>Ja, jeg mottar gjenlevendepensjon i perioden {{iso_to_long_date gjenlevendepensjon.periode.fra}} - {{iso_to_long_date gjenlevendepensjon.periode.til}}</p>
+                {{else}}
+                    <p>Nei, jeg mottar ikke gjenlevendepensjon i perioden jeg deltar på tiltaket</p>
+                {{/if}}
+            </div>
+        </div>
+        <div class="common-section">
+            <h3>Alderspensjon</h3>
+            <div class="svar">
+                {{#if alderspensjon.mottar}}
+                    <p>Ja, jeg mottar alderspensjon fra {{iso_to_long_date alderspensjon.fraDato}}</p>
+                {{else}}
+                    <p>Nei, jeg mottar ikke alderspensjon i perioden jeg deltar på tiltaket</p>
+                {{/if}}
+            </div>
+        </div>
+        <div class="common-section">
+            <h3>Supplerende stønad for personer over 67 år</h3>
+            <div class="svar">
+                {{#if supplerendestønadover67.mottar}}
+                    <p>Ja, jeg mottar supplerende stønad for personer over 67 år i perioden {{iso_to_long_date supplerendestønadover67.periode.fra}} - {{iso_to_long_date supplerendestønadover67.periode.til}}</p>
+                {{else}}
+                    <p>Nei, jeg mottar ikke supplerende stønad for personer over 67 år i perioden jeg deltar på tiltaket</p>
+                {{/if}}
+            </div>
+        </div>
+        <div class="common-section">
+            <h3>Supplerende stønad for uføre flyktninger</h3>
+            <div class="svar">
+                {{#if supplerendestønadflyktninger.mottar}}
+                    <p>Ja, jeg mottar supplerende stønad for uføre flyktninger i perioden {{iso_to_long_date supplerendestønadflyktninger.periode.fra}} - {{iso_to_long_date supplerendestønadflyktninger.periode.til}}</p>
+                {{else}}
+                    <p>Nei, jeg mottar ikke supplerende stønad for uføre flyktninger i perioden jeg deltar på tiltaket</p>
+                {{/if}}
+            </div>
+        </div>
+        <div class="common-section">
             <h3>Pensjonsordninger</h3>
             <div class="svar">
-                {{#if pensjonsordning.mottarEllerSøktPensjonsordning}}
-                    <p>Ja, jeg har nylig søkt om eller mottar utbetalinger fra en pensjonsordning</p>
+                {{#if pensjonsordning.mottar}}
+                    <p>Ja, jeg mottar pensjonsordning i perioden jeg deltar på tiltaket</p>
                 {{else}}
-                    <p>Nei, jeg mottar ingen utbetalinger fra en pensjonsordning</p>
+                    <p>Nei, jeg mottar ikke pensjonsordning i perioden jeg deltar på tiltaket</p>
                 {{/if}}
             </div>
         </div>
         <div class="common-section">
             <h3>Etterlønn</h3>
             <div class="svar">
-            {{#if etterlønn.mottarEllerSøktEtterlønn}}
-                <p>Ja, jeg har nylig søkt om eller mottar etterlønn</p>
-            {{else}}
-                <p>Nei, jeg mottar ingen etterlønn</p>
-            {{/if}}
+                {{#if etterlønn.mottar}}
+                    <p>Ja, jeg mottar etterlønn i perioden jeg deltar på tiltaket</p>
+                {{else}}
+                    <p>Nei, jeg mottar ikke etterlønn i perioden jeg deltar på tiltaket</p>
+                {{/if}}
+            </div>
+        </div>
+        <div class="common-section">
+            <h3>Jobbsjansen</h3>
+            <div class="svar">
+                {{#if jobbsjansen.mottar}}
+                    <p>Ja, jeg mottar utbetalinger fra jobbsjansen i periode {{iso_to_long_date jobbsjansen.periode.fra}} - {{iso_to_long_date jobbsjansen.periode.til}}</p>
+                {{else}}
+                    <p>Nei, jeg mottar ingen utbetalinger fra en jobbsjansen</p>
+                {{/if}}
             </div>
         </div>
         <div class="common-section">
@@ -128,22 +188,30 @@
         <div class="common-section">
             <h3>Bekreftelse</h3>
             <div class="svar">
-            {{#if harBekreftetÅSvareSåGodtManKan}}
-                <p>Jeg vil svare så godt jeg kan på spørsmålene i søknaden.</p>
-            {{/if}}
-            {{#if harBekreftetAlleOpplysninger}}
-                <p>Jeg har lest all informasjonen jeg har fått i søknaden og bekrefter at opplysningene jeg har gitt er korrekte.</p>
-            {{/if}}
+                {{#if harBekreftetÅSvareSåGodtManKan}}
+                    <p>Jeg vil svare så godt jeg kan på spørsmålene i søknaden.</p>
+                {{/if}}
+                {{#if harBekreftetAlleOpplysninger}}
+                    <p>Jeg har lest all informasjonen jeg har fått i søknaden og bekrefter at opplysningene jeg har gitt er korrekte.</p>
+                {{/if}}
             </div>
         </div>
-            {{#if vedleggsnavn.length}}
+        {{#if vedleggsnavn.length}}
             <div class="common-section">
                 <h3>Dine opplastede vedlegg</h3>
                 {{#each vedleggsnavn}}
                     <p>{{this}}</p>
                 {{/each}}
             </div>
-            {{/if}}
+        {{/if}}
+        <div class="common-section">
+            <h3>Bekreftelse</h3>
+            <div class="svar">
+                {{#if harBekreftetAlleOpplysninger}}
+                    <p>Jeg har lest all informasjonen jeg har fått i søknaden og bekrefter at opplysningene jeg har gitt er korrekte.</p>
+                {{/if}}
+            </div>
+        </div>
         </div>
     </div>
 </body>
