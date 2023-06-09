@@ -158,25 +158,49 @@
         <div class="common-section">
             <h3>Barnetillegg</h3>
             <div class="svar">
-                <ul>
-                    {{#each barnetillegg.manueltRegistrerteBarnSøktBarnetilleggFor}}
-                        {{#if this.fornavn}}
-                            <li><b>{{this.fornavn}} {{this.mellomnavn}} {{this.etternavn}}</b> født {{iso_to_long_date this.fødselsdato}}</li>
-                        {{else}}
-                            <li>Barn født {{iso_to_long_date this.fødselsdato}}</li>
-                        {{/if}}
-                    {{/each}}
-                </ul>
-
-                <ul>
-                    {{#each barnetillegg.registrerteBarnSøktBarnetilleggFor}}
-                        {{#if this.fornavn}}
-                            <li><b>{{this.fornavn}} {{this.mellomnavn}} {{this.etternavn}}</b> født {{iso_to_long_date this.fødselsdato}}</li>
-                        {{else}}
-                            <li>Barn født {{iso_to_long_date this.fødselsdato}}</li>
-                        {{/if}}
-                    {{/each}}
-                </ul>
+                {{#each barnetillegg.manueltRegistrerteBarnSøktBarnetilleggFor}}
+                    <p>
+                        <b>{{this.fornavn}} {{this.mellomnavn}} {{this.etternavn}}</b> født {{iso_to_long_date this.fødselsdato}}
+                        <ul>
+                            <li>
+                                {{#if this.oppholdInnenforEøs}}
+                                    <p>Ja, barnet oppholder seg innenfor EØS i tiltaksperioden</p>
+                                {{else}}
+                                    <p>Nei, barnet oppholder seg ikke innenfor EØS i tiltaksperioden</p>
+                                {{/if}}
+                            </li>
+                        </ul>
+                    </p>
+                {{/each}}
+                {{#each barnetillegg.registrerteBarnSøktBarnetilleggFor}}
+                    {{#if this.fornavn}}
+                        <p>
+                            <b>{{this.fornavn}} {{this.mellomnavn}} {{this.etternavn}}</b> født {{iso_to_long_date this.fødselsdato}}
+                            <ul>
+                                <li>
+                                    {{#if this.oppholdInnenforEøs}}
+                                        <p>Ja, barnet oppholder seg innenfor EØS i tiltaksperioden</p>
+                                    {{else}}
+                                        <p>Nei, barnet oppholder seg ikke innenfor EØS i tiltaksperioden</p>
+                                    {{/if}}
+                                </li>
+                            </ul>
+                        </p>
+                    {{else}}
+                         <p>
+                            <b>Barn født {{iso_to_long_date this.fødselsdato}}
+                            <ul>
+                                <li>
+                                    {{#if this.oppholdInnenforEøs}}
+                                        <p>Ja, barnet oppholder seg innenfor EØS i tiltaksperioden</p>
+                                    {{else}}
+                                        <p>Nei, barnet oppholder seg ikke innenfor EØS i tiltaksperioden</p>
+                                    {{/if}}
+                                </li>
+                            </ul>
+                        </p>
+                    {{/if}}
+                {{/each}}
             </div>
         </div>
         <div class="common-section">
