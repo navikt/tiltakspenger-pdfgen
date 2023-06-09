@@ -158,12 +158,6 @@
         <div class="common-section">
             <h3>Barnetillegg</h3>
             <div class="svar">
-                {{#if barnetillegg.søkerOmBarnetillegg}}
-                    <p>Ja, jeg søker om barnetillegg for følgende barn</p>
-                {{else}}
-                    <p>Nei, jeg søker ikke om barnetillegg</p>
-                {{/if}}
-
                 <ul>
                     {{#each barnetillegg.manueltRegistrerteBarnSøktBarnetilleggFor}}
                         {{#if this.fornavn}}
