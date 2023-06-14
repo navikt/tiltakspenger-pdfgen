@@ -76,6 +76,16 @@
             </div>
         </div>
         <div class="common-section">
+            <h3>Lønnet arbeid</h3>
+            <div class="svar">
+                {{#if lønnetArbeid.erILønnetArbeid}}
+                    <p>Ja, jeg er i lønnet arbeid i perioden {{iso_to_long_date sykepenger.periode.fra}} - {{iso_to_long_date sykepenger.periode.til}}</p>
+                {{else}}
+                    <p>Nei, jeg er ikke i lønnet arbeid i perioden jeg deltar på tiltaket</p>
+                {{/if}}
+            </div>
+        </div>
+        <div class="common-section">
             <h3>Sykepenger</h3>
             <div class="svar">
                 {{#if sykepenger.mottar}}
@@ -129,7 +139,7 @@
             <h3>Pensjonsordninger</h3>
             <div class="svar">
                 {{#if pensjonsordning.mottar}}
-                    <p>Ja, jeg mottar pensjonsordning i perioden jeg deltar på tiltaket</p>
+                    <p>Ja, jeg mottar pensjonsordning i perioden {{iso_to_long_date pensjonsordning.periode.fra}} - {{iso_to_long_date pensjonsordning.periode.til}}</p>
                 {{else}}
                     <p>Nei, jeg mottar ikke pensjonsordning i perioden jeg deltar på tiltaket</p>
                 {{/if}}
@@ -149,7 +159,7 @@
             <h3>Jobbsjansen</h3>
             <div class="svar">
                 {{#if jobbsjansen.mottar}}
-                    <p>Ja, jeg mottar utbetalinger fra jobbsjansen i periode {{iso_to_long_date jobbsjansen.periode.fra}} - {{iso_to_long_date jobbsjansen.periode.til}}</p>
+                    <p>Ja, jeg mottar utbetalinger fra jobbsjansen i perioden {{iso_to_long_date jobbsjansen.periode.fra}} - {{iso_to_long_date jobbsjansen.periode.til}}</p>
                 {{else}}
                     <p>Nei, jeg mottar ingen utbetalinger fra en jobbsjansen</p>
                 {{/if}}
