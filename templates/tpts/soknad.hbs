@@ -86,12 +86,32 @@
             </div>
         </div>
         <div class="common-section">
+            <h3>Etterlønn</h3>
+            <div class="svar">
+                {{#if etterlønn.mottar}}
+                    <p>Ja, jeg mottar etterlønn i perioden jeg deltar på tiltaket</p>
+                {{else}}
+                    <p>Nei, jeg mottar ikke etterlønn i perioden jeg deltar på tiltaket</p>
+                {{/if}}
+            </div>
+        </div>
+        <div class="common-section">
             <h3>Sykepenger</h3>
             <div class="svar">
                 {{#if sykepenger.mottar}}
                     <p>Ja, jeg mottar sykepenger i perioden {{iso_to_long_date sykepenger.periode.fra}} - {{iso_to_long_date sykepenger.periode.til}}</p>
                 {{else}}
                     <p>Nei, jeg mottar ikke sykepenger i perioden jeg deltar på tiltaket</p>
+                {{/if}}
+            </div>
+        </div>
+        <div class="common-section">
+            <h3>Annen pengestøtte</h3>
+            <div class="svar">
+                {{#if mottarAndreUtbetalinger}}
+                    <p>Ja, jeg mottar annen pengestøtte i perioden jeg går på tiltak</p>
+                {{else}}
+                    <p>Nei, jeg mottar ikke annen pengestøtte i perioden jeg deltar på tiltaket</p>
                 {{/if}}
             </div>
         </div>
@@ -136,22 +156,12 @@
             </div>
         </div>
         <div class="common-section">
-            <h3>Pensjonsordninger</h3>
+            <h3>Pengestøtte fra andre trygde- eller pensjonsordninger</h3>
             <div class="svar">
                 {{#if pensjonsordning.mottar}}
-                    <p>Ja, jeg mottar pensjonsordning i perioden {{iso_to_long_date pensjonsordning.periode.fra}} - {{iso_to_long_date pensjonsordning.periode.til}}</p>
+                    <p>Ja, jeg mottar pengestøtte fra andre trygde- eller pensjonsordninger i perioden {{iso_to_long_date pensjonsordning.periode.fra}} - {{iso_to_long_date pensjonsordning.periode.til}}</p>
                 {{else}}
-                    <p>Nei, jeg mottar ikke pensjonsordning i perioden jeg deltar på tiltaket</p>
-                {{/if}}
-            </div>
-        </div>
-        <div class="common-section">
-            <h3>Etterlønn</h3>
-            <div class="svar">
-                {{#if etterlønn.mottar}}
-                    <p>Ja, jeg mottar etterlønn i perioden jeg deltar på tiltaket</p>
-                {{else}}
-                    <p>Nei, jeg mottar ikke etterlønn i perioden jeg deltar på tiltaket</p>
+                    <p>Nei, jeg mottar  ikke pengestøtte fra andre trygde- eller pensjonsordninger i perioden jeg deltar på tiltaket</p>
                 {{/if}}
             </div>
         </div>
