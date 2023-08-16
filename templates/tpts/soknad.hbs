@@ -61,7 +61,11 @@
         <div class="common-section">
             <h3>Tiltak</h3>
             <div class="svar">
-                <p>{{spørsmålsbesvarelser.tiltak.typeNavn}} - {{spørsmålsbesvarelser.tiltak.arrangør}}</p>
+                {{#if spørsmålsbesvarelser.tiltak.arrangør}}
+                    <p>{{spørsmålsbesvarelser.tiltak.typeNavn}} - {{spørsmålsbesvarelser.tiltak.arrangør}}</p>
+                {{else}}
+                    <p>{{spørsmålsbesvarelser.tiltak.typeNavn}}</p>
+                {{/if}}
                 <ul>
                     <li>
                         <p>Startdato <b>{{iso_to_long_date spørsmålsbesvarelser.tiltak.periode.fra}}</b> - Sluttdato <b>{{iso_to_long_date spørsmålsbesvarelser.tiltak.periode.til}}</b></p>
