@@ -22,7 +22,7 @@
 
         .navLogo {
             height: 75px;
-            margin-bottom: 128px;
+            margin-bottom: 80px;
         }
 
         .personalia {
@@ -32,6 +32,10 @@
 
         .personalia p {
             margin: 0;
+        }
+
+        .dato {
+            text-align: left;
         }
 
         .mainContent {
@@ -122,8 +126,11 @@
 
             <div class="personalia">
                 <p>{{fornavn}} {{etternavn}}</p>
+                <p>{{adresse}} {{husnummer}}, {{bruksenhet}}</p>
+                <p>{{postnummer}} {{poststed}}</p>
+            </div>
+            <div class="dato">
                 <p>Dato: {{dato}}</p>
-                <p>Saksnummer: {{saksnummer}}</p>
             </div>
         </div>
         {{/with}}
