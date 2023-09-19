@@ -29,22 +29,22 @@
             <p class="svar">{{iso_to_long_date spørsmålsbesvarelser.tiltak.periode.fra}} - {{iso_to_long_date spørsmålsbesvarelser.tiltak.periode.til}}</p>
         </div>
         <div class="common-section">
-            <h3>Kvalifiseringsprogrammet</h3>
+            <h3>Kvalifiseringsstønad</h3>
             <div class="svar">
                 {{#if spørsmålsbesvarelser.kvalifiseringsprogram.deltar}}
-                    <p>Ja, jeg deltar i kvalifiseringsprogrammet i perioden {{iso_to_long_date spørsmålsbesvarelser.kvalifiseringsprogram.periode.fra}} - {{iso_to_long_date spørsmålsbesvarelser.kvalifiseringsprogram.periode.til}}</p>
+                    <p>Ja, jeg mottar kvalifiseringsstønad i perioden {{iso_to_long_date spørsmålsbesvarelser.kvalifiseringsprogram.periode.fra}} - {{iso_to_long_date spørsmålsbesvarelser.kvalifiseringsprogram.periode.til}}</p>
                 {{else}}
-                    <p>Nei, jeg deltar ikke i kvalifiseringsprogrammet i perioden jeg deltar på tiltaket</p>
+                    <p>Nei, jeg mottar ikke kvalifiseringsstønad i perioden jeg deltar på tiltaket</p>
                 {{/if}}
             </div>
         </div>
         <div class="common-section">
-            <h3>Introduksjonsprogrammet</h3>
+            <h3>Introduksjonsstønad</h3>
             <div class="svar">
                 {{#if spørsmålsbesvarelser.introduksjonsprogram.deltar}}
-                    <p>Ja, jeg deltar i introduksjonsprogrammet i perioden {{iso_to_long_date spørsmålsbesvarelser.introduksjonsprogram.periode.fra}} - {{iso_to_long_date spørsmålsbesvarelser.introduksjonsprogram.periode.til}}</p>
+                    <p>Ja, jeg mottar introduksjonsstønad i perioden {{iso_to_long_date spørsmålsbesvarelser.introduksjonsprogram.periode.fra}} - {{iso_to_long_date spørsmålsbesvarelser.introduksjonsprogram.periode.til}}</p>
                 {{else}}
-                    <p>Nei, jeg deltar ikke i introduksjonsprogrammet i perioden jeg deltar på tiltaket</p>
+                    <p>Nei, jeg mottar ikke introduksjonsstønad i perioden jeg deltar på tiltaket</p>
                 {{/if}}
             </div>
         </div>
