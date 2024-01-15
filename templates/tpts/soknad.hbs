@@ -104,12 +104,12 @@
             </div>
         </div>
         <div class="common-section">
-            <h3>Gjenlevendepensjon</h3>
+            <h3>Gjenlevendepensjon og omstillingsstønad</h3>
             <div class="svar">
                 {{#if spørsmålsbesvarelser.gjenlevendepensjon.mottar}}
-                    <p>Ja, jeg mottar gjenlevendepensjon i perioden {{iso_to_long_date spørsmålsbesvarelser.gjenlevendepensjon.periode.fra}} - {{iso_to_long_date spørsmålsbesvarelser.gjenlevendepensjon.periode.til}}</p>
+                    <p>Ja, jeg mottar gjenlevendepensjon eller omstillingsstønad i perioden {{iso_to_long_date spørsmålsbesvarelser.gjenlevendepensjon.periode.fra}} - {{iso_to_long_date spørsmålsbesvarelser.gjenlevendepensjon.periode.til}}</p>
                 {{else}}
-                    <p>Nei, jeg mottar ikke gjenlevendepensjon i perioden jeg deltar på tiltaket</p>
+                    <p>Nei, jeg mottar ikke gjenlevendepensjon eller omstillingsstønad i perioden jeg deltar på tiltaket</p>
                 {{/if}}
             </div>
         </div>
