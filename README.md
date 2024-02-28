@@ -1,8 +1,8 @@
 # tiltakspenger-pdfgen
 PDF generator for tiltakspenger. Kjør lokalt docker image med  `./run_development.sh`
 
-PDFene kan testes lokalt på `http://localhost:8081/api/v1/genpdf/<application>/<template>`, f.eks.
-http://localhost:8081/api/v1/genpdf/tpts/vedtakInnvilgelse
+PDFene kan testes lokalt på `http://localhost:8085/api/v1/genpdf/<application>/<template>`, f.eks.
+http://localhost:8085/api/v1/genpdf/tpts/vedtakInnvilgelse
 
 Templatene vil bruke flettedata fra json-fil med samme navn som template i `data/tpts`
 
