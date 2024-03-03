@@ -1,14 +1,8 @@
 {
   "personalia": {
-    "dato": "01.01.2021",
     "ident": "12345678901",
     "fornavn": "Planet",
     "etternavn": "Planetus",
-    "adresse": "Melkeveien",
-    "husnummer": "20",
-    "bruksenhet": "H103",
-    "postnummer": "9807",
-    "poststed": "Uranus",
     "antallBarn": 0
   },
   "tiltaksinfo": {
@@ -17,10 +11,10 @@
     "tiltaksnummer": "2023/0263674",
     "arrangør": "DAHLS GRILL ÅRNES"
   },
+  "datoForUtsendelse": "01.01.2023",
   "fraDato": "2025-01-01",
   "tilDato": "2025-01-01",
   "saksnummer": "123456789",
-  "innsendingTidspunkt": "2023-09-07T12:18:38.487383",
   "barnetillegg": false,
   "saksbehandler": "MOT BAKKE",
   "kontor": "NAV Hvaler"
