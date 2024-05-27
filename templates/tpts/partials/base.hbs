@@ -61,6 +61,18 @@
             margin-top: 64px;
         }
 
+        td.left {
+            text-align: left;
+        }
+
+        td.center {
+            text-align: center;
+        }
+
+        td.right {
+            text-align: right;
+        }
+
         .hilsen p {
             padding: 0;
             margin: 0;
@@ -114,6 +126,11 @@
             padding-left: 0.2em;
             padding-right: 0.2em;
         }
+
+        .right-align {
+            text-align: right;
+        }
+
     </style>
     <title>Tiltakspenger</title>
 </head>
@@ -121,19 +138,23 @@
 <body>
     <div class="main">
         {{#with personalia}}
-        <div class="header">
-            <img class="navLogo" src="{{image "Navlogo.png"}}" />
+            <div class="header">
+                <img class="navLogo" src="{{image "Navlogo.png"}}" />
 
-            <div class="personalia">
-                <p>{{fornavn}} {{etternavn}}</p>
+                <div class="personalia">
+                    <p>{{fornavn}} {{etternavn}}</p>
+                </div>
+                <table style="width: 100%;">
+                    <tr>
+                        <td class="left">Fødselsnummer: {{ident}}</td>
+                        <td class="center">Saksnummer: {{saksnummer}}</td>
+                        <td class="right">Dato: {{datoForUtsending}}</td>
+                    </tr>
+                </table>
             </div>
-            <div class="dato">
-                <p>Dato: {{datoForUtsendelse}}</p>
-            </div>
-        </div>
         {{/with}}
         {{> @partial-block}}
-
+        {{> tpts/partials/hilsen }}
     </div>
 </body>
 

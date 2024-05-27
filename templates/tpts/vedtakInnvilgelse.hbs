@@ -1,65 +1,13 @@
 {{#> tpts/partials/innvilgelseBase}}
-    <div class="mainContent">
-        <h2>Du får tiltakspenger under tiltak</h2>
-    <br/>
-    <div class="personalia">
-    {{#with tiltaksinfo}}
-
-        <p><b>Tiltak:</b> {{tiltak}}</p>
-        <p><b>Tiltaksnavn:</b> {{tiltaksnavn}}</p>
-        <p><b>Tiltaksnummer:</b> {{tiltaksnummer}}</p>
-        <p><b>Arrangør:</b> {{arrangør}}</p>
-    {{/with}}
-    </div>
-        <br/>
-        <div>
-            <h3>  TILTAKSPENGER UNDER TILTAK - INNVILGELSE </h3>
-            <p>
-                Du får 268 kroner per dag før skatt fra og med {{fraDato}} til og med {{tilDato}}. Du trenger ikke betale skatt av pengene.
-                Pengene blir utbetalt til din bankkonto.  Du kan selv sjekke utbetalingene dine på nav.no/utbetalinger.
-            </p>
-            <p>
-                Vedtaket er gjort etter forskrift om tiltakspenger (tiltakspengeforskriften) og Lov om arbeidsmarkedstjenester (arbeidsmarkedsloven).
-
-                Dersom det skjer endringer som kan ha betydning for det du får utbetalt, må du straks melde fra til NAV på telefon 55 55 33 33.
-            </p>
-        </div>
-        <div>
-        {{#if barnetillegg}}
-            <h3>  BARNETILLEGG UNDER TILTAK - INNVILGELSE </h3>
-            <p>
-                Du får 53 kroner per dag i barnetillegg fra {{fraDato}}  til {{tilDato}}.
-            </p>
-            <p>
-                Du får barnetillegg for {{antallBarn}} barn.
-            </p>
-            <p>
-                Pengene blir utbetalt til din bankkonto.  Du kan selv sjekke utbetalingene dine på nav.no/utbetalinger.
-            </p>
-            <p>
-                Vedtaket er gjort etter forskrift om tiltakspenger (tiltakspengeforskriften) og § 3 jf. Lov om arbeidsmarkedstjenester § 13.
-            </p>
-        {{/if}}
-
-        {{#if fritekst}}
-            <p class="fritekst">{{fritekst}}</p>
-        {{/if}}
-        </div>
-        <br/>
     <div>
-        <p>
-            Med hilsen
-        </p>
+        <p>Du får tiltakspenger fordi du deltar på {{tiltaksinfo.tiltak}} hos {{tiltaksinfo.arrangør}}</p>
+        <p>Du får tiltakspenger{{#if barnetillegg}} og barnetillegg{{/if}} fra og med den {{fraDato}} til og med den {{tilDato}}</p>
 
-
-        <div class="personalia">
-            <p>{{saksbehandler}}</p>
-            <p>{{kontor}}</p>
-        </div>
-        <p>
-            Vedlegg: informasjon om retten til å klage med mer.
-        </p>
-    </div>
-        <br/>
+        <ul>
+            <li>Tiltakspengene er {{sats}} kroner per dag du deltra i arbeidsmarkedstiltaket</li>
+            {{#if barnetillegg}}
+                <li>Barnetillegget er {{satsBarn}} kroner per barn per dag du deltar i arbeidsmarkedstiltaket</li>
+            {{/if}}
+        </ul>
     </div>
 {{/tpts/partials/innvilgelseBase}}

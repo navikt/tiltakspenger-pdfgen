@@ -11,11 +11,14 @@
     "tiltaksnummer": "2023/0263674",
     "arrangør": "DAHLS GRILL ÅRNES"
   },
-  "datoForUtsendelse": "01.01.2023",
-  "fraDato": "2025-01-01",
-  "tilDato": "2025-01-01",
+  "datoForUtsending": "3. august 2023",
+  "fraDato": "1. januar 2024",
+  "tilDato": "31. desember 2024",
   "saksnummer": "123456789",
-  "barnetillegg": false,
-  "saksbehandler": "MOT BAKKE",
-  "kontor": "NAV Hvaler"
+  "barnetillegg": true,
+  "saksbehandler": "Kåre Kropp",
+  "beslutter": "Pelle Parafin",
+  "kontor": "NAV Hvaler",
+  "sats": 285,
+  "satsBarn": 53
 }
