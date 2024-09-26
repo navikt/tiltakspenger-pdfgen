@@ -17,6 +17,7 @@ spec:
     inbound:
       rules:
         - application: tiltakspenger-soknad-api
+        - application: tiltakspenger-vedtak
   azure:
     application:
       enabled: false
