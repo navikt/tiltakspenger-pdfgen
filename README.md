@@ -28,8 +28,7 @@ f.eks:
     "etternavn": "Planetus"
   },
   "tiltak": {
-    "navn": "(tiltaksnavn)",
-    "arrangør": "(arrangør)"
+    "navn": "(tiltaksnavn)"
   },
   "rammevedtakFraDato": "2025-01-01",
   "rammevedtakTilDato": "2025-02-02",
