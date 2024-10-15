@@ -142,15 +142,11 @@
                 <img class="navLogo" src="{{image "Navlogo.png"}}" />
 
                 <div class="personalia">
-                    <p>{{fornavn}} {{etternavn}}</p>
+                    <p>Navn: {{fornavn}} {{etternavn}}</p>
+                    <p>Fødselsnummer: {{ident}}</p>
+                    <p>Saksnummer: {{saksnummer}}</p>
+                    <p class="right-align">Dato: {{iso_to_long_date datoForUtsending}}</p>
                 </div>
-                <table style="width: 100%;">
-                    <tr>
-                        <td class="left">Fødselsnummer: {{ident}}</td>
-                        <td class="center">Saksnummer: {{saksnummer}}</td>
-                        <td class="right">Dato: {{datoForUtsending}}</td>
-                    </tr>
-                </table>
             </div>
         {{/with}}
         {{> @partial-block}}
