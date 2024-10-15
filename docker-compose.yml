@@ -1,0 +1,10 @@
+services:
+  service:
+    platform: linux/arm64/v8
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8085:8080
+    environment:
+      DISABLE_PDF_GET: false
