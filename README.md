@@ -27,9 +27,7 @@ f.eks:
     "fornavn": "Planet",
     "etternavn": "Planetus"
   },
-  "tiltak": {
-    "navn": "(tiltaksnavn)"
-  },
+  "tiltaksnavn": "(tiltaksnavn)",
   "rammevedtakFraDato": "2025-01-01",
   "rammevedtakTilDato": "2025-02-02",
   "saksnummer": "123456",
