@@ -8,8 +8,8 @@ Pdfgen er også en del av scriptet `up.sh` som ligger i metarepo og starter opp 
 
 
 # Gjøre kall mot tiltakspenger-pdfgen lokalt
-PDFene kan testes lokalt på `http://localhost:8085/api/v1/genpdf/<application>/<template>`, f.eks.
-http://localhost:8085/api/v1/genpdf/tpts/vedtakInnvilgelse
+PDFene kan testes lokalt på `http://localhost:8081/api/v1/genpdf/<application>/<template>`, f.eks.
+http://localhost:8081/api/v1/genpdf/tpts/vedtakInnvilgelse
 
 Templatene vil bruke flettedata fra json-fil med samme navn som template i `data/tpts`
 
@@ -17,7 +17,7 @@ Templatene vil bruke flettedata fra json-fil med samme navn som template i `data
 # Gjøre kall mot tiltakspenger-pdfgen lokalt (alternativ 2) 
 1. Start opp postman/insomnia/bruno eller et annet program som kan gjøre rest-kall
 
-2. Sett opp en `POST` mot endepunktet du vil ha brev fra f.eks: `http://localhost:8085/api/v1/genpdf/tpts/vedtakInnvilgelse`
+2. Sett opp en `POST` mot endepunktet du vil ha brev fra f.eks: `http://localhost:8081/api/v1/genpdf/tpts/vedtakInnvilgelse`
 3. Sett BODY til å være Json
 f.eks:
 ```
