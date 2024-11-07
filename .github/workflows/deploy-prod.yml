@@ -1,11 +1,15 @@
-name: Build, push and deploy to dev (manual)
+name: Build, push and deploy to prod
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '**.md'
 
 jobs:
   build:
-    name: Build docker image
+    name: Test and build
     uses: ./.github/workflows/.build-image.yml
     permissions:
       contents: read
@@ -13,7 +17,7 @@ jobs:
     secrets:
       NAIS_WORKLOAD_IDENTITY_PROVIDER: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}
 
-  deploy:
+  deploy-dev:
     name: Deploy to NAIS (dev)
     needs: build
     uses: ./.github/workflows/.deploy-to-nais.yml
@@ -22,4 +26,15 @@ jobs:
       id-token: write
     with:
       NAIS_ENV: dev
+      IMAGE: ${{ needs.build.outputs.IMAGE }}
+
+  deploy-prod:
+    name: Deploy to NAIS (prod)
+    needs: build
+    uses: ./.github/workflows/.deploy-to-nais.yml
+    permissions:
+      contents: read
+      id-token: write
+    with:
+      NAIS_ENV: prod
       IMAGE: ${{ needs.build.outputs.IMAGE }}
