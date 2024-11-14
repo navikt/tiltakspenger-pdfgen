@@ -1,15 +1,16 @@
 #!/bin/bash
 
-CURRENT_PATH="$(cd "$(dirname "$1")"; pwd)/$(basename "$1")"
+CURRENT_PATH=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 
-docker pull navikt/pdfgen:2.0.48
+CONTAINER_NAME="tiltakspenger-pdfgen"
+
+docker build -t "$CONTAINER_NAME" "$CURRENT_PATH"
+
 docker run \
-        -v $CURRENT_PATH/templates:/app/templates \
-        -v $CURRENT_PATH/fonts:/app/fonts \
-        -v $CURRENT_PATH/data:/app/data \
-        -v $CURRENT_PATH/resources:/app/resources \
+        --name "$CONTAINER_NAME" \
+        -v "$CURRENT_PATH"/data:/app/data \
         -p 8081:8080 \
         -e DISABLE_PDF_GET=false \
         -it \
         --rm \
-        navikt/pdfgen
+        "$CONTAINER_NAME"
