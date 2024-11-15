@@ -18,7 +18,12 @@
   "barnetillegg": true,
   "saksbehandler": "Kåre Kropp",
   "beslutter": "Pelle Parafin",
+  "saksbehandlerNavn": "Kåre Kropp",
+  "beslutterNavn": "Pelle Parafin",
   "kontor": "Nav Hvaler",
   "sats": 285,
-  "satsBarn": 53
+  "satsBarn": 53,
+  "rammevedtakFraDato": "1. januar 2024",
+  "rammevedtakTilDato": "31. desember 2024",
+  "tiltaksnavn": "Fiskeburger-kokk"
 }
