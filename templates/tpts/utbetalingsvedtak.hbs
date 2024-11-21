@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="description" content="Utbetalingsvedtak"/>
+    {{> tpts/partials/style }}
+    <title>Utbetalingsvedtak</title>
+</head>
+<body>
+{{#with meldekortPeriode}}
+    <h1 class="tittel">Utbetalingsvedtak for {{fom}} - {{tom}}</h1>
+{{/with}}
+<h2>Informasjon fra meldekortet</h2>
+<ul class="informasjon">
+    <li><b>Fødselsnummer:</b> {{fødselsnummer}}</li>
+    <li><b>Saksnummer:</b> {{saksnummer}}</li>
+    <li><b>Iverksatt:</b> {{iverksattTidspunkt}}</li>
+    <li><b>MeldekortId:</b> {{meldekortId}}</li>
+    {{#with saksbehandler}}
+        <li><b>Saksbehandler:</b> {{navn}}</li>
+    {{/with}}
+    {{#with beslutter}}
+        <li><b>Beslutter:</b> {{navn}}</li>
+    {{/with}}
+</ul>
+<h2>Tiltak</h2>
+<ul class="informasjon">
+    <li><b>Tiltaksnavn:</b> {{tiltaksnavn}}</li>
+    <li><b>Tiltakstype:</b> {{tiltakstype}}</li>
+    <li><b>DeltagelseId:</b> {{ekstenrDeltagelseId}}</li>
+    <li><b>GjennomføringId:</b> {{eksternGjennomføringId}}</li>
+
+</ul>
+
+<h2>Meldekortdager</h2>
+<table>
+        <thead>
+        <tr>
+            <th>Dato</th>
+            <th>Status</th>
+            <th>Beløp</th>
+            <th>Prosent</th>
+            <th>Reduksjon</th>
+        </tr>
+        </thead>
+        <tbody>
+    {{#each meldekortDager}}
+        <tr>
+            <td>{{dato}}</td>
+            <td>{{status}}</td>
+            <td>{{beløp}}</td>
+            <td>{{prosent}}</td>
+            <td>{{reduksjon}}</td>
+        </tr>
+    {{/each}}
+        </tbody>
+</table>
+</body>
+</html>

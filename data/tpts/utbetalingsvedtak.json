@@ -1,0 +1,121 @@
+{
+  "meldekortId" : "meldekort_01JCQV1M22WR1D9VGC43MSRP0P",
+  "eksternDeltagelseId" : "1231-234-3242-23432",
+  "eksternGjennomføringId" : "1231-234-3242-23432",
+  "saksnummer":  "3424234132",
+  "meldekortPeriode" : {
+    "fom" : "1. januar 2024",
+    "tom" : "14.januar 2024"
+  },
+  "fødselsnummer": "12345678901",
+  "saksbehandler" : {
+    "navn" : "F_Z994380 E_Z994380",
+    "navIdent" : "Z994380"
+  },
+  "beslutter" : {
+    "navn" : "F_Z994127 E_Z994127",
+    "navIdent" : "Z994127"
+  },
+  "meldekortDager" : [ {
+    "dato" : "2024-10-28",
+    "tiltakType" : "GRUPPE_AMO",
+    "status" : "Ikke rett på tiltakspenger",
+    "beløp" : 0,
+    "prosent" : 0,
+    "reduksjon" : "Ytelsen Faller Bort"
+  }, {
+    "dato" : "2024-10-29",
+    "tiltakType" : "GRUPPE_AMO",
+    "status" : "Ikke rett på tiltakspenger",
+    "beløp" : 0,
+    "prosent" : 0,
+    "reduksjon" : "Ytelsen Faller Bort"
+  }, {
+    "dato" : "2024-10-30",
+    "tiltakType" : "GRUPPE_AMO",
+    "status" : "Ikke rett på tiltakspenger",
+    "beløp" : 0,
+    "prosent" : 0,
+    "reduksjon" : "Ytelsen Faller Bort"
+  }, {
+    "dato" : "2024-10-31",
+    "tiltakType" : "GRUPPE_AMO",
+    "status" : "Ikke rett på tiltakspenger",
+    "beløp" : 0,
+    "prosent" : 0,
+    "reduksjon" : "Ytelsen Faller Bort"
+  }, {
+    "dato" : "2024-11-01",
+    "tiltakType" : "GRUPPE_AMO",
+    "status" : "Syk Bruker",
+    "beløp" : 285,
+    "prosent" : 100,
+    "reduksjon" : "Ingen Reduksjon"
+  }, {
+    "dato" : "2024-11-02",
+    "tiltakType" : "GRUPPE_AMO",
+    "status" : "Sykt Barn",
+    "beløp" : 285,
+    "prosent" : 100,
+    "reduksjon" : "Ingen Reduksjon"
+  }, {
+    "dato" : "2024-11-03",
+    "tiltakType" : "GRUPPE_AMO",
+    "status" : "Ikke Deltatt",
+    "beløp" : 0,
+    "prosent" : 0,
+    "reduksjon" : "Ytelsen Faller Bort"
+  }, {
+    "dato" : "2024-11-04",
+    "tiltakType" : "GRUPPE_AMO",
+    "status" : "Ikke Deltatt",
+    "beløp" : 0,
+    "prosent" : 0,
+    "reduksjon" : "Ytelsen Faller Bort"
+  }, {
+    "dato" : "2024-11-05",
+    "tiltakType" : "GRUPPE_AMO",
+    "status" : "Ikke Deltatt",
+    "beløp" : 0,
+    "prosent" : 0,
+    "reduksjon" : "Ytelsen Faller Bort"
+  }, {
+    "dato" : "2024-11-06",
+    "tiltakType" : "GRUPPE_AMO",
+    "status" : "Deltatt Med Lønn I Tiltaket",
+    "beløp" : 0,
+    "prosent" : 0,
+    "reduksjon" : "Ytelsen Faller Bort"
+  }, {
+    "dato" : "2024-11-07",
+    "tiltakType" : "GRUPPE_AMO",
+    "status" : "Deltatt Uten Lønn I Tiltaket",
+    "beløp" : 285,
+    "prosent" : 100,
+    "reduksjon" : "Ingen Reduksjon"
+  }, {
+    "dato" : "2024-11-08",
+    "tiltakType" : "GRUPPE_AMO",
+    "status" : "Deltatt Uten Lønn I Tiltaket",
+    "beløp" : 285,
+    "prosent" : 100,
+    "reduksjon" : "Ingen Reduksjon"
+  }, {
+    "dato" : "2024-11-09",
+    "tiltakType" : "GRUPPE_AMO",
+    "status" : "Ikke Deltatt",
+    "beløp" : 0,
+    "prosent" : 0,
+    "reduksjon" : "Ytelsen Faller Bort"
+  }, {
+    "dato" : "2024-11-10",
+    "tiltakType" : "GRUPPE_AMO",
+    "status" : "Ikke Deltatt",
+    "beløp" : 0,
+    "prosent" : 0,
+    "reduksjon" : "Ytelsen Faller Bort"
+  } ],
+  "tiltakstype" : "GRUPPE_AMO",
+  "tiltaksnavn" : "Asker kommune Arbeidsmarkedsoppfølging gruppe",
+  "iverksattTidspunkt" : "2024-11-15 13:05:15"
+}
