@@ -1,162 +1,133 @@
 <style>
 * {
-font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
+  font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 @page {
-@bottom-right {
-font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
-font-size: 12px;
-content: "Side "counter(page) " av "counter(pages);
-}
+  size: A4 portrait; 
+  margin: 64px 64px 90px 64px; 
+  font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
+
+  @bottom-left { 
+    font-size: 10px; 
+    content: "Saksnummer: {{saksnummer}}";
+    font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
+  }
 }
 
-.header {
-margin-bottom: 40px;
+@page {
+  @bottom-right {
+    font-size: 10px; 
+    content: "side "counter(page) " av "counter(pages);
+    font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
+  }
+}
+
+#pagenumber:before {
+  content: counter(page);
+}
+
+#pagecount:before {
+  content: counter(pages)
+}
+
+header {
+  height: 48px;
+  position: relative;
 }
 
 .navLogo {
-height: 75px;
-margin-bottom: 80px;
+  height: 48px;
+  margin-bottom: 48px;
 }
 
 .personalia {
-clear: both;
-padding-bottom: 16px;
+  margin-right: 10%;
+  float: left;
 }
 
-.personalia p {
-margin: 0;
+.personalia p{
+  margin: 0;
 }
 
 .dato {
-text-align: left;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 0;
 }
 
-.mainContent {
-margin-bottom: 40px;
-}
-
-.pagebreak {
-page-break-before: always;
-}
-.info {
-margin-bottom: 1rem;
-}
-
-.info p {
-margin-top: 0;
-}
-
-/* Styling under her følger aksel sine anbefalinger https://aksel.nav.no/monster-maler/brev/visuelle-retningslinjer-for-brev */
-/* vvvvvv */
+/* 
+** Styling under her følger aksel sine anbefalinger
+** https://aksel.nav.no/monster-maler/brev/visuelle-retningslinjer-for-brev 
+*/
 
 h1 {
-margin-bottom: 26px;
+  margin-top: 40px;
+  margin-bottom: 26px;
+  font-size: 18px;
+  line-height: 20px;
 }
 
-h2, h3, h4 {
-margin-bottom: 6px;
+h2 {
+  font-size: 16px;
+}
+
+h3 {
+  font-size: 13px;
+}
+
+h4 {
+  font-size: 12px;
+}
+
+h2,
+h3,
+h4 {
+  margin-top: 26px;
+  line-height: 16px;
+  margin-bottom: 6px;
+}
+
+p, ul{
+  font-size: 12px;
+  line-height: 16px;
+  margin-top: 0;
+}
+
+
+ul {
+  padding-left:16px;
+  margin-bottom: 16px;
+}
+ul p {
+  margin: 0
+}
+
+.hilsen {
+  margin-top: 32px;
+}
+
+.hilsen p{
+  margin: 0;
 }
 
 .signatur {
-margin-top: 32px;
-margin-bottom: 40px;
+  margin-top: 26px;
 }
 
-.signatur p {
-margin-top: 0px;
-margin-bottom: 0px;
-}
-
-.heading-og-brodtekst-separator {
-margin-top: 26px;
+.beslutter {
+  float: left;
+  margin-right: 50%;
 }
 
 .venstrestill {
-    float:left;
-}
-
-.høyrestill {
-}
-
-/* ^^^^^^ */
-
-.hilsen {
-margin-top: 64px;
-}
-
-td.left {
-text-align: left;
-}
-
-td.center {
-text-align: center;
-}
-
-td.right {
-text-align: right;
-}
-
-.hilsen p {
-padding: 0;
-margin: 0;
-}
-
-.keyValueOppsummering__heading {
-margin-bottom: 0;
-}
-
-.keyValueOppsummering {
-border-collapse: collapse;
-width: 100%;
-clear: both;
-}
-
-.keyValueOppsummering__title {
-margin-bottom: 0;
-}
-
-.keyValueOppsummering__value {
-text-align: right;
-}
-
-.keyValueOppsummering__keyInfo {
-list-style: none;
-margin: 0;
-padding-left: 16px;
-font-size: 0.8em;
-}
-
-.fritekst {
-white-space: pre-wrap;
-margin-bottom: 1rem;
-word-wrap: break-word;
-}
-
-.preline{
-white-space: pre-line;
-}
-
-.tabell {
-width: 100%;
-border-collapse: collapse;
-table-layout: fixed;
-}
-.tabell-auto {
-width: 100%;
-border-collapse: collapse;
-table-layout: auto;
-}
-
-.tabellcol {
-border: 1px solid black;
-padding-left: 0.2em;
-padding-right: 0.2em;
+  float: left;
 }
 
 .right-align {
-text-align: right;
+  text-align: right;
 }
-
 </style>

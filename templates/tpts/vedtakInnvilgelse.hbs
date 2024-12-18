@@ -1,7 +1,9 @@
 {{#> tpts/partials/innvilgelseBase}}
-    <div class="info">
+    <section>
         <h1>Du har fått innvilget tiltakspenger</h1>
 
+        <h2>Vedtak</h2>
+        
         <p>Du får tiltakspenger {{#if barnetillegg}}og barnetillegg{{/if}} fra og med {{rammevedtakFraDato}} til og med {{rammevedtakTilDato}} fordi du deltar på {{tiltaksnavn}}.</p>
 
         <p>Tiltakspengene er {{currency_no sats true}} kroner per dag du deltar i arbeidsmarkedstiltaket.</p>
@@ -9,19 +11,11 @@
         {{#if barnetillegg}}
             <p>Barnetillegget er {{currency_no satsBarn true}} kroner per barn per dag du deltar i arbeidsmarkedstiltaket.</p>
         {{/if}}
-
-        <div class="info">
             <p>For å få tiltakspenger må du gjennomføre avtalt aktivitet og delta hele den avtalte tiden i tiltaket ditt.</p>
-        </div>
 
-        <div class="info">
             <p>Du har ikke rett på tiltakspenger de dagene du ikke gjennomfører avtalt aktivitet, eller de dagene du har lønnet arbeid som en del av oppfølgingen i tiltaket ditt.</p>
-        </div>
-
-        <div class="info">
             <p>
                 Vedtaket er gjort etter arbeidsmarkedsloven § 13 første ledd og tiltakspengeforskriften §§ 2, 3 og 6.
             </p>
-        </div>
-    </div>
+    </section>
 {{/tpts/partials/innvilgelseBase}}

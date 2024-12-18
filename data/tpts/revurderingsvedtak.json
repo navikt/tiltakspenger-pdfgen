@@ -7,13 +7,13 @@
   },
   "tiltaksinfo": {
     "tiltak": "Arbeidstrening",
-    "tiltaksnavn": "Fiskeburger-kokk",
-    "tiltaksnummer": "2023/0263674",
+    "tiltaksnavn": "Jobbklubb",
+    "tiltaksnummer": "2025/0263674",
     "arrangør": "DAHLS GRILL ÅRNES"
   },
-  "datoForUtsending": "3. august 2023",
-  "fraDato": "1. januar 2024",
-  "tilDato": "31. desember 2024",
+  "datoForUtsending": "1. januar 2025",
+  "fraDato": "1. januar 2025",
+  "tilDato": "31. desember 2025",
   "saksnummer": "123456789",
   "barnetillegg": false,
   "saksbehandler": "Kåre Kropp",
@@ -23,7 +23,7 @@
   "kontor": "Nav Hvaler",
   "sats": 285,
   "satsBarn": 53,
-  "rammevedtakFraDato": "1. januar 2024",
-  "rammevedtakTilDato": "31. desember 2024",
-  "tiltaksnavn": "Fiskeburger-kokk"
+  "rammevedtakFraDato": "1. januar 2025",
+  "rammevedtakTilDato": "31. desember 2025",
+  "tiltaksnavn": "Jobbklubb"
 }

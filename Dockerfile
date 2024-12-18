@@ -5,4 +5,4 @@ COPY templates /app/templates
 COPY fonts /app/fonts
 COPY resources /app/resources
 
-ENV ENABLE_HTML_ENDPOINT=true
+ENV ENABLE_HTML_ENDPOINT=false
