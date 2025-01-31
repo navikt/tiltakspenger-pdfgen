@@ -1,0 +1,68 @@
+{
+  "meldekortId": "meldekort_01JCQV1M22WR1D9VGC43MSRP0P",
+  "saksnummer": "3424234132",
+  "ident": "12345678901",
+  "meldekortPeriode": {
+    "fom": "30. september 2024",
+    "tom": "13. oktober 2024"
+  },
+  "mottatt": "2024-11-15 13:05:15",
+  "dager": [
+    {
+      "dato": "2024-09-30",
+      "status": "DELTATT"
+    },
+    {
+      "dato": "2024-10-01",
+      "status": "FRAVÆR_SYK"
+    },
+    {
+      "dato": "2024-10-02",
+      "status": "FRAVÆR_SYKT_BARN"
+    },
+    {
+      "dato": "2024-10-03",
+      "status": "FRAVÆR_ANNET"
+    },
+    {
+      "dato": "2024-10-04",
+      "status": "IKKE_DELTATT"
+    },
+    {
+      "dato": "2024-10-05",
+      "status": "IKKE_REGISTRERT"
+    },
+    {
+      "dato": "2024-10-06",
+      "status": "IKKE_REGISTRERT"
+    },
+    {
+      "dato": "2024-10-07",
+      "status": "DELTATT"
+    },
+    {
+      "dato": "2024-10-08",
+      "status": "FRAVÆR_SYK"
+    },
+    {
+      "dato": "2024-10-09",
+      "status": "FRAVÆR_SYK"
+    },
+    {
+      "dato": "2024-10-10",
+      "status": "FRAVÆR_SYK"
+    },
+    {
+      "dato": "2024-10-11",
+      "status": "SYK"
+    },
+    {
+      "dato": "2024-10-12",
+      "status": "IKKE_REGISTRERT"
+    },
+    {
+      "dato": "2024-10-13",
+      "status": "IKKE_REGISTRERT"
+    }
+  ]
+}
