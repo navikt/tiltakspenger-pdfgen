@@ -15,6 +15,7 @@ spec:
   accessPolicy:
     inbound:
       rules:
+        - application: tiltakspenger-meldekort-api
         - application: tiltakspenger-soknad-api
         - application: tiltakspenger-saksbehandling-api
   azure:
