@@ -1,67 +1,69 @@
 {
-  "meldekortId": "meldekort_01JCQV1M22WR1D9VGC43MSRP0P",
+  "id": "meldekort_01JCQV1M22WR1D9VGC43MSRP0P",
   "saksnummer": "3424234132",
-  "ident": "12345678901",
-  "meldekortPeriode": {
-    "fom": "30. september 2024",
-    "tom": "13. oktober 2024"
+  "fnr": "12345678901",
+  "periode": {
+    "fraOgMed": "30. september 2024",
+    "tilOgMed": "13. oktober 2024"
   },
-  "mottatt": "2024-11-15 13:05:15",
+  "uke1": "40",
+  "uke2": "41",
+  "mottatt": "2024-10-15 13:05:15",
   "dager": [
     {
-      "dato": "2024-09-30",
+      "dag": "Mandag 30. september",
       "status": "DELTATT"
     },
     {
-      "dato": "2024-10-01",
+      "dag": "Tirsdag 1. oktober",
       "status": "FRAVÆR_SYK"
     },
     {
-      "dato": "2024-10-02",
+      "dag": "Onsdag 2. oktober",
       "status": "FRAVÆR_SYKT_BARN"
     },
     {
-      "dato": "2024-10-03",
+      "dag": "Torsdag 3. oktober",
       "status": "FRAVÆR_ANNET"
     },
     {
-      "dato": "2024-10-04",
+      "dag": "Fredag 4. oktober",
       "status": "IKKE_DELTATT"
     },
     {
-      "dato": "2024-10-05",
+      "dag": "Lørdag 5. oktober",
       "status": "IKKE_REGISTRERT"
     },
     {
-      "dato": "2024-10-06",
+      "dag": "Søndag 6. oktober",
       "status": "IKKE_REGISTRERT"
     },
     {
-      "dato": "2024-10-07",
+      "dag": "Mandag 7. oktober",
       "status": "DELTATT"
     },
     {
-      "dato": "2024-10-08",
+      "dag": "Tirsdag 8. oktober",
       "status": "FRAVÆR_SYK"
     },
     {
-      "dato": "2024-10-09",
+      "dag": "Onsdag 9. oktober",
       "status": "FRAVÆR_SYK"
     },
     {
-      "dato": "2024-10-10",
+      "dag": "Torsdag 10. oktober",
       "status": "FRAVÆR_SYK"
     },
     {
-      "dato": "2024-10-11",
+      "dag": "Fredag 11. oktober",
       "status": "SYK"
     },
     {
-      "dato": "2024-10-12",
+      "dag": "Lørdag 12. oktober",
       "status": "IKKE_REGISTRERT"
     },
     {
-      "dato": "2024-10-13",
+      "dag": "Søndag 13. oktober",
       "status": "IKKE_REGISTRERT"
     }
   ]

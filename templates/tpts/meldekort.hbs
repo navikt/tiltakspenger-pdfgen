@@ -16,31 +16,37 @@
 
         /*Heading XLarge*/
         h1 {
-            font-size: 40px;
-            line-height: 52px;
+            font-size: 2.5rem;
+            line-height: 3.25rem;
         }
 
-        /*Heading Large*/
+        /*Custom størrelse fordi Aksel verdi for Heading Large skapte wrapping*/
         h2 {
-            font-size: 32px;
-            line-height: 40px;
+            font-size: 1.75rem;
+            line-height: 2.25rem;
         }
 
         /*Heading Medium*/
         h3 {
-            font-size: 24px;
-            line-height: 32px;
+            font-size: 1.5rem;
+            line-height: 2rem;
         }
 
         /*Heading Small*/
         h4 {
-            font-size: 20px;
-            line-height: 28px;
+            font-size: 1.25rem;
+            line-height: 1.75rem;
             margin-bottom: 0;
         }
 
+        b {
+            font-size: 1.125rem;
+            line-height: 1.5rem;
+            font-weight: 450;
+        }
+
         .navLogo {
-            width: 6rem;
+            width: 10rem;
             vertical-align: middle;
             position: relative;
         }
@@ -56,11 +62,11 @@
         }
 
         td:first-child {
-            width: 25%;
+            width: 35%;
         }
 
         td:nth-child(2) {
-            width: 75%;
+            width: 65%;
         }
 
         td.ikkeRegistrert {
@@ -73,24 +79,14 @@
             border-color: #2AA758; /*--a-green-400*/
         }
 
-        td.syk {
+        td.syk, td.syktBarn {
             background: #FFECCC; /*--a-orange-100*/
             border-color: #FFAA33; /*--a-orange-400*/
         }
 
-        td.syktBarn {
-            background: #FFD799; /*--a-orange-200*/
-            border-color: #FFAA33; /*--a-orange-400*/
-        }
-
-        td.annet {
-            background: #FFC166; /*--a-orange-300*/
-            border-color: #FFAA33; /*--a-orange-400*/
-        }
-
-        td.ikkeDeltatt {
-            background: #F68282; /*--a-red-200*/
-            border-color: #DE2E2E; /*--a-red-400*/
+        td.annet, td.ikkeDeltatt {
+            background: #FFC2C2; /*--a-surface-danger-subtle*/
+            border-color: #C30000; /*--a-border-danger*/
         }
 
         td.statiskDag {
@@ -102,17 +98,22 @@
         }
 
         p {
+            margin-top: 0.5rem;
             font-size: 1rem;
             line-height: 1.5rem;
         }
 
-        div.readMore > p {
+        div.readMore > p, div.readMore > ul, div.readMore > h4 {
             margin-top: 0;
+            font-size: 0.875rem;
+            line-height: 1.375rem;
         }
 
         div.readMore {
             background: #F2F3F5; /*--a-surface-subtle*/
             padding: 1rem;
+            margin-left: 1rem;
+            margin-right: 1rem;
         }
     </style>
 
@@ -125,18 +126,18 @@
     </header>
     <h1 class="tittel">Meldekort for tiltakspenger</h1>
     <section>
-        {{#with meldekortPeriode}}
-            <h2>{{fom}} - {{tom}}</h2>
+        {{#with periode}}
+            <h2>{{fraOgMed}} - {{tilOgMed}} (uke {{uke1}}-{{uke2}})</h2>
         {{/with}}
 
         <p>
-            <b>Fødselsnummer:</b> {{ident}}
+            <b>Fødselsnummer:</b> {{fnr}}
             <br/>
             <b>Saksnummer:</b> {{saksnummer}}
             <br/>
             <b>Mottatt:</b> {{mottatt}}
             <br/>
-            <b>MeldekortId:</b> {{meldekortId}}
+            <b>Meldekort-ID:</b> {{id}}
         </p>
     </section>
     <section>
@@ -152,44 +153,64 @@
     </section>
 
     <section>
-        <div class="readMore">
-            <h3>Les mer om hva som skal registreres på meldekortet</h3>
-            <h4>(Overskrift)</h4>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                Duis
-                aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-            <h4>(Overskrift)</h4>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                Duis
-                aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-            <h4>(Overskrift)</h4>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                Duis
-                aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-        </div>
+        <h3>Slik fyller du ut meldekortet</h3>
         <p>
-            <b>Kryss av for de dagene du deltok på tiltaket som avtalt</b>
-            Hvis du har fravær fra tiltaket, kan du legge inn dette i neste steg.
+            For hver tiltaksdag i meldeperioden må du angi om du har deltatt eller ikke. Du kan ha rett til tiltakspenger ved enkelte fravær. Det er derfor viktig at du melder for alle avtalte tiltaksdager. Du skal ikke oppgi noe for dager som er
+            utenfor tiltaket.
         </p>
 
         <div class="readMore">
-            <h3>Les mer om hvilke fravær som gir rett til tiltakspenger</h3>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                Duis
-                aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+            <h4>Når skal du føre at du har deltatt?</h4>
+            <ul>
+                <li>Du skal krysse av for deltakelse hvis du har deltatt på tiltaket som avtalt.</li>
+                <li>Du kan krysse av for deltakelse hvis dagen er en offentlig fridag og du ikke får deltatt fordi tiltaket er stengt.</li>
+                <li>Hvis du har hatt lønn i avtalt tiltakstid den aktuelle dagen, for eksempel lønn fra tiltaksarrangør, har du ikke rett på tiltakspenger og må registrere fravær.</li>
+            </ul>
+            <p>Hvis du ikke har deltatt på alle dagene i tiltaket som var avtalt, oppgir du at du har hatt fravær nederst på denne siden. Hva som var årsaken til fraværet kan du registrere på det neste skrittet i meldekortet.</p>
         </div>
 
+        <p><b>Ta kontakt med veilederen din hvis du er usikker på hva du skal føre på meldekortet.</b></p>
         <p>
             <b>Legg inn fravær når du skulle vært på tiltak, men ikke fikk deltatt hele eller deler av dagen</b>
             Velg hva slags fravær du hadde. Noen typer fravær gir rett til utbetaling, mens andre gjør det ikke. De dagene du ikke skulle vært på tiltaket trenger du ikke registrere.
+        </p>
+
+        <div class="readMore">
+            <b>Når skal du føre at du har deltatt?</b>
+            <ul>
+                <li>Du skal velge «Syk» hvis du har vært for syk til å kunne delta på tiltaksdagen. Du kan ha rett til tiltakspenger når du er syk. Det er derfor viktig at du melder om dette.</li>
+                <li>Du får utbetalt full stønad de 3 første dagene du er syk. Er du syk mer enn 3 dager, får du utbetalt 75 prosent av full stønad resten av arbeidsgiverperioden. En arbeidsgiverperiode er på til sammen 16 virkedager.</li>
+                <li>Du må ha sykmelding fra lege for å ha rett på tiltakspenger i mer enn 3 dager.</li>
+            </ul>
+            <b>Når skal du velge “sykt barn eller syk barnepasser”?</b>
+            <ul>
+                <li>Du skal velge «Sykt barn eller syk barnepasser» hvis du ikke kunne delta på tiltaksdagen fordi barnet ditt eller barnets barnepasser var syk.</li>
+                <li>Det er de samme reglene som gjelder for sykt barn/barnepasser som ved egen sykdom. Det vil si at du har rett til full utbetaling de tre første dagene og 75 % resten av arbeidsgiverperioden.</li>
+                <li>Du må sende legeerklæring for barnet ditt eller bekreftelse fra barnepasseren fra dag 4 for å ha rett på tiltakspenger i mer enn 3 dager.</li>
+            </ul>
+            <b>Når skal du velge “fravær godkjent av Nav”</b>
+            <ul>
+                <li>Du kan ha rett til tiltakspenger selv om du har hatt fravær. Det gjelder hvis fraværet skyldes aktiviteter som du har avtalt med veilederen din.</li>
+                <li>
+                    Godkjente årsaker til fravær, som fortsatt gir deg tiltakspenger, er for eksempel:
+                    <ul>
+                        <li>jobbintervju</li>
+                        <li>timeavtale i det offentlige hjelpeapparatet</li>
+                        <li>alvorlig sykdom/begravelse i nærmeste familie</li>
+                    </ul>
+                </li>
+                <li>Ta kontakt med veilederen din for å dokumentere årsaken til fraværet og få det godkjent.</li>
+            </ul>
+            <b>Når skal du velge “annet fravær”?</b>
+            <ul>
+                <li>Du skal velge «Annet fravær» hvis du har vært fraværende den aktuelle tiltaksdagen.</li>
+                <li>Du skal velge «Annet fravær» hvis du har fått lønn for tiden du deltok i tiltaket den aktuelle dagen.</li>
+                <li>Du skal velge «Annet fravær» hvis du har fått fri/ferie utenom planlagt ferieperiode for tiltaket.</li>
+            </ul>
+        </div>
+        <p>
+            Kryss av for de dagene du deltok på tiltaket som avtalt.
+            Velg hva slags fravær du hadde.
         </p>
     </section>
 
@@ -200,33 +221,34 @@
             {{#each dager}}
                 <tr>
                     {{#eq status "DELTATT"}}
-                        <td class="statiskDag deltatt">{{iso_to_long_date dato}}:</td>
+                        <td class="statiskDag deltatt">{{dag}}:</td>
                         <td class="statiskDag deltatt"><b>Deltatt</b></td>
                     {{/eq}}
                     {{#eq status "FRAVÆR_SYK"}}
-                        <td class="statiskDag syk">{{iso_to_long_date dato}}:</td>
+                        <td class="statiskDag syk">{{dag}}:</td>
                         <td class="statiskDag syk"><b>Syk</b></td>
                     {{/eq}}
                     {{#eq status "FRAVÆR_SYKT_BARN"}}
-                        <td class="statiskDag syktBarn">{{iso_to_long_date dato}}:</td>
+                        <td class="statiskDag syktBarn">{{dag}}:</td>
                         <td class="statiskDag syktBarn"><b>Sykt barn eller syk barnepasser</b></td>
                     {{/eq}}
                     {{#eq status "FRAVÆR_ANNET"}}
-                        <td class="statiskDag annet">{{iso_to_long_date dato}}:</td>
+                        <td class="statiskDag annet">{{dag}}:</td>
                         <td class="statiskDag annet"><b>Fravær godkjent av Nav</b></td>
                     {{/eq}}
                     {{#eq status "IKKE_DELTATT"}}
-                        <td class="statiskDag ikkeDeltatt">{{iso_to_long_date dato}}:</td>
+                        <td class="statiskDag ikkeDeltatt">{{dag}}:</td>
                         <td class="statiskDag ikkeDeltatt"><b>Annet fravær</b></td>
                     {{/eq}}
                     {{#eq status "IKKE_REGISTRERT"}}
-                        <td class="statiskDag ikkeRegistrert">{{iso_to_long_date dato}}:</td>
+                        <td class="statiskDag ikkeRegistrert">{{dag}}:</td>
                         <td class="statiskDag ikkeRegistrert"><b>Ikke registrert</b></td>
                     {{/eq}}
                 </tr>
             {{/each}}
             </tbody>
         </table>
+        <p><img alt="Sjekket av ikon" src="{{image "Checkmark.svg"}}"/>Jeg bekrefter at disse opplysningene stemmer.</p>
     </section>
 </article>
 </body>
