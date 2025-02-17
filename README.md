@@ -42,8 +42,8 @@ f.eks:
   "beslutterNavn": "(beslutter)",
   "kontor": "(kontor)",
   "datoForUtsending": "2029-05-10",
-  "sats": "285",
-  "satsBarn": "53"
+  "sats": "298",
+  "satsBarn": "55"
 }
 ```
 
