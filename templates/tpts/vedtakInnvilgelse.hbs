@@ -3,21 +3,24 @@
         <h1>Du har fått innvilget tiltakspenger</h1>
 
         <h2>Vedtak</h2>
-    {{#if tilleggstekst}}
-        <p>{{tilleggstekst}}</p>
-    {{else}}
+
         <p>Du får tiltakspenger {{#if barnetillegg}}og barnetillegg{{/if}} fra og med {{rammevedtakFraDato}} til og med {{rammevedtakTilDato}} fordi du deltar på {{tiltaksnavn}}.</p>
-    {{/if}}
         <p>Tiltakspengene er {{currency_no sats true}} kroner per dag du deltar i arbeidsmarkedstiltaket.</p>
 
         {{#if barnetillegg}}
             <p>Barnetillegget er {{currency_no satsBarn true}} kroner per barn per dag du deltar i arbeidsmarkedstiltaket.</p>
         {{/if}}
-            <p>For å få tiltakspenger må du gjennomføre avtalt aktivitet og delta hele den avtalte tiden i tiltaket ditt.</p>
+        <p>For å få tiltakspenger må du gjennomføre avtalt aktivitet og delta hele den avtalte tiden i tiltaket ditt.</p>
 
-            <p>Du har ikke rett på tiltakspenger de dagene du ikke gjennomfører avtalt aktivitet, eller de dagene du har lønnet arbeid som en del av oppfølgingen i tiltaket ditt.</p>
-            <p>
-                Vedtaket er gjort etter arbeidsmarkedsloven § 13 første ledd og tiltakspengeforskriften §§ 2, 3 og 6.
-            </p>
+        <p>Du har ikke rett på tiltakspenger de dagene du ikke gjennomfører avtalt aktivitet, eller de dagene du har lønnet arbeid som en del av oppfølgingen i tiltaket ditt.</p>
+
+        {{#if tilleggstekst}}
+            <h2>Vurderingen vår</h2>
+            <!--        Om man ønsker linebreaks mellom tilleggstekstene (fordi bruker kan ha limt inn flere) må de skilles med '\n\n'-->
+            <p>{{breaklines tilleggstekst}}</p>
+        {{/if}}
+        <p>
+            Vedtaket er gjort etter arbeidsmarkedsloven § 13 første ledd og tiltakspengeforskriften §§ 2, 3 og 6.
+        </p>
     </section>
 {{/tpts/partials/innvilgelseBase}}
