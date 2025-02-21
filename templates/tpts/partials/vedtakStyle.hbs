@@ -6,12 +6,12 @@
 }
 
 @page {
-  size: A4 portrait; 
-  margin: 64px 64px 90px 64px; 
+  size: A4 portrait;
+  margin: 64px 64px 90px 64px;
   font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
 
-  @bottom-left { 
-    font-size: 10px; 
+  @bottom-left {
+    font-size: 10px;
     content: "Saksnummer: {{saksnummer}}";
     font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
   }
@@ -19,10 +19,18 @@
 
 @page {
   @bottom-right {
-    font-size: 10px; 
+    font-size: 10px;
     content: "side "counter(page) " av "counter(pages);
     font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
   }
+
+    @top-right {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: red;
+        content: "{{#if forhandsvisning}}Forhåndsvisning{{/if}}";
+        font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
+    }
 }
 
 #pagenumber:before {
@@ -59,9 +67,9 @@ header {
   margin: 0;
 }
 
-/* 
+/*
 ** Styling under her følger aksel sine anbefalinger
-** https://aksel.nav.no/monster-maler/brev/visuelle-retningslinjer-for-brev 
+** https://aksel.nav.no/monster-maler/brev/visuelle-retningslinjer-for-brev
 */
 
 h1 {
@@ -133,5 +141,14 @@ ul p {
 
 a {
     text-decoration: none;
+}
+
+.forhandsvisning {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: red;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 </style>
