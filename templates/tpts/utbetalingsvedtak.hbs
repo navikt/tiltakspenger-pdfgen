@@ -36,26 +36,34 @@
 
 <h2>Meldekortdager</h2>
 <table>
-        <thead>
-        <tr>
-            <th>Dato</th>
-            <th>Status</th>
+    <thead>
+    <tr>
+        <th>Dato</th>
+        <th>Status</th>
+        {{#if barnetillegg}}
+            <th>Ordinært beløp</th>
+            <th>Barnetillegg</th>
+        {{else}}
             <th>Beløp</th>
-            <th>Prosent</th>
-            <th>Reduksjon</th>
-        </tr>
-        </thead>
-        <tbody>
+        {{/if}}
+        <th>Prosent</th>
+        <th>Reduksjon</th>
+    </tr>
+    </thead>
+    <tbody>
     {{#each meldekortDager}}
         <tr>
             <td>{{dato}}</td>
             <td>{{status}}</td>
             <td>{{beløp}}</td>
+            {{#if barnetillegg}}
+                <td>{{beløpBarnetillegg}}</td>
+            {{/if}}
             <td>{{prosent}}</td>
             <td>{{reduksjon}}</td>
         </tr>
     {{/each}}
-        </tbody>
+    </tbody>
 </table>
 </body>
 </html>
