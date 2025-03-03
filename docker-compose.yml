@@ -1,6 +1,6 @@
 services:
   service:
-    container_name: tiltakspenger-pdfgen-service
+    container_name: tiltakspenger-pdfgen
     platform: linux/arm64/v8
     build:
       context: .
