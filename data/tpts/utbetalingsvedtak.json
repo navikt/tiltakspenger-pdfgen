@@ -9,143 +9,127 @@
   },
   "fødselsnummer": "12345678901",
   "saksbehandler": {
-    "navn": "F_Z994380 E_Z994380",
-    "navIdent": "Z994380"
+    "navn": "F_Z994380 E_Z994380"
   },
   "beslutter": {
-    "navn": "F_Z994127 E_Z994127",
-    "navIdent": "Z994127"
+    "navn": "F_Z994127 E_Z994127"
   },
   "barnetillegg": false,
   "meldekortDager": [
     {
       "dato": "2024-10-28",
-      "tiltakType": "GRUPPE_AMO",
       "status": "Ikke rett på tiltakspenger",
       "beløp": 0,
       "beløpBarnetillegg": 59,
       "prosent": 0,
-      "reduksjon": "Ytelsen Faller Bort"
+      "reduksjon": "Ytelsen faller bort"
     },
     {
       "dato": "2024-10-29",
-      "tiltakType": "GRUPPE_AMO",
       "status": "Ikke rett på tiltakspenger",
       "beløp": 0,
       "beløpBarnetillegg": 11,
       "prosent": 0,
-      "reduksjon": "Ytelsen Faller Bort"
+      "reduksjon": "Ytelsen faller bort"
     },
     {
       "dato": "2024-10-30",
-      "tiltakType": "GRUPPE_AMO",
       "status": "Ikke rett på tiltakspenger",
       "beløp": 0,
       "beløpBarnetillegg": 0,
       "prosent": 0,
-      "reduksjon": "Ytelsen Faller Bort"
+      "reduksjon": "Ytelsen faller bort"
     },
     {
       "dato": "2024-10-31",
-      "tiltakType": "GRUPPE_AMO",
       "status": "Ikke rett på tiltakspenger",
       "beløp": 0,
       "beløpBarnetillegg": 0,
       "prosent": 0,
-      "reduksjon": "Ytelsen Faller Bort"
+      "reduksjon": "Ytelsen faller bort"
     },
     {
       "dato": "2024-11-01",
-      "tiltakType": "GRUPPE_AMO",
-      "status": "Syk Bruker",
+      "status": "Syk bruker",
       "beløp": 298,
       "beløpBarnetillegg": 204,
       "prosent": 100,
-      "reduksjon": "Ingen Reduksjon"
+      "reduksjon": "Ingen reduksjon"
     },
     {
       "dato": "2024-11-02",
-      "tiltakType": "GRUPPE_AMO",
-      "status": "Sykt Barn",
+      "status": "Sykt barn",
       "beløp": 298,
       "beløpBarnetillegg": 0,
       "prosent": 100,
-      "reduksjon": "Ingen Reduksjon"
+      "reduksjon": "Ingen reduksjon"
     },
     {
       "dato": "2024-11-03",
-      "tiltakType": "GRUPPE_AMO",
-      "status": "Ikke Deltatt",
+      "status": "Ikke deltatt",
       "beløp": 0,
       "beløpBarnetillegg": 0,
       "prosent": 0,
-      "reduksjon": "Ytelsen Faller Bort"
+      "reduksjon": "Ytelsen faller bort"
     },
     {
       "dato": "2024-11-04",
-      "tiltakType": "GRUPPE_AMO",
-      "status": "Ikke Deltatt",
+      "status": "Ikke deltatt",
       "beløp": 0,
       "beløpBarnetillegg": 4000,
       "prosent": 0,
-      "reduksjon": "Ytelsen Faller Bort"
+      "reduksjon": "Ytelsen faller bort"
     },
     {
       "dato": "2024-11-05",
-      "tiltakType": "GRUPPE_AMO",
-      "status": "Ikke Deltatt",
+      "status": "Ikke deltatt",
       "beløp": 0,
       "beløpBarnetillegg": 0,
       "prosent": 0,
-      "reduksjon": "Ytelsen Faller Bort"
+      "reduksjon": "Ytelsen faller bort"
     },
     {
       "dato": "2024-11-06",
-      "tiltakType": "GRUPPE_AMO",
-      "status": "Deltatt Med Lønn I Tiltaket",
+      "status": "Deltatt med lønn i tiltaket",
       "beløp": 0,
       "beløpBarnetillegg": 0,
       "prosent": 0,
-      "reduksjon": "Ytelsen Faller Bort"
+      "reduksjon": "Ytelsen faller bort"
     },
     {
       "dato": "2024-11-07",
-      "tiltakType": "GRUPPE_AMO",
-      "status": "Deltatt Uten Lønn I Tiltaket",
+      "status": "Deltatt uten lønn i tiltaket",
       "beløp": 298,
       "beløpBarnetillegg": 0,
       "prosent": 100,
-      "reduksjon": "Ingen Reduksjon"
+      "reduksjon": "Ingen reduksjon"
     },
     {
       "dato": "2024-11-08",
-      "tiltakType": "GRUPPE_AMO",
-      "status": "Deltatt Uten Lønn I Tiltaket",
+      "status": "Deltatt uten lønn i tiltaket",
       "beløp": 298,
       "beløpBarnetillegg": 0,
       "prosent": 100,
-      "reduksjon": "Ingen Reduksjon"
+      "reduksjon": "Ingen reduksjon"
     },
     {
       "dato": "2024-11-09",
-      "tiltakType": "GRUPPE_AMO",
-      "status": "Ikke Deltatt",
+      "status": "Ikke deltatt",
       "beløp": 0,
       "beløpBarnetillegg": 0,
       "prosent": 0,
-      "reduksjon": "Ytelsen Faller Bort"
+      "reduksjon": "Ytelsen faller bort"
     },
     {
       "dato": "2024-11-10",
-      "tiltakType": "GRUPPE_AMO",
-      "status": "Ikke Deltatt",
+      "status": "Ikke deltatt",
       "beløp": 0,
       "beløpBarnetillegg": 0,
       "prosent": 0,
-      "reduksjon": "Ytelsen Faller Bort"
+      "reduksjon": "Ytelsen faller bort"
     }
   ],
   "tiltakstype": "GRUPPE_AMO",
-  "tiltaksnavn": "Asker kommune Arbeidsmarkedsoppfølging gruppe",
+  "tiltaksnavn": "Gruppe AMO",
   "iverksattTidspunkt": "2024-11-15 13:05:15"
 }

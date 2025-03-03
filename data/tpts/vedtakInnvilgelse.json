@@ -2,22 +2,11 @@
   "personalia": {
     "ident": "12345678901",
     "fornavn": "Planet",
-    "etternavn": "Planetus",
-    "antallBarn": 0
-  },
-  "tiltaksinfo": {
-    "tiltak": "Arbeidstrening",
-    "tiltaksnavn": "Fiskeburger-kokk",
-    "tiltaksnummer": "2023/0263674",
-    "arrangør": "DAHLS GRILL ÅRNES"
+    "etternavn": "Planetus"
   },
   "datoForUtsending": "3. august 2023",
-  "fraDato": "1. januar 2024",
-  "tilDato": "31. desember 2024",
   "saksnummer": "123456789",
   "barnetillegg": false,
-  "saksbehandler": "Kåre Kropp",
-  "beslutter": "Pelle Parafin",
   "saksbehandlerNavn": "Kåre Kropp",
   "beslutterNavn": "Pelle Parafin",
   "kontor": "Nav Hvaler",
@@ -25,7 +14,7 @@
   "satsBarn": 55,
   "rammevedtakFraDato": "1. januar 2024",
   "rammevedtakTilDato": "31. desember 2024",
-  "tiltaksnavn": "Fiskeburger-kokk",
+  "tiltaksnavn": "Arbeidstrening",
   "tilleggstekst": "",
   "forhandsvisning": true
 }
