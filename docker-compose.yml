@@ -1,5 +1,6 @@
 services:
   service:
+    container_name: tiltakspenger-pdfgen-service
     platform: linux/arm64/v8
     build:
       context: .
@@ -8,3 +9,9 @@ services:
       - "8085:8080"
     environment:
       DISABLE_PDF_GET: false
+      JDK_JAVA_OPTIONS: ""
+    volumes:
+      - ./templates:/app/templates
+      - ./fonts:/app/fonts
+      - ./data:/app/data
+      - ./resources:/app/resources
