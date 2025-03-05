@@ -1,7 +1,5 @@
 {
   "meldekortId": "meldekort_01JCQV1M22WR1D9VGC43MSRP0P",
-  "eksternDeltagelseId": "1231-234-3242-23432",
-  "eksternGjennomføringId": "1231-234-3242-23432",
   "saksnummer": "3424234132",
   "meldekortPeriode": {
     "fom": "1. januar 2024",
@@ -129,7 +127,19 @@
       "reduksjon": "Ytelsen faller bort"
     }
   ],
-  "tiltakstype": "GRUPPE_AMO",
-  "tiltaksnavn": "Gruppe AMO",
+  "tiltak": [
+    {
+      "tiltakstypenavn": "Arbeidsmarkedsopplæring (gruppe)",
+      "tiltakstype": "GRUPPE_AMO",
+      "eksternDeltagelseId": "1231-234-3242-23432",
+      "eksternGjennomføringId": "1231-234-3242-23432"
+    },
+    {
+      "tiltakstypenavn": "Jobbklubb",
+      "tiltakstype": "JOBBK",
+      "eksternDeltagelseId": "1111-234-3242-23432",
+      "eksternGjennomføringId": "2222-234-3242-23432"
+    }
+  ],
   "iverksattTidspunkt": "2024-11-15 13:05:15"
 }
