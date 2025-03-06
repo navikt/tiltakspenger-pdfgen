@@ -26,13 +26,14 @@
     {{/with}}
 </ul>
 <h2>Tiltak</h2>
-<ul class="informasjon">
-    <li><b>Tiltaksnavn:</b> {{tiltaksnavn}}</li>
-    <li><b>Tiltakstype:</b> {{tiltakstype}}</li>
-    <li><b>DeltagelseId:</b> {{eksternDeltagelseId}}</li>
-    <li><b>GjennomføringId:</b> {{eksternGjennomføringId}}</li>
-
-</ul>
+{{#each tiltak}}
+    <ul class="informasjon">
+        <li><b>Tiltaksnavn:</b> {{tiltakstypenavn}}</li>
+        <li><b>Tiltakstype:</b> {{tiltakstype}}</li>
+        <li><b>DeltagelseId:</b> {{eksternDeltagelseId}}</li>
+        <li><b>GjennomføringId:</b> {{eksternGjennomføringId}}</li>
+    </ul>
+{{/each}}
 
 <h2>Meldekortdager</h2>
 <table>
