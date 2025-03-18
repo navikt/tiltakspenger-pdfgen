@@ -11,7 +11,18 @@
   "saksbehandlerNavn": "Kåre Kropp",
   "beslutterNavn": "Pelle Parafin",
   "kontor": "Nav Tiltak Øst Viken",
-  "sats": 298,
+  "satser": [
+    {
+      "år": 2024,
+      "ordinær": 285,
+      "barnetillegg": 53
+    },
+    {
+      "år": 2025,
+      "ordinær": 298,
+      "barnetillegg": 55
+    }
+  ],
   "satsBarn": 55,
   "rammevedtakFraDato": "1. januar 2024",
   "rammevedtakTilDato": "31. desember 2024",

@@ -6,12 +6,19 @@
         <p>Du får tiltakspenger fra og med {{rammevedtakFraDato}} til og med {{rammevedtakTilDato}} fordi du deltar på
             arbeidsmarkedstiltak. {{#if barnetillegg}} {{barnetilleggTekst}} {{/if}}</p>
 
-        <p>Tiltakspengene er {{currency_no sats true}} kroner per dag du deltar i arbeidsmarkedstiltak.</p>
+        <p>
+            {{#each satser}}
+                <span>Tiltakspengene for {{år}} er {{currency_no ordinær true}} kroner per dag.</span>
+            {{/each}}
+        </p>
 
-        {{#if barnetillegg}}
-            <p>Barnetillegget er {{currency_no satsBarn true}} kroner per barn per dag du deltar i
-                arbeidsmarkedstiltak.</p>
-        {{/if}}
+        <p>
+            {{#if barnetillegg}}
+                {{#each satser}}
+                    <span>Barnetillegget for {{år}} er {{currency_no barnetillegg true}} kroner per dag.</span>
+                {{/each}}
+            {{/if}}
+        </p>
         <p>For å få tiltakspenger må du gjennomføre avtalt aktivitet og delta hele den avtalte tiden i tiltaket
             ditt.</p>
 
