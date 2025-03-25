@@ -5,7 +5,13 @@
         <h2>Vedtak</h2>
 
         <p>
-            Tiltakspenger {{#if barnetillegg}}og barnetillegg{{/if}} stanses fra og med {{virkningsperiodeFraDato}} fordi {{valgtHjemmelTekst}}
+            Tiltakspenger {{#if barnetillegg}}og barnetillegg{{/if}} stanses fra og med {{virkningsperiodeFraDato}} fordi
+            {{#each valgtHjemmelTekst}}
+                <!-- revurdering til stans skal bare støtte at man har valgt en hjemmel. Om flere skal støttes burde man kanskje brukt kulepunkter?-->
+                {{#eq @index 0}}
+                    {{this}}
+                {{/eq}}
+            {{/each}}
         </p>
 
         {{#if tilleggstekst}}
