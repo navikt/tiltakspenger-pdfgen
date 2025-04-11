@@ -5,66 +5,301 @@
     <meta name="description" content="Utbetalingsvedtak"/>
     <meta name="author" content="Team tiltakspenger"/>
     <meta name="subject" content="Tiltakspenger"/>
-    {{> tpts/partials/style }}
-    <title>Utbetalingsvedtak</title>
+    <style>
+        * {
+            font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
+        }
+
+        @page {
+            @top-right {
+                font-size: 1.5rem;
+                font-weight: bold;
+                color: red;
+            content: {{#if forhandsvisning}}Forhåndsvisning{{/if}};
+                font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
+            }
+        }
+
+        header {
+            text-align: center;
+        }
+
+        /*Heading XLarge*/
+        h1 {
+            font-size: 2.5rem;
+            line-height: 3.25rem;
+        }
+
+        /*Custom størrelse fordi Aksel verdi for Heading Large skapte wrapping*/
+        h2 {
+            font-size: 1.5rem;
+            line-height: 2rem;
+        }
+
+        /*Heading Medium*/
+        h3 {
+            font-size: 1.5rem;
+            line-height: 2rem;
+        }
+
+        /*Heading Small*/
+        h4 {
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+            margin-bottom: 0;
+        }
+
+        b {
+            font-weight: 450;
+        }
+
+        .navLogo {
+            width: 10rem;
+            vertical-align: middle;
+            position: relative;
+        }
+
+        .korrigert-ikon {
+            width: 1.25rem;
+            vertical-align: middle;
+            position: relative;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            padding-left: 0.25rem;
+            border-bottom: 1px solid;
+            font-size: 0.9rem;
+        }
+
+        p img {
+            vertical-align: middle;
+        }
+
+        p {
+            margin-top: 0.5rem;
+            font-size: 1rem;
+            line-height: 1.5rem;
+        }
+
+        div.readMore > p, div.readMore > h3 {
+            margin-top: 0;
+            font-size: 1rem;
+        }
+
+        div.readMore {
+            padding: 1rem;
+            margin-top: 2rem;
+            border: #F2F3F5 0.1875rem solid; /*--a-surface-subtle*/
+        }
+
+        .endret {
+            background: #F2F3F5; /*--a-surface-subtle*/
+        }
+
+        td.status {
+            width: 15%;
+        }
+
+        span.column-spacing {
+            margin-left: 0.4rem;
+        }
+
+        .total-differanse {
+            width: 100%;
+            border-bottom: #F2F3F5 0.1875rem solid;
+            overflow: hidden;
+            padding-left: 1.75rem;
+            padding-right: 1.75rem;
+            margin-bottom: 2rem;
+        }
+
+        .total-differanse span:first-child,
+        .total-differanse span:nth-child(2) {
+            float: left;
+            margin-right: 7.5rem;
+            white-space: nowrap;
+        }
+
+        .total-differanse span:last-child {
+            float: right;
+            white-space: nowrap;
+            margin-right: 1.75rem;
+        }
+    </style>
+    {{#if korrigering}}
+        <title>Korrigert utbetalingsvedtak</title>
+    {{else}}
+        <title>Utbetalingsvedtak</title>
+    {{/if}}
 </head>
 <body>
-{{#with meldekortPeriode}}
-    <h1 class="tittel">Utbetalingsvedtak for {{fom}} - {{tom}}</h1>
-{{/with}}
-<h2>Informasjon fra meldekortet</h2>
-<ul class="informasjon">
-    <li><b>Fødselsnummer:</b> {{fødselsnummer}}</li>
-    <li><b>Saksnummer:</b> {{saksnummer}}</li>
-    <li><b>Iverksatt:</b> {{iverksattTidspunkt}}</li>
-    <li><b>MeldekortId:</b> {{meldekortId}}</li>
-    {{#with saksbehandler}}
-        <li><b>Saksbehandler:</b> {{navn}}</li>
-    {{/with}}
-    {{#with beslutter}}
-        <li><b>Beslutter:</b> {{navn}}</li>
-    {{/with}}
-</ul>
-<h2>Tiltak</h2>
-{{#each tiltak}}
-    <ul class="informasjon">
-        <li><b>Tiltaksnavn:</b> {{tiltakstypenavn}}</li>
-        <li><b>Tiltakstype:</b> {{tiltakstype}}</li>
-        <li><b>DeltagelseId:</b> {{eksternDeltagelseId}}</li>
-        <li><b>GjennomføringId:</b> {{eksternGjennomføringId}}</li>
-    </ul>
-{{/each}}
+<header>
+    <img alt="Nav logo" class="navLogo" src="{{image "navlogo.png"}}"/>
+</header>
 
-<h2>Meldekortdager</h2>
-<table>
-    <thead>
-    <tr>
-        <th>Dato</th>
-        <th>Status</th>
-        {{#if barnetillegg}}
-            <th>Ordinært beløp</th>
-            <th>Barnetillegg</th>
-        {{else}}
-            <th>Beløp</th>
+{{#if korrigering}}
+    <h1 class="tittel">Korrigert utbetalingsvedtak</h1>
+{{else}}
+    <h1 class="tittel">Utbetalingsvedtak</h1>
+{{/if}}
+
+<h2>{{meldekortPeriode.fom}} - {{meldekortPeriode.tom}}</h2>
+
+<b>Fødselsnummer:</b> {{fødselsnummer}}
+<br/>
+<b>Saksnummer:</b> {{saksnummer}}
+<br/>
+<b>Iverksatt:</b> {{iverksattTidspunkt}}
+<br/>
+<b>MeldekortId:</b> {{meldekortId}}
+<br/>
+{{#with saksbehandler}}
+    <b>Saksbehandler:</b> {{navn}}
+    <br/>
+{{/with}}
+{{#with beslutter}}
+    <b>Beslutter:</b> {{navn}}
+    <br/>
+{{/with}}
+
+
+{{#with sammenligningAvBeregninger}}
+    {{#if korrigering}}
+        {{#if begrunnelse}}
+            <div class="readMore">
+                <h3>Begrunnelse for korrigering</h3>
+                <p>{{begrunnelse}}</p>
+            </div>
         {{/if}}
-        <th>Prosent</th>
-        <th>Reduksjon</th>
-    </tr>
-    </thead>
-    <tbody>
-    {{#each meldekortDager}}
-        <tr>
-            <td>{{dato}}</td>
-            <td>{{status}}</td>
-            <td>{{beløp}}</td>
-            {{#if barnetillegg}}
-                <td>{{beløpBarnetillegg}}</td>
-            {{/if}}
-            <td>{{prosent}}</td>
-            <td>{{reduksjon}}</td>
-        </tr>
+        <h3>Utfall av korrigeringen</h3>
+        <div class="total-differanse">
+            <span>Resultat</span>
+            {{#gt totalDifferanse 0}}<span>Økning</span>{{/gt}}
+            {{#lt totalDifferanse 0}}<span>Reduksjon</span>{{/lt}}
+            {{#eq totalDifferanse 0}}<span>Ingen endring</span>{{/eq}}
+            <span>{{totalDifferanse}}kr</span>
+        </div>
+    {{/if}}
+    {{#each meldeperioder}}
+        <h2>{{tittel}}</h2>
+        <table>
+            <thead>
+            <tr>
+                <th></th>
+                <th>Dato</th>
+                <th>Status</th>
+                <th></th>
+                <th>Beløp</th>
+                {{#if barnetillegg}}
+                    <th>Barnetillegg</th>
+                {{/if}}
+                <th>Prosent</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each dager}}
+                <!-- harEndretSeg for hele raden, kalkulert av konsument. Dette for å kunne markere raden med en annen farge, derav dupliseringen -->
+                {{#if harEndretSeg}}
+                    <tr>
+                        <td class="endret">
+                            {{#if status.harEndretSeg}}
+                                <img alt="Korrigert" class="korrigert-ikon" src="{{image "Pencil.svg"}}"/>
+                            {{/if}}
+                        </td>
+                        <td class="endret">{{dato}}</td>
+
+                        {{#if status.harEndretSeg}}
+                            <td class="status endret">{{status.forrige}}</td>
+                            <td class="status endret"><b>{{status.gjeldende}}</b></td>
+                        {{else}}
+                            <td class="status endret">{{status.gjeldende}}</td>
+                            <td class="status endret"/>
+                        {{/if}}
+
+                        <!-- Beløp, barnetillegg og prosent samles i samme kolonne for å spare plass ettersom headingen tvinger en gitt kolonnebredde -->
+                        <!-- Det samme er ikke gjort for status for det er mye høyere sannsynlighet for line wrap der -->
+                        {{#if beløp.harEndretSeg}}
+                            <td class="endret">{{beløp.forrige}}
+                                <span class="column-spacing"><b>{{beløp.gjeldende}}</b></span>
+                            </td>
+                        {{else}}
+                            <td class="endret">{{beløp.gjeldende}}</td>
+                        {{/if}}
+
+                        {{#if barnetillegg}}
+                            {{#if barnetillegg.harEndretSeg}}
+                                <td class="endret">{{barnetillegg.forrige}}
+                                    <span class="column-spacing"><b>{{barnetillegg.gjeldende}}</b></span>
+                                </td>
+                            {{else}}
+                                <td class="endret">{{barnetillegg.gjeldende}}</td>
+                            {{/if}}
+                        {{/if}}
+                        {{#if prosent.harEndretSeg}}
+                            <td class="endret">
+                                {{prosent.forrige}}%
+                                <span class="column-spacing"><b>{{prosent.gjeldende}}%</b></span>
+                            </td>
+                        {{else}}
+                            <td class="endret">{{prosent.gjeldende}}</td>
+                        {{/if}}
+                    </tr>
+                {{else}}
+                    <tr>
+                        <td>
+                            {{#if status.harEndretSeg}}
+                                <img alt="Korrigert" class="korrigert-ikon" src="{{image "Pencil.svg"}}"/>
+                            {{/if}}
+                        </td>
+                        <td>{{dato}}</td>
+                        {{#if status.harEndretSeg}}
+                            <td class="status">{{status.forrige}}</td>
+                            <td class="status"><b>{{status.gjeldende}}</b></td>
+                        {{else}}
+                            <td class="status">{{status.gjeldende}}</td>
+                            <td class="status"/>
+                        {{/if}}
+
+                        <!-- Beløp, barnetillegg og prosent samles i samme kolonne for å spare plass ettersom headingen tvinger en gitt kolonnebredde -->
+                        <!-- Det samme er ikke gjort for status for det er mye høyere sannsynlighet for line wrap der -->
+                        {{#if beløp.harEndretSeg}}
+                            <td>{{beløp.forrige}}
+                                <span class="column-spacing"><b>{{beløp.gjeldende}}</b></span>
+                            </td>
+                        {{else}}
+                            <td>{{beløp.gjeldende}}</td>
+                        {{/if}}
+
+                        {{#if barnetillegg}}
+                            {{#if barnetillegg.harEndretSeg}}
+                                <td>{{barnetillegg.forrige}}
+                                    <span class="column-spacing"><b>{{barnetillegg.gjeldende}}</b></span>
+                                </td>
+                            {{else}}
+                                <td>{{barnetillegg.gjeldende}}</td>
+                            {{/if}}
+                        {{/if}}
+                        {{#if prosent.harEndretSeg}}
+                            <td>
+                                {{prosent.forrige}}%
+                                <span class="column-spacing"><b>{{prosent.gjeldende}}%</b></span>
+                            </td>
+                        {{else}}
+                            <td>{{prosent.gjeldende}}%</td>
+                        {{/if}}
+                    </tr>
+                {{/if}}
+            {{/each}}
+            </tbody>
+        </table>
     {{/each}}
-    </tbody>
-</table>
+{{/with}}
 </body>
 </html>
