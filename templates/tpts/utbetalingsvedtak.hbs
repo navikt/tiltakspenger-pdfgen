@@ -150,10 +150,12 @@
 
 {{#with sammenligningAvBeregninger}}
     {{#if korrigering}}
-        <div class="readMore">
-            <h3>Begrunnelse for korrigering</h3>
-            <p>{{begrunnelse}}</p>
-        </div>
+        {{#if begrunnelse}}
+            <div class="readMore">
+                <h3>Begrunnelse for korrigering</h3>
+                <p>{{begrunnelse}}</p>
+            </div>
+        {{/if}}
     {{/if}}
     {{#each meldeperioder}}
         <h2>{{tittel}}</h2>
