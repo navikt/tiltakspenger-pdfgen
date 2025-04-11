@@ -110,6 +110,28 @@
         span.column-spacing {
             margin-left: 0.4rem;
         }
+
+        .total-differanse {
+            width: 100%;
+            border-bottom: #F2F3F5 0.1875rem solid;
+            overflow: hidden;
+            padding-left: 1.75rem;
+            padding-right: 1.75rem;
+            margin-bottom: 2rem;
+        }
+
+        .total-differanse span:first-child,
+        .total-differanse span:nth-child(2) {
+            float: left;
+            margin-right: 7.5rem;
+            white-space: nowrap;
+        }
+
+        .total-differanse span:last-child {
+            float: right;
+            white-space: nowrap;
+            margin-right: 1.75rem;
+        }
     </style>
     {{#if korrigering}}
         <title>Korrigert utbetalingsvedtak</title>
@@ -156,6 +178,14 @@
                 <p>{{begrunnelse}}</p>
             </div>
         {{/if}}
+        <h3>Utfall av korrigeringen</h3>
+        <div class="total-differanse">
+            <span>Resultat</span>
+            {{#gt totalDifferanse 0}}<span>Økning</span>{{/gt}}
+            {{#lt totalDifferanse 0}}<span>Reduksjon</span>{{/lt}}
+            {{#eq totalDifferanse 0}}<span>Ingen endring</span>{{/eq}}
+            <span>{{totalDifferanse}}kr</span>
+        </div>
     {{/if}}
     {{#each meldeperioder}}
         <h2>{{tittel}}</h2>

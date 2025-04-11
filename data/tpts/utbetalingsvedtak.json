@@ -146,6 +146,7 @@
   "korrigering": true,
   "sammenligningAvBeregninger": {
     "begrunnelse": "Bruker mottok lønn fra tiltaksarrangør den 5. januar.",
+    "totalDifferanse": 81,
     "meldeperioder": [
       {
         "tittel": "Meldekort 26. desember 2022 - 8. januar 2023",
