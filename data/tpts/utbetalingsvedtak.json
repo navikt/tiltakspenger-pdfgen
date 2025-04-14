@@ -3,7 +3,7 @@
   "saksnummer": "3424234132",
   "meldekortPeriode": {
     "fom": "26. desember 2022",
-    "tom": "8. januar 2023"
+    "tom": "19. februar 2023"
   },
   "saksbehandler": {
     "navn": "F_Z994380 E_Z994380"
@@ -31,15 +31,13 @@
   "forhandsvisning": true,
   "korrigering": true,
   "sammenligningAvBeregninger": {
-    "begrunnelse": "Bruker mottok lønn fra tiltaksarrangør den 5. januar.",
-    "totalDifferanse": 81,
     "meldeperioder": [
       {
         "tittel": "Meldekort 26. desember 2022 - 8. januar 2023",
+        "differanseFraForrige": 0,
         "dager": [
           {
             "dato": "mandag 26. desember",
-            "harEndretSeg": false,
             "status": {
               "forrige": "Ikke rett på tiltakspenger",
               "gjeldende": "Ikke rett på tiltakspenger",
@@ -59,11 +57,11 @@
               "forrige": 0,
               "gjeldende": 0,
               "harEndretSeg": false
-            }
+            },
+            "harEndretSeg": false
           },
           {
             "dato": "tirsdag 27. desember",
-            "harEndretSeg": false,
             "status": {
               "forrige": "Ikke rett på tiltakspenger",
               "gjeldende": "Ikke rett på tiltakspenger",
@@ -83,11 +81,11 @@
               "forrige": 0,
               "gjeldende": 0,
               "harEndretSeg": false
-            }
+            },
+            "harEndretSeg": false
           },
           {
             "dato": "onsdag 28. desember",
-            "harEndretSeg": false,
             "status": {
               "forrige": "Ikke rett på tiltakspenger",
               "gjeldende": "Ikke rett på tiltakspenger",
@@ -107,11 +105,11 @@
               "forrige": 0,
               "gjeldende": 0,
               "harEndretSeg": false
-            }
+            },
+            "harEndretSeg": false
           },
           {
             "dato": "torsdag 29. desember",
-            "harEndretSeg": false,
             "status": {
               "forrige": "Ikke rett på tiltakspenger",
               "gjeldende": "Ikke rett på tiltakspenger",
@@ -131,11 +129,11 @@
               "forrige": 0,
               "gjeldende": 0,
               "harEndretSeg": false
-            }
+            },
+            "harEndretSeg": false
           },
           {
             "dato": "fredag 30. desember",
-            "harEndretSeg": false,
             "status": {
               "forrige": "Ikke rett på tiltakspenger",
               "gjeldende": "Ikke rett på tiltakspenger",
@@ -155,11 +153,11 @@
               "forrige": 0,
               "gjeldende": 0,
               "harEndretSeg": false
-            }
+            },
+            "harEndretSeg": false
           },
           {
             "dato": "lørdag 31. desember",
-            "harEndretSeg": false,
             "status": {
               "forrige": "Ikke rett på tiltakspenger",
               "gjeldende": "Ikke rett på tiltakspenger",
@@ -179,19 +177,19 @@
               "forrige": 0,
               "gjeldende": 0,
               "harEndretSeg": false
-            }
+            },
+            "harEndretSeg": false
           },
           {
             "dato": "søndag 1. januar",
-            "harEndretSeg": false,
             "status": {
-              "forrige": "Ikke tiltak denne dagen",
-              "gjeldende": "Ikke tiltak denne dagen",
-              "harEndretSeg": false
+              "forrige": "Fravær - Syk",
+              "gjeldende": "Deltatt uten lønn i tiltaket",
+              "harEndretSeg": true
             },
             "beløp": {
-              "forrige": 0,
-              "gjeldende": 0,
+              "forrige": 268,
+              "gjeldende": 268,
               "harEndretSeg": false
             },
             "barnetillegg": {
@@ -200,18 +198,18 @@
               "harEndretSeg": false
             },
             "prosent": {
-              "forrige": 0,
-              "gjeldende": 0,
+              "forrige": 100,
+              "gjeldende": 100,
               "harEndretSeg": false
-            }
+            },
+            "harEndretSeg": true
           },
           {
             "dato": "mandag 2. januar",
-            "harEndretSeg": false,
             "status": {
               "forrige": "Fravær - Syk",
-              "gjeldende": "Fravær - Syk",
-              "harEndretSeg": false
+              "gjeldende": "Deltatt uten lønn i tiltaket",
+              "harEndretSeg": true
             },
             "beløp": {
               "forrige": 268,
@@ -219,23 +217,23 @@
               "harEndretSeg": false
             },
             "barnetillegg": {
-              "forrige": 55,
-              "gjeldende": 55,
+              "forrige": 0,
+              "gjeldende": 0,
               "harEndretSeg": false
             },
             "prosent": {
               "forrige": 100,
               "gjeldende": 100,
               "harEndretSeg": false
-            }
+            },
+            "harEndretSeg": true
           },
           {
             "dato": "tirsdag 3. januar",
-            "harEndretSeg": false,
             "status": {
-              "forrige": "Fravær - Syk",
-              "gjeldende": "Fravær - Syk",
-              "harEndretSeg": false
+              "forrige": "Fravær - Sykt barn",
+              "gjeldende": "Deltatt uten lønn i tiltaket",
+              "harEndretSeg": true
             },
             "beløp": {
               "forrige": 268,
@@ -243,67 +241,19 @@
               "harEndretSeg": false
             },
             "barnetillegg": {
-              "forrige": 55,
-              "gjeldende": 55,
+              "forrige": 0,
+              "gjeldende": 0,
               "harEndretSeg": false
             },
             "prosent": {
               "forrige": 100,
               "gjeldende": 100,
               "harEndretSeg": false
-            }
+            },
+            "harEndretSeg": true
           },
           {
             "dato": "onsdag 4. januar",
-            "harEndretSeg": false,
-            "status": {
-              "forrige": "Fravær - Syk",
-              "gjeldende": "Fravær - Syk",
-              "harEndretSeg": false
-            },
-            "beløp": {
-              "forrige": 268,
-              "gjeldende": 268,
-              "harEndretSeg": false
-            },
-            "barnetillegg": {
-              "forrige": 55,
-              "gjeldende": 55,
-              "harEndretSeg": false
-            },
-            "prosent": {
-              "forrige": 100,
-              "gjeldende": 100,
-              "harEndretSeg": false
-            }
-          },
-          {
-            "dato": "torsdag 5. januar",
-            "harEndretSeg": true,
-            "status": {
-              "forrige": "Deltatt uten lønn i tiltaket",
-              "gjeldende": "Deltatt med lønn i tiltaket",
-              "harEndretSeg": true
-            },
-            "beløp": {
-              "forrige": 268,
-              "gjeldende": 201,
-              "harEndretSeg": true
-            },
-            "barnetillegg": {
-              "forrige": 55,
-              "gjeldende": 41,
-              "harEndretSeg": true
-            },
-            "prosent": {
-              "forrige": 100,
-              "gjeldende": 75,
-              "harEndretSeg": true
-            }
-          },
-          {
-            "dato": "fredag 6. januar",
-            "harEndretSeg": false,
             "status": {
               "forrige": "Deltatt uten lønn i tiltaket",
               "gjeldende": "Deltatt uten lønn i tiltaket",
@@ -315,19 +265,67 @@
               "harEndretSeg": false
             },
             "barnetillegg": {
-              "forrige": 55,
-              "gjeldende": 55,
+              "forrige": 0,
+              "gjeldende": 0,
               "harEndretSeg": false
             },
             "prosent": {
               "forrige": 100,
               "gjeldende": 100,
               "harEndretSeg": false
-            }
+            },
+            "harEndretSeg": false
+          },
+          {
+            "dato": "torsdag 5. januar",
+            "status": {
+              "forrige": "Deltatt uten lønn i tiltaket",
+              "gjeldende": "Deltatt uten lønn i tiltaket",
+              "harEndretSeg": false
+            },
+            "beløp": {
+              "forrige": 268,
+              "gjeldende": 268,
+              "harEndretSeg": false
+            },
+            "barnetillegg": {
+              "forrige": 0,
+              "gjeldende": 0,
+              "harEndretSeg": false
+            },
+            "prosent": {
+              "forrige": 100,
+              "gjeldende": 100,
+              "harEndretSeg": false
+            },
+            "harEndretSeg": false
+          },
+          {
+            "dato": "fredag 6. januar",
+            "status": {
+              "forrige": "Deltatt uten lønn i tiltaket",
+              "gjeldende": "Deltatt uten lønn i tiltaket",
+              "harEndretSeg": false
+            },
+            "beløp": {
+              "forrige": 268,
+              "gjeldende": 268,
+              "harEndretSeg": false
+            },
+            "barnetillegg": {
+              "forrige": 0,
+              "gjeldende": 0,
+              "harEndretSeg": false
+            },
+            "prosent": {
+              "forrige": 100,
+              "gjeldende": 100,
+              "harEndretSeg": false
+            },
+            "harEndretSeg": false
           },
           {
             "dato": "lørdag 7. januar",
-            "harEndretSeg": false,
             "status": {
               "forrige": "Ikke tiltak denne dagen",
               "gjeldende": "Ikke tiltak denne dagen",
@@ -347,11 +345,11 @@
               "forrige": 0,
               "gjeldende": 0,
               "harEndretSeg": false
-            }
+            },
+            "harEndretSeg": false
           },
           {
             "dato": "søndag 8. januar",
-            "harEndretSeg": false,
             "status": {
               "forrige": "Ikke tiltak denne dagen",
               "gjeldende": "Ikke tiltak denne dagen",
@@ -371,10 +369,355 @@
               "forrige": 0,
               "gjeldende": 0,
               "harEndretSeg": false
-            }
+            },
+            "harEndretSeg": false
+          }
+        ]
+      },
+      {
+        "tittel": "Meldekort 6. februar 2023 - 19. februar 2023",
+        "differanseFraForrige": 67,
+        "dager": [
+          {
+            "dato": "mandag 6. februar",
+            "status": {
+              "forrige": "Deltatt uten lønn i tiltaket",
+              "gjeldende": "Deltatt uten lønn i tiltaket",
+              "harEndretSeg": false
+            },
+            "beløp": {
+              "forrige": 268,
+              "gjeldende": 268,
+              "harEndretSeg": false
+            },
+            "barnetillegg": {
+              "forrige": 0,
+              "gjeldende": 0,
+              "harEndretSeg": false
+            },
+            "prosent": {
+              "forrige": 100,
+              "gjeldende": 100,
+              "harEndretSeg": false
+            },
+            "harEndretSeg": false
+          },
+          {
+            "dato": "tirsdag 7. februar",
+            "status": {
+              "forrige": "Deltatt uten lønn i tiltaket",
+              "gjeldende": "Deltatt uten lønn i tiltaket",
+              "harEndretSeg": false
+            },
+            "beløp": {
+              "forrige": 268,
+              "gjeldende": 268,
+              "harEndretSeg": false
+            },
+            "barnetillegg": {
+              "forrige": 0,
+              "gjeldende": 0,
+              "harEndretSeg": false
+            },
+            "prosent": {
+              "forrige": 100,
+              "gjeldende": 100,
+              "harEndretSeg": false
+            },
+            "harEndretSeg": false
+          },
+          {
+            "dato": "onsdag 8. februar",
+            "status": {
+              "forrige": "Fravær - Sykt barn",
+              "gjeldende": "Fravær - Sykt barn",
+              "harEndretSeg": false
+            },
+            "beløp": {
+              "forrige": 268,
+              "gjeldende": 268,
+              "harEndretSeg": false
+            },
+            "barnetillegg": {
+              "forrige": 0,
+              "gjeldende": 0,
+              "harEndretSeg": false
+            },
+            "prosent": {
+              "forrige": 100,
+              "gjeldende": 100,
+              "harEndretSeg": false
+            },
+            "harEndretSeg": false
+          },
+          {
+            "dato": "torsdag 9. februar",
+            "status": {
+              "forrige": "Fravær - Sykt barn",
+              "gjeldende": "Fravær - Sykt barn",
+              "harEndretSeg": false
+            },
+            "beløp": {
+              "forrige": 268,
+              "gjeldende": 268,
+              "harEndretSeg": false
+            },
+            "barnetillegg": {
+              "forrige": 0,
+              "gjeldende": 0,
+              "harEndretSeg": false
+            },
+            "prosent": {
+              "forrige": 100,
+              "gjeldende": 100,
+              "harEndretSeg": false
+            },
+            "harEndretSeg": false
+          },
+          {
+            "dato": "fredag 10. februar",
+            "status": {
+              "forrige": "Fravær - Sykt barn",
+              "gjeldende": "Fravær - Sykt barn",
+              "harEndretSeg": false
+            },
+            "beløp": {
+              "forrige": 201,
+              "gjeldende": 268,
+              "harEndretSeg": true
+            },
+            "barnetillegg": {
+              "forrige": 0,
+              "gjeldende": 0,
+              "harEndretSeg": false
+            },
+            "prosent": {
+              "forrige": 75,
+              "gjeldende": 100,
+              "harEndretSeg": true
+            },
+            "harEndretSeg": true
+          },
+          {
+            "dato": "lørdag 11. februar",
+            "status": {
+              "forrige": "Ikke tiltak denne dagen",
+              "gjeldende": "Ikke tiltak denne dagen",
+              "harEndretSeg": false
+            },
+            "beløp": {
+              "forrige": 0,
+              "gjeldende": 0,
+              "harEndretSeg": false
+            },
+            "barnetillegg": {
+              "forrige": 0,
+              "gjeldende": 0,
+              "harEndretSeg": false
+            },
+            "prosent": {
+              "forrige": 0,
+              "gjeldende": 0,
+              "harEndretSeg": false
+            },
+            "harEndretSeg": false
+          },
+          {
+            "dato": "søndag 12. februar",
+            "status": {
+              "forrige": "Ikke tiltak denne dagen",
+              "gjeldende": "Ikke tiltak denne dagen",
+              "harEndretSeg": false
+            },
+            "beløp": {
+              "forrige": 0,
+              "gjeldende": 0,
+              "harEndretSeg": false
+            },
+            "barnetillegg": {
+              "forrige": 0,
+              "gjeldende": 0,
+              "harEndretSeg": false
+            },
+            "prosent": {
+              "forrige": 0,
+              "gjeldende": 0,
+              "harEndretSeg": false
+            },
+            "harEndretSeg": false
+          },
+          {
+            "dato": "mandag 13. februar",
+            "status": {
+              "forrige": "Deltatt uten lønn i tiltaket",
+              "gjeldende": "Deltatt uten lønn i tiltaket",
+              "harEndretSeg": false
+            },
+            "beløp": {
+              "forrige": 268,
+              "gjeldende": 268,
+              "harEndretSeg": false
+            },
+            "barnetillegg": {
+              "forrige": 0,
+              "gjeldende": 0,
+              "harEndretSeg": false
+            },
+            "prosent": {
+              "forrige": 100,
+              "gjeldende": 100,
+              "harEndretSeg": false
+            },
+            "harEndretSeg": false
+          },
+          {
+            "dato": "tirsdag 14. februar",
+            "status": {
+              "forrige": "Deltatt uten lønn i tiltaket",
+              "gjeldende": "Deltatt uten lønn i tiltaket",
+              "harEndretSeg": false
+            },
+            "beløp": {
+              "forrige": 268,
+              "gjeldende": 268,
+              "harEndretSeg": false
+            },
+            "barnetillegg": {
+              "forrige": 0,
+              "gjeldende": 0,
+              "harEndretSeg": false
+            },
+            "prosent": {
+              "forrige": 100,
+              "gjeldende": 100,
+              "harEndretSeg": false
+            },
+            "harEndretSeg": false
+          },
+          {
+            "dato": "onsdag 15. februar",
+            "status": {
+              "forrige": "Deltatt uten lønn i tiltaket",
+              "gjeldende": "Deltatt uten lønn i tiltaket",
+              "harEndretSeg": false
+            },
+            "beløp": {
+              "forrige": 268,
+              "gjeldende": 268,
+              "harEndretSeg": false
+            },
+            "barnetillegg": {
+              "forrige": 0,
+              "gjeldende": 0,
+              "harEndretSeg": false
+            },
+            "prosent": {
+              "forrige": 100,
+              "gjeldende": 100,
+              "harEndretSeg": false
+            },
+            "harEndretSeg": false
+          },
+          {
+            "dato": "torsdag 16. februar",
+            "status": {
+              "forrige": "Deltatt uten lønn i tiltaket",
+              "gjeldende": "Deltatt uten lønn i tiltaket",
+              "harEndretSeg": false
+            },
+            "beløp": {
+              "forrige": 268,
+              "gjeldende": 268,
+              "harEndretSeg": false
+            },
+            "barnetillegg": {
+              "forrige": 0,
+              "gjeldende": 0,
+              "harEndretSeg": false
+            },
+            "prosent": {
+              "forrige": 100,
+              "gjeldende": 100,
+              "harEndretSeg": false
+            },
+            "harEndretSeg": false
+          },
+          {
+            "dato": "fredag 17. februar",
+            "status": {
+              "forrige": "Deltatt uten lønn i tiltaket",
+              "gjeldende": "Deltatt uten lønn i tiltaket",
+              "harEndretSeg": false
+            },
+            "beløp": {
+              "forrige": 268,
+              "gjeldende": 268,
+              "harEndretSeg": false
+            },
+            "barnetillegg": {
+              "forrige": 0,
+              "gjeldende": 0,
+              "harEndretSeg": false
+            },
+            "prosent": {
+              "forrige": 100,
+              "gjeldende": 100,
+              "harEndretSeg": false
+            },
+            "harEndretSeg": false
+          },
+          {
+            "dato": "lørdag 18. februar",
+            "status": {
+              "forrige": "Ikke tiltak denne dagen",
+              "gjeldende": "Ikke tiltak denne dagen",
+              "harEndretSeg": false
+            },
+            "beløp": {
+              "forrige": 0,
+              "gjeldende": 0,
+              "harEndretSeg": false
+            },
+            "barnetillegg": {
+              "forrige": 0,
+              "gjeldende": 0,
+              "harEndretSeg": false
+            },
+            "prosent": {
+              "forrige": 0,
+              "gjeldende": 0,
+              "harEndretSeg": false
+            },
+            "harEndretSeg": false
+          },
+          {
+            "dato": "søndag 19. februar",
+            "status": {
+              "forrige": "Ikke tiltak denne dagen",
+              "gjeldende": "Ikke tiltak denne dagen",
+              "harEndretSeg": false
+            },
+            "beløp": {
+              "forrige": 0,
+              "gjeldende": 0,
+              "harEndretSeg": false
+            },
+            "barnetillegg": {
+              "forrige": 0,
+              "gjeldende": 0,
+              "harEndretSeg": false
+            },
+            "prosent": {
+              "forrige": 0,
+              "gjeldende": 0,
+              "harEndretSeg": false
+            },
+            "harEndretSeg": false
           }
         ]
       }
-    ]
+    ],
+    "begrunnelse": "Bruker hadde registrert at han var syk, men deltok på tiltak disse dagene.",
+    "totalDifferanse": 67
   }
 }
