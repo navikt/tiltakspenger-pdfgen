@@ -226,7 +226,8 @@
                         <!-- Beløp, barnetillegg og prosent samles i samme kolonne for å spare plass ettersom headingen tvinger en gitt kolonnebredde -->
                         <!-- Det samme er ikke gjort for status for det er mye høyere sannsynlighet for line wrap der -->
                         {{#if beløp.harEndretSeg}}
-                            <td class="endret">{{beløp.forrige}}
+                            <td class="endret">
+                                {{beløp.forrige}}
                                 <span class="column-spacing"><b>{{beløp.gjeldende}}</b></span>
                             </td>
                         {{else}}
@@ -235,7 +236,8 @@
 
                         {{#if barnetillegg}}
                             {{#if barnetillegg.harEndretSeg}}
-                                <td class="endret">{{barnetillegg.forrige}}
+                                <td class="endret">
+                                    {{barnetillegg.forrige}}
                                     <span class="column-spacing"><b>{{barnetillegg.gjeldende}}</b></span>
                                 </td>
                             {{else}}
@@ -270,7 +272,8 @@
                         <!-- Beløp, barnetillegg og prosent samles i samme kolonne for å spare plass ettersom headingen tvinger en gitt kolonnebredde -->
                         <!-- Det samme er ikke gjort for status for det er mye høyere sannsynlighet for line wrap der -->
                         {{#if beløp.harEndretSeg}}
-                            <td>{{beløp.forrige}}
+                            <td>
+                                {{beløp.forrige}}
                                 <span class="column-spacing"><b>{{beløp.gjeldende}}</b></span>
                             </td>
                         {{else}}
@@ -279,7 +282,8 @@
 
                         {{#if barnetillegg}}
                             {{#if barnetillegg.harEndretSeg}}
-                                <td>{{barnetillegg.forrige}}
+                                <td>
+                                    {{barnetillegg.forrige}}
                                     <span class="column-spacing"><b>{{barnetillegg.gjeldende}}</b></span>
                                 </td>
                             {{else}}
