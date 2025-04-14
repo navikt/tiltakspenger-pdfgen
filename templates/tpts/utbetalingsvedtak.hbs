@@ -234,7 +234,8 @@
                             <td class="endret">{{beløp.gjeldende}}</td>
                         {{/if}}
 
-                        {{#if barnetillegg}}
+                        <!-- Nested if-statement hvor innerste if har en else gjør at dersom første if-statement er feil så hopper den feilaktig til elsen til det innerste if-statementet. Bruker dermed eq -->
+                        {{#eq barnetillegg true}}
                             {{#if barnetillegg.harEndretSeg}}
                                 <td class="endret">
                                     {{barnetillegg.forrige}}
@@ -243,7 +244,8 @@
                             {{else}}
                                 <td class="endret">{{barnetillegg.gjeldende}}</td>
                             {{/if}}
-                        {{/if}}
+                        {{/eq}}
+
                         {{#if prosent.harEndretSeg}}
                             <td class="endret">
                                 {{prosent.forrige}}%
@@ -280,7 +282,8 @@
                             <td>{{beløp.gjeldende}}</td>
                         {{/if}}
 
-                        {{#if barnetillegg}}
+                        <!-- Nested if-statement hvor innerste if har en else gjør at dersom første if-statement er feil så hopper den feilaktig til elsen til det innerste if-statementet. Bruker dermed eq -->
+                        {{#eq barnetillegg true}}
                             {{#if barnetillegg.harEndretSeg}}
                                 <td>
                                     {{barnetillegg.forrige}}
@@ -289,7 +292,8 @@
                             {{else}}
                                 <td>{{barnetillegg.gjeldende}}</td>
                             {{/if}}
-                        {{/if}}
+                        {{/eq}}
+
                         {{#if prosent.harEndretSeg}}
                             <td>
                                 {{prosent.forrige}}%
