@@ -178,14 +178,14 @@
                 <p>{{begrunnelse}}</p>
             </div>
         {{/if}}
-<!--        <h3>Utfall av korrigeringen</h3>-->
-<!--        <div class="total-differanse">-->
-<!--            <span>Resultat</span>-->
-<!--            {{#gt totalDifferanse 0}}<span>Økning</span>{{/gt}}-->
-<!--            {{#lt totalDifferanse 0}}<span>Reduksjon</span>{{/lt}}-->
-<!--            {{#eq totalDifferanse 0}}<span>Ingen endring</span>{{/eq}}-->
-<!--            <span>{{totalDifferanse}}kr</span>-->
-<!--        </div>-->
+        <h3>Utfall av korrigeringen</h3>
+        <div class="total-differanse">
+            <span>Resultat</span>
+            {{#gt totalDifferanse 0}}<span>Økning</span>{{/gt}}
+            {{#lt totalDifferanse 0}}<span>Reduksjon</span>{{/lt}}
+            {{#eq totalDifferanse 0}}<span>Ingen endring</span>{{/eq}}
+            <span>{{totalDifferanse}}kr</span>
+        </div>
     {{/if}}
     {{#each meldeperioder}}
         <h2>{{tittel}}</h2>
