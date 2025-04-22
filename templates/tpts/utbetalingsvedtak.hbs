@@ -169,6 +169,22 @@
     <br/>
 {{/with}}
 
+{{#if tiltak}}
+    <h2>Tiltak</h2>
+    {{#each tiltak}}
+        <div class="informasjon">
+            <b>Tiltaksnavn:</b> {{tiltakstypenavn}}
+            <br/>
+            <b>Tiltakstype:</b> {{tiltakstype}}
+            <br/>
+            <b>DeltagelseId:</b> {{eksternDeltagelseId}}
+            <br/>
+            <b>GjennomføringId:</b> {{eksternGjennomføringId}}
+            <br/>
+        </div>
+        <br/>
+    {{/each}}
+{{/if}}
 
 {{#with sammenligningAvBeregninger}}
     {{#if korrigering}}
