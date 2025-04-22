@@ -6,9 +6,6 @@ on:
       IMAGE:
         description: "Docker image"
         value: ${{ jobs.build.outputs.IMAGE }}
-    secrets:
-      NAIS_WORKLOAD_IDENTITY_PROVIDER:
-        required: true
 
 jobs:
   build:
@@ -28,5 +25,3 @@ jobs:
         id: docker-push
         with:
           team: tpts
-          project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}
-          identity_provider: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}
