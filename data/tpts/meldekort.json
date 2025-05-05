@@ -12,7 +12,7 @@
   "dager": [
     {
       "dag": "Mandag 30. september",
-      "status": "DELTATT"
+      "status": "DELTATT_UTEN_LØNN_I_TILTAKET"
     },
     {
       "dag": "Tirsdag 1. oktober",
@@ -24,11 +24,11 @@
     },
     {
       "dag": "Torsdag 3. oktober",
-      "status": "FRAVÆR_ANNET"
+      "status": "FRAVÆR_VELFERD_GODKJENT_AV_NAV"
     },
     {
       "dag": "Fredag 4. oktober",
-      "status": "IKKE_DELTATT"
+      "status": "FRAVÆR_VELFERD_IKKE_GODKJENT_AV_NAV"
     },
     {
       "dag": "Lørdag 5. oktober",
@@ -40,7 +40,7 @@
     },
     {
       "dag": "Mandag 7. oktober",
-      "status": "DELTATT"
+      "status": "DELTATT_UTEN_LØNN_I_TILTAKET"
     },
     {
       "dag": "Tirsdag 8. oktober",

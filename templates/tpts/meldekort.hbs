@@ -221,9 +221,13 @@
             <tbody>
             {{#each dager}}
                 <tr>
-                    {{#eq status "DELTATT"}}
+                    {{#eq status "DELTATT_UTEN_LØNN_I_TILTAKET"}}
                         <td class="statiskDag deltatt">{{dag}}:</td>
                         <td class="statiskDag deltatt"><b>Deltatt</b></td>
+                    {{/eq}}
+                    {{#eq status "DELTATT_MED_LØNN_I_TILTAKET"}}
+                        <td class="statiskDag deltatt">{{dag}}:</td>
+                        <td class="statiskDag deltatt"><b>Deltatt med lønn</b></td>
                     {{/eq}}
                     {{#eq status "FRAVÆR_SYK"}}
                         <td class="statiskDag syk">{{dag}}:</td>
@@ -233,11 +237,11 @@
                         <td class="statiskDag syktBarn">{{dag}}:</td>
                         <td class="statiskDag syktBarn"><b>Sykt barn eller syk barnepasser</b></td>
                     {{/eq}}
-                    {{#eq status "FRAVÆR_ANNET"}}
+                    {{#eq status "FRAVÆR_VELFERD_GODKJENT_AV_NAV"}}
                         <td class="statiskDag annet">{{dag}}:</td>
                         <td class="statiskDag annet"><b>Fravær godkjent av Nav</b></td>
                     {{/eq}}
-                    {{#eq status "IKKE_DELTATT"}}
+                    {{#eq status "FRAVÆR_VELFERD_IKKE_GODKJENT_AV_NAV"}}
                         <td class="statiskDag ikkeDeltatt">{{dag}}:</td>
                         <td class="statiskDag ikkeDeltatt"><b>Annet fravær</b></td>
                     {{/eq}}
