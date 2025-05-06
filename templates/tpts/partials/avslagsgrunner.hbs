@@ -14,10 +14,16 @@
                         For å få tiltakspenger og barnetillegg må du delta i arbeidsmarkedstiltak som gir rett
                         til tiltakspenger og barnetillegg.
                     </p>
+                    <p>
+                        Dette kommer frem av arbeidsmarkedsloven § 13, tiltakspengeforskriften §§ 2 og 3.
+                    </p>
             {{else}}
                     <p>
                         For å få tiltakspenger må du delta i arbeidsmarkedstiltak som gir rett til
                         tiltakspenger.
+                    </p>
+                    <p>
+                        Dette kommer frem av arbeidsmarkedsloven § 13 og tiltakspengeforskriften § 2.
                     </p>
             {{/if}}
         {{/eq}}
@@ -40,6 +46,9 @@
                     og barnetillegg {{/if}} fra og med {{avslagFraOgMed}} fordi du ikke har fylt 18 år. Du må ha
                     fylt 18 år for å ha rett til å få tiltakspenger.
                 </p>
+                <p>
+                    Det kommer frem av tiltakspengeforskriften § 3.
+                </p>
         {{/eq}}
         {{#eq type "multi"}}
                 <li>
@@ -56,6 +65,9 @@
                     {{avslagFraOgMed}} fordi du mottar en annen pengestøtte til livsopphold. Deltakere som har
                     rett til andre pengestøtter til livsopphold har ikke samtidig rett til å
                     få tiltakspenger{{#if harSøktMedBarn}} og barnetillegg {{else}}.{{/if}}
+                </p>
+                <p>
+                    Dette kommer frem av arbeidsmarkedsloven § 13 første ledd og forskrift om tiltakspenger § 7.
                 </p>
         {{/eq}}
         {{#eq type "multi"}}
@@ -78,6 +90,9 @@
                     kvalifiseringsprogram, har ikke rett
                     til tiltakspenger{{#if harSøktMedBarn}}og barnetillegg {{else}}.{{/if}}
                 </p>
+                <p>
+                    Dette kommer frem av tiltakspengeforskriften § 7 tredje ledd.
+                </p>
         {{/eq}}
         {{#eq type "multi"}}
                 <li>
@@ -98,6 +113,9 @@
                     og barnetillegg {{/if}} fra og med {{avslagFraOgMed}} fordi du deltar på
                     introduksjonsprogram. Deltakere i introduksjonsprogram, har ikke rett til
                     tiltakspenger{{#if harSøktMedBarn}} og barnetillegg {{else}}.{{/if}}
+                </p>
+                <p>
+                    Dette kommer frem av tiltakspengeforskriften § 7 tredje ledd.
                 </p>
         {{/eq}}
         {{#eq type "multi"}}
@@ -122,6 +140,9 @@
                 <p>
                     Deltakere som mottar lønn fra tiltaksarrangør for tid i arbeidsmarkedstiltaket, har ikke
                     rett til tiltakspenger{{#if harSøktMedBarn}} og barnetillegg {{else}}.{{/if}}
+                </p>
+                <p>
+                    Dette kommer frem av tiltakspengeforskriften § 8.
                 </p>
         {{/eq}}
         {{#eq type "multi"}}
@@ -152,6 +173,9 @@
                 </p>
                 <p>
                     Lønn fra arbeid utenom tiltaksdeltakelsen har ikke betydning for din rett til tiltakspenger.
+                </p>
+                <p>
+                    Dette kommer frem av arbeidsmarkedsloven § 13 og tiltakspengeforskriften § 8 andre ledd.
                 </p>
         {{/eq}}
         {{#eq type "multi"}}
@@ -185,6 +209,10 @@
                     Under gjennomføringen av arbeidsmarkedstiltaket, har ikke rett
                     til tiltakspenger{{#if harSøktMedBarn}} og barnetillegg {{else}}.{{/if}}.
                 </p>
+                <p>
+                    Det er gjort unntak for opphold i barneverns-institusjoner. Dette kommer frem av
+                    tiltakspengeforskriften § 9.
+                </p>
         {{/eq}}
         {{#eq type "multi"}}
                 <li>
@@ -210,6 +238,9 @@
                     Tiltakspenger gis for opptil tre måneder før den måneden tiltaksdeltakeren søkte om
                     tiltakspenger{{#if harSøktMedBarn}} og barnetillegg {{else}}.{{/if}}.
                 </p>
+                <p>
+                    Dette kommer frem av tiltakspengeforskriften § 11.
+                </p>
         {{/eq}}
         {{#eq type "multi"}}
                 <li>
@@ -227,3 +258,9 @@
 {{#eq type "multi"}}
     </ul>
 {{/eq}}
+
+{{#gt avslagsgrunnerSize 1}}
+    <p>
+        {{hjemlerTekst}}
+    </p>
+{{/gt}}
