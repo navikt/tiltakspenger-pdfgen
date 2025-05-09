@@ -1,0 +1,24 @@
+{{#> tpts/partials/base}}
+    <section>
+        <h1>
+            Du har fått avslag på din søknad om tiltakspenger
+        </h1>
+        {{#eq avslagsgrunnerSize 1}}
+            {{> tpts/partials/avslagsgrunner type="single"}}
+        {{/eq}}
+        {{#gt avslagsgrunnerSize 1}}
+            <p>
+                Du får ikke tiltakspenger {{#if harSøktMedBarn}} og barnetillegg {{/if}} fra og med
+                {{avslagFraOgMed}} til og med {{avslagTilOgMed}} fordi:
+            </p>
+            {{> tpts/partials/avslagsgrunner type="multi"}}
+        {{/gt}}
+
+        <h2>
+            Slik har vi vurdert saken din
+        </h2>
+        <p>
+            {{breaklines tilleggstekst}}
+        </p>
+    </section>
+{{/tpts/partials/base}}
