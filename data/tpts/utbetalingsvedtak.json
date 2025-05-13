@@ -34,7 +34,7 @@
       {
         "tittel": "Meldekort 26. desember 2022 - 8. januar 2023",
         "differanseFraForrige": 0,
-        "barnetillegg": true,
+        "harBarnetillegg": true,
         "dager": [
           {
             "dato": "mandag 26. desember",
@@ -377,7 +377,7 @@
       {
         "tittel": "Meldekort 6. februar 2023 - 19. februar 2023",
         "differanseFraForrige": 67,
-        "barnetillegg": true,
+        "harBarnetillegg": true,
         "dager": [
           {
             "dato": "mandag 6. februar",

@@ -251,7 +251,7 @@
                         {{/if}}
 
                         <!-- Nested if-statement hvor innerste if har en else gjør at dersom første if-statement er feil så hopper den feilaktig til elsen til det innerste if-statementet. Bruker dermed eq -->
-                        {{#if barnetillegg}}
+                        {{#if harBarnetillegg}}
                             {{#eq barnetillegg.harEndretSeg true}}
                                 <td class="endret">
                                     {{barnetillegg.forrige}}
@@ -300,7 +300,7 @@
                         {{/if}}
 
                         <!-- Nested if-statement hvor innerste if har en else gjør at dersom første if-statement er feil så hopper den feilaktig til elsen til det innerste if-statementet. Bruker dermed eq -->
-                        {{#if barnetillegg}}
+                        {{#if harBarnetillegg}}
                             {{#eq barnetillegg.harEndretSeg true}}
                                 <td>
                                     {{barnetillegg.forrige}}
