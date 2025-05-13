@@ -251,16 +251,17 @@
                         {{/if}}
 
                         <!-- Nested if-statement hvor innerste if har en else gjør at dersom første if-statement er feil så hopper den feilaktig til elsen til det innerste if-statementet. Bruker dermed eq -->
-                        {{#eq barnetillegg true}}
-                            {{#if barnetillegg.harEndretSeg}}
+                        {{#if barnetillegg}}
+                            {{#eq barnetillegg.harEndretSeg true}}
                                 <td class="endret">
                                     {{barnetillegg.forrige}}
                                     <span class="column-spacing"><b>{{barnetillegg.gjeldende}}</b></span>
                                 </td>
-                            {{else}}
+                            {{/eq}}
+                            {{#eq barnetillegg.harEndretSeg false}}
                                 <td class="endret">{{barnetillegg.gjeldende}}</td>
-                            {{/if}}
-                        {{/eq}}
+                            {{/eq}}
+                        {{/if}}
 
                         {{#if prosent.harEndretSeg}}
                             <td class="endret">
@@ -299,16 +300,17 @@
                         {{/if}}
 
                         <!-- Nested if-statement hvor innerste if har en else gjør at dersom første if-statement er feil så hopper den feilaktig til elsen til det innerste if-statementet. Bruker dermed eq -->
-                        {{#eq barnetillegg true}}
-                            {{#if barnetillegg.harEndretSeg}}
+                        {{#if barnetillegg}}
+                            {{#eq barnetillegg.harEndretSeg true}}
                                 <td>
                                     {{barnetillegg.forrige}}
                                     <span class="column-spacing"><b>{{barnetillegg.gjeldende}}</b></span>
                                 </td>
-                            {{else}}
+                            {{/eq}}
+                            {{#eq barnetillegg.harEndretSeg false}}
                                 <td>{{barnetillegg.gjeldende}}</td>
-                            {{/if}}
-                        {{/eq}}
+                            {{/eq}}
+                        {{/if}}
 
                         {{#if prosent.harEndretSeg}}
                             <td>

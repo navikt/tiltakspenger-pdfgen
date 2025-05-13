@@ -27,7 +27,6 @@
   ],
   "iverksattTidspunkt": "7. april 2025 14:36:18",
   "fødselsnummer": "50218274152",
-  "barnetillegg": true,
   "forhandsvisning": true,
   "korrigering": true,
   "sammenligningAvBeregninger": {
@@ -35,6 +34,7 @@
       {
         "tittel": "Meldekort 26. desember 2022 - 8. januar 2023",
         "differanseFraForrige": 0,
+        "barnetillegg": true,
         "dager": [
           {
             "dato": "mandag 26. desember",
@@ -193,8 +193,8 @@
               "harEndretSeg": false
             },
             "barnetillegg": {
-              "forrige": 0,
-              "gjeldende": 0,
+              "forrige": 55,
+              "gjeldende": 55,
               "harEndretSeg": false
             },
             "prosent": {
@@ -217,8 +217,8 @@
               "harEndretSeg": false
             },
             "barnetillegg": {
-              "forrige": 0,
-              "gjeldende": 0,
+              "forrige": 55,
+              "gjeldende": 55,
               "harEndretSeg": false
             },
             "prosent": {
@@ -241,8 +241,8 @@
               "harEndretSeg": false
             },
             "barnetillegg": {
-              "forrige": 0,
-              "gjeldende": 0,
+              "forrige": 55,
+              "gjeldende": 55,
               "harEndretSeg": false
             },
             "prosent": {
@@ -377,6 +377,7 @@
       {
         "tittel": "Meldekort 6. februar 2023 - 19. februar 2023",
         "differanseFraForrige": 67,
+        "barnetillegg": true,
         "dager": [
           {
             "dato": "mandag 6. februar",
@@ -487,9 +488,9 @@
               "harEndretSeg": true
             },
             "barnetillegg": {
-              "forrige": 0,
-              "gjeldende": 0,
-              "harEndretSeg": false
+              "forrige": 42,
+              "gjeldende": 55,
+              "harEndretSeg": true
             },
             "prosent": {
               "forrige": 75,
