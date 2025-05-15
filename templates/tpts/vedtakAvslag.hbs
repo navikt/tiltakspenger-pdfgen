@@ -14,11 +14,13 @@
             {{> tpts/partials/avslagsgrunner type="multi"}}
         {{/gt}}
 
-        <h2>
-            Slik har vi vurdert saken din
-        </h2>
-        <p>
-            {{breaklines tilleggstekst}}
-        </p>
+        {{#if tilleggstekst}}
+            <h2>
+                Slik har vi vurdert saken din
+            </h2>
+            <p>
+                {{breaklines tilleggstekst}}
+            </p>
+        {{/if}}
     </section>
 {{/tpts/partials/base}}
