@@ -43,8 +43,8 @@
         {{#eq type "single"}}
                 <p>
                     Du får ikke tiltakspenger {{#if harSøktMedBarn}}
-                    og barnetillegg {{/if}} fra og med {{avslagFraOgMed}} fordi du ikke har fylt 18 år. Du må ha
-                    fylt 18 år for å ha rett til å få tiltakspenger.
+                    og barnetillegg {{/if}} fra og med {{avslagFraOgMed}} til og med {{avslagTilOgMed}} fordi du
+                    ikke har fylt 18 år. Du må ha fylt 18 år for å ha rett til å få tiltakspenger.
                 </p>
                 <p>
                     Det kommer frem av tiltakspengeforskriften § 3.
@@ -61,10 +61,10 @@
     {{#eq this "LIVSOPPHOLDYTELSE"}}
         {{#eq type "single"}}
                 <p>
-                    Du får ikke tiltakspenger {{#if harSøktMedBarn}} og barnetillegg {{/if}} fra og med
-                    {{avslagFraOgMed}} fordi du mottar en annen pengestøtte til livsopphold. Deltakere som har
-                    rett til andre pengestøtter til livsopphold har ikke samtidig rett til å
-                    få tiltakspenger{{#if harSøktMedBarn}} og barnetillegg {{else}}.{{/if}}
+                    Du får ikke tiltakspenger {{#if harSøktMedBarn}} og barnetillegg {{/if}}
+                    fra og med {{avslagFraOgMed}} til og med {{avslagTilOgMed}} fordi du mottar en
+                    annen pengestøtte til livsopphold. Deltakere som har rett til andre pengestøtter til livsopphold har
+                    ikke samtidig rett til å få tiltakspenger{{#if harSøktMedBarn}} og barnetillegg {{else}}.{{/if}}
                 </p>
                 <p>
                     Dette kommer frem av arbeidsmarkedsloven § 13 første ledd og forskrift om tiltakspenger § 7.
@@ -85,9 +85,9 @@
     {{#eq this "KVALIFISERINGSPROGRAMMET"}}
         {{#eq type "single"}}
                 <p>
-                    Du får ikke tiltakspenger {{#if harSøktMedBarn}} og barnetillegg {{/if}} fra og med
-                    {{avslagFraOgMed}} fordi du deltar på kvalifiseringsprogram. Deltakere i
-                    kvalifiseringsprogram, har ikke rett
+                    Du får ikke tiltakspenger {{#if harSøktMedBarn}} og barnetillegg {{/if}}
+                    fra og med {{avslagFraOgMed}} til og med {{avslagTilOgMed}} fordi du deltar på
+                    kvalifiseringsprogram. Deltakere i kvalifiseringsprogram, har ikke rett
                     til tiltakspenger{{#if harSøktMedBarn}}og barnetillegg {{else}}.{{/if}}
                 </p>
                 <p>
@@ -110,8 +110,8 @@
         {{#eq type "single"}}
                 <p>
                     Du får ikke tiltakspenger {{#if harSøktMedBarn}}
-                    og barnetillegg {{/if}} fra og med {{avslagFraOgMed}} fordi du deltar på
-                    introduksjonsprogram. Deltakere i introduksjonsprogram, har ikke rett til
+                    og barnetillegg {{/if}} fra og med {{avslagFraOgMed}} til og med {{avslagTilOgMed}} fordi du deltar
+                    på introduksjonsprogram. Deltakere i introduksjonsprogram, har ikke rett til
                     tiltakspenger{{#if harSøktMedBarn}} og barnetillegg {{else}}.{{/if}}
                 </p>
                 <p>
@@ -133,9 +133,9 @@
     {{#eq this "LØNN_FRA_TILTAKSARRANGØR"}}
         {{#eq type "single"}}
                 <p>
-                    Du får ikke tiltakspenger {{#if harSøktMedBarn}} og barnetillegg {{/if}} fra og med
-                    {{avslagFraOgMed}} fordi du mottar lønn fra tiltaksarrangør for tiden i
-                    arbeidsmarkedstiltaket.
+                    Du får ikke tiltakspenger {{#if harSøktMedBarn}} og barnetillegg {{/if}}
+                    fra og med {{avslagFraOgMed}} til og med {{avslagTilOgMed}} fordi du mottar lønn
+                    fra tiltaksarrangør for tiden i arbeidsmarkedstiltaket.
                 </p>
                 <p>
                     Deltakere som mottar lønn fra tiltaksarrangør for tid i arbeidsmarkedstiltaket, har ikke
@@ -160,9 +160,9 @@
     {{#eq this "LØNN_FRA_ANDRE"}}
         {{#eq type "single"}}
                 <p>
-                    Du får ikke tiltakspenger {{#if harSøktMedBarn}} og barnetillegg {{/if}} fra og med
-                    {{avslagFraOgMed}} fordi du mottar lønn for arbeid som er en del av tiltaksdeltakelsen og du
-                    derfor har dekning av utgifter til livsopphold.
+                    Du får ikke tiltakspenger {{#if harSøktMedBarn}} og barnetillegg {{/if}}
+                    fra og med {{avslagFraOgMed}} til og med {{avslagTilOgMed}} fordi du mottar lønn for arbeid som er
+                    en del av tiltaksdeltakelsen og du derfor har dekning av utgifter til livsopphold.
                 </p>
                 <p>
                     Deltaker i arbeidsmarkedstiltak som har rett til å få dekket utgifter til livsopphold på
@@ -200,9 +200,9 @@
     {{#eq this "INSTITUSJONSOPPHOLD"}}
         {{#eq type "single"}}
                 <p>
-                    Du får ikke tiltakspenger {{#if harSøktMedBarn}} og barnetillegg {{/if}} fra og med
-                    {{avslagFraOgMed}} fordi du oppholder deg på en institusjon med gratis opphold, mat og
-                    drikke.
+                    Du får ikke tiltakspenger {{#if harSøktMedBarn}} og barnetillegg {{/if}}
+                    fra og med {{avslagFraOgMed}} til og med {{avslagTilOgMed}} fordi du oppholder deg på en institusjon
+                    med gratis opphold, mat og drikke.
                 </p>
                 <p>
                     Deltakere som har opphold i institusjon, med gratis opphold, mat og drikke.
@@ -230,9 +230,9 @@
     {{#eq this "FREMMET_FOR_SENT"}}
         {{#eq type "single"}}
                 <p>
-                    Du får ikke tiltakspenger {{#if harSøktMedBarn}} og barnetillegg {{/if}} fra og med
-                    {{avslagFraOgMed}} fordi du har søkt om tiltakspenger{{#if harSøktMedBarn}} og
-                    barnetillegg{{/if}} for sent.
+                    Du får ikke tiltakspenger {{#if harSøktMedBarn}} og barnetillegg {{/if}}
+                    fra og med {{avslagFraOgMed}} til og med {{avslagTilOgMed}} fordi du har søkt
+                    om tiltakspenger{{#if harSøktMedBarn}} og barnetillegg{{/if}} for sent.
                 </p>
                 <p>
                     Tiltakspenger gis for opptil tre måneder før den måneden tiltaksdeltakeren søkte om
