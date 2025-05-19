@@ -23,12 +23,16 @@ spec:
       enabled: false
   liveness:
     path: internal/is_alive
-    initialDelay: 5
-    timeout: 10
+    initialDelay: 10
+    timeout: 1
+    periodSeconds: 5
+    failureThreshold: 30
   readiness:
     path: internal/is_ready
-    initialDelay: 5
-    timeout: 10
+    initialDelay: 10
+    timeout: 1
+    periodSeconds: 5
+    failureThreshold: 30
   prometheus:
     enabled: true
     path: /metrics
@@ -37,9 +41,11 @@ spec:
     max: {{ replicas }}
   resources:
     limits:
-      memory: 1024Mi
+      cpu: "1"
+      memory: 2048Mi
     requests:
-      memory: 512Mi
+      cpu: 300m
+      memory: 1024Mi
   observability:
     autoInstrumentation:
       enabled: true
