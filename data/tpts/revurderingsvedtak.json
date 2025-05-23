@@ -4,15 +4,16 @@
     "fornavn": "Planet",
     "etternavn": "Planetus"
   },
-  "datoForUtsending": "1. januar 2025",
   "saksnummer": "123456789",
-  "barnetillegg": false,
   "saksbehandlerNavn": "Kåre Kropp",
   "beslutterNavn": "Pelle Parafin",
   "kontor": "Nav Hvaler",
-  "virkningsperiodeFraDato": "1. januar 2025",
-  "virkningsperiodeTilDato": "31. desember 2025",
-  "valgtHjemmelTekst": ["du mottar en annen stønad til livsopphold. Deltakere som mottar andre stønader til livsopphold, har ikke rett til tiltakspenger og barnetillegg etter forskrift om tiltakspenger § 7."],
-  "tilleggstekst": "",
+  "fraDato": "01.01.2023",
+  "tilDato": "31.12.2023",
+  "barnetilleggTekst": "Du får barnetillegg for tre barn fra og med 01.01.2023 til og med 31.12.2023 og for to barn fra 01.01.2023 til 31.12.2023.",
+  "tiltakspengesats": 298,
+  "barnetilleggsats": 55,
+  "saksbehandlerVurdering": "lorem ipsum.",
+  "hjemlerTekst": "Lorem impsum §§ 1 første ledd.",
   "forhandsvisning": true
 }
