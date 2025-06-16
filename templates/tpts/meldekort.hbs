@@ -69,7 +69,7 @@
             width: 65%;
         }
 
-        td.ikkeRegistrert {
+        td.ikkeBesvart {
             background: #ECEEF0; /*--a-gray-100*/
             border-color: #AAB0BA; /*--a-gray-400*/
         }
@@ -240,17 +240,17 @@
                         <td class="statiskDag syktBarn">{{dag}}:</td>
                         <td class="statiskDag syktBarn"><b>Sykt barn eller syk barnepasser</b></td>
                     {{/eq}}
-                    {{#eq status "FRAVÆR_VELFERD_GODKJENT_AV_NAV"}}
+                    {{#eq status "FRAVÆR_GODKJENT_AV_NAV"}}
                         <td class="statiskDag annet">{{dag}}:</td>
                         <td class="statiskDag annet"><b>Fravær godkjent av Nav</b></td>
                     {{/eq}}
-                    {{#eq status "FRAVÆR_VELFERD_IKKE_GODKJENT_AV_NAV"}}
+                    {{#eq status "FRAVÆR_ANNET"}}
                         <td class="statiskDag ikkeDeltatt">{{dag}}:</td>
                         <td class="statiskDag ikkeDeltatt"><b>Annet fravær</b></td>
                     {{/eq}}
-                    {{#eq status "IKKE_REGISTRERT"}}
-                        <td class="statiskDag ikkeRegistrert">{{dag}}:</td>
-                        <td class="statiskDag ikkeRegistrert"><b>Ikke registrert</b></td>
+                    {{#eq status "IKKE_BESVART"}}
+                        <td class="statiskDag ikkeBesvart">{{dag}}:</td>
+                        <td class="statiskDag ikkeBesvart"><b>Ikke besvart</b></td>
                     {{/eq}}
                 </tr>
             {{/each}}
