@@ -1,0 +1,29 @@
+{
+  "personalia": {
+    "ident": "12345678901",
+    "fornavn": "Planet",
+    "etternavn": "Planetus"
+  },
+  "saksnummer": "123456789",
+  "saksbehandlerNavn": "Kåre Kropp",
+  "beslutterNavn": "Pelle Parafin",
+  "kontor": "Nav Hvaler",
+  "fraDato": "01.01.2023",
+  "tilDato": "31.12.2023",
+  "harBarnetillegg": true,
+  "introTekstMedBarnetillegg": "Du får tiltakspenger fra og med 10.03.25 til og med 10.05.25 fordi deltakelsen på arbeidsmarkedstiltaket er blitt forlenget. \nDu får barnetillegg for tre barn fra og med 10.03.25 til og med 10.04.25 og for to barn fra og med 11.04.25 til og med 10.05.25. ",
+  "satser": [
+    {
+      "år": 2024,
+      "ordinær": 285,
+      "barnetillegg": 53
+    },
+    {
+      "år": 2025,
+      "ordinær": 298,
+      "barnetillegg": 55
+    }
+  ],
+  "saksbehandlerVurdering": "lorem ipsum.",
+  "forhandsvisning": true
+}
