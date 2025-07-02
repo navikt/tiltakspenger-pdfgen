@@ -44,15 +44,15 @@
     },
     {
       "dag": "Tirsdag 8. oktober",
-      "status": "FRAVÆR_SYK"
+      "status": "DELTATT_UTEN_LØNN_I_TILTAKET"
     },
     {
       "dag": "Onsdag 9. oktober",
-      "status": "FRAVÆR_SYK"
+      "status": "DELTATT_MED_LØNN_I_TILTAKET"
     },
     {
       "dag": "Torsdag 10. oktober",
-      "status": "FRAVÆR_SYK"
+      "status": "DELTATT_MED_LØNN_I_TILTAKET"
     },
     {
       "dag": "Fredag 11. oktober",
