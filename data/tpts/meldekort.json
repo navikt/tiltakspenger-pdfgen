@@ -40,11 +40,11 @@
     },
     {
       "dag": "Mandag 7. oktober",
-      "status": "DELTATT_UTEN_LØNN_I_TILTAKET"
+      "status": "IKKE_TILTAKSDAG"
     },
     {
       "dag": "Tirsdag 8. oktober",
-      "status": "DELTATT_UTEN_LØNN_I_TILTAKET"
+      "status": "IKKE_RETT_TIL_TILTAKSPENGER"
     },
     {
       "dag": "Onsdag 9. oktober",
