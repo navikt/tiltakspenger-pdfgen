@@ -1,6 +1,6 @@
 {{#> tpts/partials/innvilgelseBase}}
     <section>
-        <h1 class="h1UtenMarginBottom">Du har fått innvilget tiltakspenger.</h1>
+        <h1 class="h1UtenMarginBottom">Vedtaket ditt om tiltakspenger er endret.</h1>
 
         {{#if harBarnetillegg}}
             <p>
@@ -8,30 +8,31 @@
             </p>
         {{else}}
             <p>
-                Du får tiltakspenger fra og med {{fraDato}} til og med {{tilDato}} fordi deltakelsen på arbeidsmarkedstiltaket er blitt forlenget.
+                Du får tiltakspenger fra og med {{fraDato}} til og med {{tilDato}}.
             </p>
         {{/if}}
 
         <p>
             {{#each satser}}
-                <span>Tiltakspengene for {{år}} er {{currency_no ordinær true}} kroner per dag.</span>
+                <span>Tiltakspengene for {{år}} er {{currency_no ordinær true}} kroner per dag du deltar i arbeidsmarkedstiltak.</span>
             {{/each}}
         </p>
 
         <p>
             {{#if harBarnetillegg}}
                 {{#each satser}}
-                    <span>Barnetillegget for {{år}} er {{currency_no barnetillegg true}} kroner per barn, per dag.</span>
+                    <span>Barnetillegget for {{år}} er {{currency_no barnetillegg true}} kroner per barn per dag du deltar i arbeidsmarkedstiltak.</span>
                 {{/each}}
             {{/if}}
         </p>
 
         <p>
             For å få tiltakspenger må du gjennomføre avtalt aktivitet og delta hele den avtalte tiden i tiltaket ditt.
-            <br/>
+        </p>
+
+        <p>
             Du har ikke rett på tiltakspenger de dagene du ikke gjennomfører avtalt aktivitet, eller de dagene du har
-            lønnet arbeid som en del av oppfølgingen i tiltaket ditt. Vedtaket er gjort etter arbeidsmarkedsloven § 13
-            første ledd og tiltakspengeforskriften §§ 2, 3 og 6.
+            lønnet arbeid som en del av oppfølgingen i tiltaket ditt.
         </p>
 
         {{#if saksbehandlerVurdering}}
