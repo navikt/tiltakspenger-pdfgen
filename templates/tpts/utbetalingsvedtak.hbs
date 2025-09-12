@@ -150,42 +150,7 @@
     <h1 class="tittel">Utbetalingsvedtak</h1>
 {{/if}}
 
-<h2>{{meldekortPeriode.fom}} - {{meldekortPeriode.tom}}</h2>
-
-<b>Fødselsnummer:</b> {{fødselsnummer}}
-<br/>
-<b>Saksnummer:</b> {{saksnummer}}
-<br/>
-<b>Iverksatt:</b> {{iverksattTidspunkt}}
-<br/>
-<b>MeldekortId:</b> {{meldekortId}}
-<br/>
-{{#with saksbehandler}}
-    <b>Saksbehandler:</b> {{navn}}
-    <br/>
-{{/with}}
-{{#with beslutter}}
-    <b>Beslutter:</b> {{navn}}
-    <br/>
-{{/with}}
-
-{{#if tiltak}}
-    <h2>Tiltak</h2>
-    {{#each tiltak}}
-        <div class="informasjon">
-            <b>Tiltaksnavn:</b> {{tiltakstypenavn}}
-            <br/>
-            <b>Tiltakstype:</b> {{tiltakstype}}
-            <br/>
-            <b>DeltagelseId:</b> {{eksternDeltagelseId}}
-            <br/>
-            <b>GjennomføringId:</b> {{eksternGjennomføringId}}
-            <br/>
-        </div>
-        <br/>
-    {{/each}}
-{{/if}}
-
+<p>Totalt utbetalt for perioden {{meldekortPeriode.fom}} - {{meldekortPeriode.tom}}: <b>{{totaltBelop}} kroner</b></p>
 {{#with sammenligningAvBeregninger}}
     {{#if korrigering}}
         {{#if begrunnelse}}
@@ -200,7 +165,7 @@
             {{#gt totalDifferanse 0}}<span>Økning</span>{{/gt}}
             {{#lt totalDifferanse 0}}<span>Reduksjon</span>{{/lt}}
             {{#eq totalDifferanse 0}}<span>Ingen endring</span>{{/eq}}
-            <span>{{totalDifferanse}}kr</span>
+            <span>{{totalDifferanse}} kroner</span>
         </div>
     {{/if}}
     {{#each meldeperioder}}
@@ -269,7 +234,7 @@
                                 <span class="column-spacing"><b>{{prosent.gjeldende}}%</b></span>
                             </td>
                         {{else}}
-                            <td class="endret">{{prosent.gjeldende}}</td>
+                            <td class="endret">{{prosent.gjeldende}}%</td>
                         {{/if}}
                     </tr>
                 {{else}}
@@ -327,5 +292,24 @@
         </table>
     {{/each}}
 {{/with}}
+<br/>
+
+<b>Iverksatt:</b> {{iverksattTidspunkt}}
+<br/>
+{{#with saksbehandler}}
+    <b>Saksbehandlere:</b> {{navn}}{{#with beslutter}}, {{navn}}{{/with}}
+    <br/>
+{{/with}}
+
+{{#if tiltak}}
+    <h4>Tiltak</h4>
+    {{#each tiltak}}
+        {{tiltakstypenavn}}
+        <br/>
+    {{/each}}
+{{/if}}
+
+{{> tpts/partials/klagerett}}
+{{> tpts/partials/sporsmal}}
 </body>
 </html>
