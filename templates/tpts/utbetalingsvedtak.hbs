@@ -149,7 +149,10 @@
 {{else}}
     <h1 class="tittel">Utbetalingsvedtak</h1>
 {{/if}}
-
+<b>Fødselsnummer:</b> {{fødselsnummer}}
+<br/>
+<b>Saksnummer:</b> {{saksnummer}}
+<br/>
 <p>Totalt utbetalt for perioden {{meldekortPeriode.fom}} - {{meldekortPeriode.tom}}: <b>{{totaltBelop}} kroner</b></p>
 {{#with sammenligningAvBeregninger}}
     {{#if korrigering}}
