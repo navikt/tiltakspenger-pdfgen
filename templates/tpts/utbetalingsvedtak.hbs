@@ -155,13 +155,13 @@
 <br/>
 <p>Totalt utbetalt for perioden {{meldekortPeriode.fom}} - {{meldekortPeriode.tom}}: <b>{{totaltBelop}} kroner</b></p>
 {{#with sammenligningAvBeregninger}}
+    {{#if begrunnelse}}
+        <div class="readMore">
+            <h3>Begrunnelse for korrigering</h3>
+            <p>{{begrunnelse}}</p>
+        </div>
+    {{/if}}
     {{#if korrigering}}
-        {{#if begrunnelse}}
-            <div class="readMore">
-                <h3>Begrunnelse for korrigering</h3>
-                <p>{{begrunnelse}}</p>
-            </div>
-        {{/if}}
         <h3>Utfall av korrigeringen</h3>
         <div class="total-differanse">
             <span>Resultat</span>
