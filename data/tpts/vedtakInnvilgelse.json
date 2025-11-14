@@ -27,5 +27,6 @@
   "rammevedtakFraDato": "1. januar 2024",
   "rammevedtakTilDato": "31. desember 2024",
   "tilleggstekst": "",
-  "forhandsvisning": true
+  "forhandsvisning": true,
+  "antallDagerTekst": "4 dager per uke"
 }
