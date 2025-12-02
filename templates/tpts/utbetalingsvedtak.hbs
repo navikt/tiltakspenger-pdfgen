@@ -154,13 +154,13 @@
 <b>Saksnummer:</b> {{saksnummer}}
 <br/>
 <p>Totalt utbetalt for perioden {{meldekortPeriode.fom}} - {{meldekortPeriode.tom}}: <b>{{totaltBelop}} kroner</b></p>
+{{#if brevTekst}}
+    <div class="readMore">
+        <h3>Begrunnelse</h3>
+        <p>{{brevTekst}}</p>
+    </div>
+{{/if}}
 {{#with sammenligningAvBeregninger}}
-    {{#if begrunnelse}}
-        <div class="readMore">
-            <h3>Begrunnelse</h3>
-            <p>{{begrunnelse}}</p>
-        </div>
-    {{/if}}
     {{#if korrigering}}
         <h3>Utfall av korrigeringen</h3>
         <div class="total-differanse">
@@ -297,7 +297,11 @@
 {{/with}}
 <br/>
 
-<b>Iverksatt:</b> {{iverksattTidspunkt}}
+
+{{#if iverksattTidspunkt}}
+    <b>Iverksatt:</b> {{iverksattTidspunkt}}
+{{/if}}
+
 <br/>
 {{#with saksbehandler}}
     <b>Saksbehandlere:</b> {{navn}}{{#with beslutter}}, {{navn}}{{/with}}

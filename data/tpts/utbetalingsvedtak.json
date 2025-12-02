@@ -30,6 +30,7 @@
   "totaltBelop": 4508,
   "forhandsvisning": true,
   "korrigering": true,
+  "brevTekst": "Bruker hadde registrert at han var syk, men deltok på tiltak disse dagene.",
   "sammenligningAvBeregninger": {
     "meldeperioder": [
       {
@@ -719,7 +720,6 @@
         ]
       }
     ],
-    "begrunnelse": "Bruker hadde registrert at han var syk, men deltok på tiltak disse dagene.",
     "totalDifferanse": 67
   }
 }
