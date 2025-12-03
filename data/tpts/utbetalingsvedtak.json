@@ -6,9 +6,11 @@
     "tom": "19. februar 2023"
   },
   "saksbehandler": {
+    "type": "AUTOMATISK",
     "navn": "F_Z994380 E_Z994380"
   },
   "beslutter": {
+    "type": "MANUELL",
     "navn": "F_Z994127 E_Z994127"
   },
   "tiltak": [
