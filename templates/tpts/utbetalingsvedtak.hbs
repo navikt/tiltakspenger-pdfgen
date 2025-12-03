@@ -132,6 +132,10 @@
             white-space: nowrap;
             margin-right: 1.75rem;
         }
+
+        .placeholder {
+            color: red;
+        }
     </style>
     {{#if korrigering}}
         <title>Korrigert utbetalingsvedtak</title>
@@ -297,16 +301,18 @@
 {{/with}}
 <br/>
 
-
 {{#if iverksattTidspunkt}}
     <b>Iverksatt:</b> {{iverksattTidspunkt}}
 {{/if}}
-
 <br/>
-{{#with saksbehandler}}
-    <b>Saksbehandlere:</b> {{navn}}{{#with beslutter}}, {{navn}}{{/with}}
-    <br/>
-{{/with}}
+
+
+<div>
+    <b>Saksbehandlere:</b>
+    {{#if saksbehandler}} {{saksbehandler.navn}} {{else}}
+        <span class="placeholder">ingen saksbehandler tildelt</span>{{/if}}
+    {{#if beslutter}}- {{beslutter.navn}} {{else}}<span class="placeholder">- ingen beslutter tildelt</span>{{/if}}
+</div>
 
 {{#if tiltak}}
     <h4>Tiltak</h4>
