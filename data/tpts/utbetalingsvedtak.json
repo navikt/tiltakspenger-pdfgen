@@ -6,9 +6,11 @@
     "tom": "19. februar 2023"
   },
   "saksbehandler": {
+    "type": "AUTOMATISK",
     "navn": "F_Z994380 E_Z994380"
   },
   "beslutter": {
+    "type": "MANUELL",
     "navn": "F_Z994127 E_Z994127"
   },
   "tiltak": [
@@ -30,6 +32,7 @@
   "totaltBelop": 4508,
   "forhandsvisning": true,
   "korrigering": true,
+  "brevTekst": "Bruker hadde registrert at han var syk, men deltok på tiltak disse dagene.",
   "sammenligningAvBeregninger": {
     "meldeperioder": [
       {
@@ -719,7 +722,6 @@
         ]
       }
     ],
-    "begrunnelse": "Bruker hadde registrert at han var syk, men deltok på tiltak disse dagene.",
     "totalDifferanse": 67
   }
 }

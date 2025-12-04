@@ -132,6 +132,10 @@
             white-space: nowrap;
             margin-right: 1.75rem;
         }
+
+        .placeholder {
+            color: red;
+        }
     </style>
     {{#if korrigering}}
         <title>Korrigert utbetalingsvedtak</title>
@@ -154,13 +158,13 @@
 <b>Saksnummer:</b> {{saksnummer}}
 <br/>
 <p>Totalt utbetalt for perioden {{meldekortPeriode.fom}} - {{meldekortPeriode.tom}}: <b>{{totaltBelop}} kroner</b></p>
+{{#if brevTekst}}
+    <div class="readMore">
+        <h3>Slik har vi vurdert saken din</h3>
+        <p>{{brevTekst}}</p>
+    </div>
+{{/if}}
 {{#with sammenligningAvBeregninger}}
-    {{#if begrunnelse}}
-        <div class="readMore">
-            <h3>Begrunnelse</h3>
-            <p>{{begrunnelse}}</p>
-        </div>
-    {{/if}}
     {{#if korrigering}}
         <h3>Utfall av korrigeringen</h3>
         <div class="total-differanse">
@@ -297,12 +301,41 @@
 {{/with}}
 <br/>
 
-<b>Iverksatt:</b> {{iverksattTidspunkt}}
+{{#if iverksattTidspunkt}}
+    <b>Iverksatt:</b> {{iverksattTidspunkt}}
+{{/if}}
 <br/>
-{{#with saksbehandler}}
-    <b>Saksbehandlere:</b> {{navn}}{{#with beslutter}}, {{navn}}{{/with}}
-    <br/>
-{{/with}}
+
+<div>
+    <b>Saksbehandlere:</b>
+    {{#if saksbehandler}}
+        {{#eq saksbehandler.type "MANUELL"}}
+            {{saksbehandler.navn}}
+        {{/eq}}
+    {{else}}
+        <span class="placeholder">ingen saksbehandler tildelt</span>
+    {{/if}}
+
+    {{#if beslutter}}
+        {{#eq beslutter.type "MANUELL"}}
+            {{#if saksbehandler}}
+                {{#eq saksbehandler.type "MANUELL"}}
+                    -
+                {{/eq}}
+            {{/if}}
+            {{beslutter.navn}}
+        {{/eq}}
+    {{else}}
+        <span class="placeholder">
+            {{#if saksbehandler}}
+                {{#eq saksbehandler.type "MANUELL"}}
+                    -
+                {{/eq}}
+            {{/if}}
+            ingen beslutter tildelt
+        </span>
+    {{/if}}
+</div>
 
 {{#if tiltak}}
     <h4>Tiltak</h4>
