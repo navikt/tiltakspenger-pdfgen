@@ -157,148 +157,167 @@
 <br/>
 <b>Saksnummer:</b> {{saksnummer}}
 <br/>
-<p>Totalt utbetalt for perioden {{meldekortPeriode.fom}} - {{meldekortPeriode.tom}}: <b>{{totaltBelop}} kroner</b></p>
+
+<p>
+    Totalt utbetalt for perioden
+    {{#if meldekortPeriode}}
+        <span>{{meldekortPeriode.fom}} - {{meldekortPeriode.tom}}</span>
+    {{else}}
+        <span class="placeholder">beregningsperiode finnes ikke</span>
+    {{/if}}:
+    {{#if totaltBelop}} <b>{{totaltBelop}} kroner</b>
+    {{else}}
+        <span class="placeholder">totalsbeløp finnes ikke</span>
+    {{/if}}
+</p>
+
 {{#if brevTekst}}
     <div class="readMore">
         <h3>Slik har vi vurdert saken din</h3>
         <p>{{brevTekst}}</p>
     </div>
 {{/if}}
-{{#with sammenligningAvBeregninger}}
-    {{#if korrigering}}
-        <h3>Utfall av korrigeringen</h3>
-        <div class="total-differanse">
-            <span>Resultat</span>
-            {{#gt totalDifferanse 0}}<span>Økning</span>{{/gt}}
-            {{#lt totalDifferanse 0}}<span>Reduksjon</span>{{/lt}}
-            {{#eq totalDifferanse 0}}<span>Ingen endring</span>{{/eq}}
-            <span>{{totalDifferanse}} kroner</span>
-        </div>
-    {{/if}}
-    {{#each meldeperioder}}
-        <h2>{{tittel}}</h2>
-        <table>
-            <thead>
-            <tr>
-                <th></th>
-                <th>Dato</th>
-                <th>Status</th>
-                <th></th>
-                <th>Beløp</th>
-                {{#if harBarnetillegg}}
-                    <th>Barnetillegg</th>
-                {{/if}}
-                <th>Prosent</th>
-            </tr>
-            </thead>
-            <tbody>
-            {{#each dager}}
-                <!-- harEndretSeg for hele raden, kalkulert av konsument. Dette for å kunne markere raden med en annen farge, derav dupliseringen -->
-                {{#if harEndretSeg}}
-                    <tr>
-                        <td class="endret">
-                            {{#if status.harEndretSeg}}
-                                <img alt="Korrigert" class="korrigert-ikon" src="{{image "Pencil.svg"}}"/>
-                            {{/if}}
-                        </td>
-                        <td class="endret">{{dato}}</td>
 
-                        {{#if status.harEndretSeg}}
-                            <td class="status endret">{{status.forrige}}</td>
-                            <td class="status endret"><b>{{status.gjeldende}}</b></td>
-                        {{else}}
-                            <td class="status endret">{{status.gjeldende}}</td>
-                            <td class="status endret"/>
-                        {{/if}}
-
-                        <!-- Beløp, barnetillegg og prosent samles i samme kolonne for å spare plass ettersom headingen tvinger en gitt kolonnebredde -->
-                        <!-- Det samme er ikke gjort for status for det er mye høyere sannsynlighet for line wrap der -->
-                        {{#if beløp.harEndretSeg}}
+{{#if sammenligningAvBeregninger}}
+    {{#with sammenligningAvBeregninger}}
+        {{#if korrigering}}
+            <h3>Utfall av korrigeringen</h3>
+            <div class="total-differanse">
+                <span>Resultat</span>
+                {{#gt totalDifferanse 0}}<span>Økning</span>{{/gt}}
+                {{#lt totalDifferanse 0}}<span>Reduksjon</span>{{/lt}}
+                {{#eq totalDifferanse 0}}<span>Ingen endring</span>{{/eq}}
+                <span>{{totalDifferanse}} kroner</span>
+            </div>
+        {{/if}}
+        {{#each meldeperioder}}
+            <h2>{{tittel}}</h2>
+            <table>
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Dato</th>
+                    <th>Status</th>
+                    <th></th>
+                    <th>Beløp</th>
+                    {{#if harBarnetillegg}}
+                        <th>Barnetillegg</th>
+                    {{/if}}
+                    <th>Prosent</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#each dager}}
+                    <!-- harEndretSeg for hele raden, kalkulert av konsument. Dette for å kunne markere raden med en annen farge, derav dupliseringen -->
+                    {{#if harEndretSeg}}
+                        <tr>
                             <td class="endret">
-                                {{beløp.forrige}}
-                                <span class="column-spacing"><b>{{beløp.gjeldende}}</b></span>
+                                {{#if status.harEndretSeg}}
+                                    <img alt="Korrigert" class="korrigert-ikon" src="{{image "Pencil.svg"}}"/>
+                                {{/if}}
                             </td>
-                        {{else}}
-                            <td class="endret">{{beløp.gjeldende}}</td>
-                        {{/if}}
+                            <td class="endret">{{dato}}</td>
 
-                        <!-- Nested if-statement hvor innerste if har en else gjør at dersom første if-statement er feil så hopper den feilaktig til elsen til det innerste if-statementet. Bruker dermed eq -->
-                        {{#if harBarnetillegg}}
-                            {{#eq barnetillegg.harEndretSeg true}}
+                            {{#if status.harEndretSeg}}
+                                <td class="status endret">{{status.forrige}}</td>
+                                <td class="status endret"><b>{{status.gjeldende}}</b></td>
+                            {{else}}
+                                <td class="status endret">{{status.gjeldende}}</td>
+                                <td class="status endret"/>
+                            {{/if}}
+
+                            <!-- Beløp, barnetillegg og prosent samles i samme kolonne for å spare plass ettersom headingen tvinger en gitt kolonnebredde -->
+                            <!-- Det samme er ikke gjort for status for det er mye høyere sannsynlighet for line wrap der -->
+                            {{#if beløp.harEndretSeg}}
                                 <td class="endret">
-                                    {{barnetillegg.forrige}}
-                                    <span class="column-spacing"><b>{{barnetillegg.gjeldende}}</b></span>
+                                    {{beløp.forrige}}
+                                    <span class="column-spacing"><b>{{beløp.gjeldende}}</b></span>
                                 </td>
-                            {{/eq}}
-                            {{#eq barnetillegg.harEndretSeg false}}
-                                <td class="endret">{{barnetillegg.gjeldende}}</td>
-                            {{/eq}}
-                        {{/if}}
-
-                        {{#if prosent.harEndretSeg}}
-                            <td class="endret">
-                                {{prosent.forrige}}%
-                                <span class="column-spacing"><b>{{prosent.gjeldende}}%</b></span>
-                            </td>
-                        {{else}}
-                            <td class="endret">{{prosent.gjeldende}}%</td>
-                        {{/if}}
-                    </tr>
-                {{else}}
-                    <tr>
-                        <td>
-                            {{#if status.harEndretSeg}}
-                                <img alt="Korrigert" class="korrigert-ikon" src="{{image "Pencil.svg"}}"/>
+                            {{else}}
+                                <td class="endret">{{beløp.gjeldende}}</td>
                             {{/if}}
-                        </td>
-                        <td>{{dato}}</td>
-                        {{#if status.harEndretSeg}}
-                            <td class="status">{{status.forrige}}</td>
-                            <td class="status"><b>{{status.gjeldende}}</b></td>
-                        {{else}}
-                            <td class="status">{{status.gjeldende}}</td>
-                            <td class="status"/>
-                        {{/if}}
 
-                        <!-- Beløp, barnetillegg og prosent samles i samme kolonne for å spare plass ettersom headingen tvinger en gitt kolonnebredde -->
-                        <!-- Det samme er ikke gjort for status for det er mye høyere sannsynlighet for line wrap der -->
-                        {{#if beløp.harEndretSeg}}
-                            <td>
-                                {{beløp.forrige}}
-                                <span class="column-spacing"><b>{{beløp.gjeldende}}</b></span>
-                            </td>
-                        {{else}}
-                            <td>{{beløp.gjeldende}}</td>
-                        {{/if}}
+                            <!-- Nested if-statement hvor innerste if har en else gjør at dersom første if-statement er feil så hopper den feilaktig til elsen til det innerste if-statementet. Bruker dermed eq -->
+                            {{#if harBarnetillegg}}
+                                {{#eq barnetillegg.harEndretSeg true}}
+                                    <td class="endret">
+                                        {{barnetillegg.forrige}}
+                                        <span class="column-spacing"><b>{{barnetillegg.gjeldende}}</b></span>
+                                    </td>
+                                {{/eq}}
+                                {{#eq barnetillegg.harEndretSeg false}}
+                                    <td class="endret">{{barnetillegg.gjeldende}}</td>
+                                {{/eq}}
+                            {{/if}}
 
-                        <!-- Nested if-statement hvor innerste if har en else gjør at dersom første if-statement er feil så hopper den feilaktig til elsen til det innerste if-statementet. Bruker dermed eq -->
-                        {{#if harBarnetillegg}}
-                            {{#eq barnetillegg.harEndretSeg true}}
-                                <td>
-                                    {{barnetillegg.forrige}}
-                                    <span class="column-spacing"><b>{{barnetillegg.gjeldende}}</b></span>
+                            {{#if prosent.harEndretSeg}}
+                                <td class="endret">
+                                    {{prosent.forrige}}%
+                                    <span class="column-spacing"><b>{{prosent.gjeldende}}%</b></span>
                                 </td>
-                            {{/eq}}
-                            {{#eq barnetillegg.harEndretSeg false}}
-                                <td>{{barnetillegg.gjeldende}}</td>
-                            {{/eq}}
-                        {{/if}}
-
-                        {{#if prosent.harEndretSeg}}
+                            {{else}}
+                                <td class="endret">{{prosent.gjeldende}}%</td>
+                            {{/if}}
+                        </tr>
+                    {{else}}
+                        <tr>
                             <td>
-                                {{prosent.forrige}}%
-                                <span class="column-spacing"><b>{{prosent.gjeldende}}%</b></span>
+                                {{#if status.harEndretSeg}}
+                                    <img alt="Korrigert" class="korrigert-ikon" src="{{image "Pencil.svg"}}"/>
+                                {{/if}}
                             </td>
-                        {{else}}
-                            <td>{{prosent.gjeldende}}%</td>
-                        {{/if}}
-                    </tr>
-                {{/if}}
-            {{/each}}
-            </tbody>
-        </table>
-    {{/each}}
-{{/with}}
+                            <td>{{dato}}</td>
+                            {{#if status.harEndretSeg}}
+                                <td class="status">{{status.forrige}}</td>
+                                <td class="status"><b>{{status.gjeldende}}</b></td>
+                            {{else}}
+                                <td class="status">{{status.gjeldende}}</td>
+                                <td class="status"/>
+                            {{/if}}
+
+                            <!-- Beløp, barnetillegg og prosent samles i samme kolonne for å spare plass ettersom headingen tvinger en gitt kolonnebredde -->
+                            <!-- Det samme er ikke gjort for status for det er mye høyere sannsynlighet for line wrap der -->
+                            {{#if beløp.harEndretSeg}}
+                                <td>
+                                    {{beløp.forrige}}
+                                    <span class="column-spacing"><b>{{beløp.gjeldende}}</b></span>
+                                </td>
+                            {{else}}
+                                <td>{{beløp.gjeldende}}</td>
+                            {{/if}}
+
+                            <!-- Nested if-statement hvor innerste if har en else gjør at dersom første if-statement er feil så hopper den feilaktig til elsen til det innerste if-statementet. Bruker dermed eq -->
+                            {{#if harBarnetillegg}}
+                                {{#eq barnetillegg.harEndretSeg true}}
+                                    <td>
+                                        {{barnetillegg.forrige}}
+                                        <span class="column-spacing"><b>{{barnetillegg.gjeldende}}</b></span>
+                                    </td>
+                                {{/eq}}
+                                {{#eq barnetillegg.harEndretSeg false}}
+                                    <td>{{barnetillegg.gjeldende}}</td>
+                                {{/eq}}
+                            {{/if}}
+
+                            {{#if prosent.harEndretSeg}}
+                                <td>
+                                    {{prosent.forrige}}%
+                                    <span class="column-spacing"><b>{{prosent.gjeldende}}%</b></span>
+                                </td>
+                            {{else}}
+                                <td>{{prosent.gjeldende}}%</td>
+                            {{/if}}
+                        </tr>
+                    {{/if}}
+                {{/each}}
+                </tbody>
+            </table>
+        {{/each}}
+    {{/with}}
+{{else}}
+    <span class="placeholder">Beregning finnes ikke</span>
+{{/if}}
+
 <br/>
 
 {{#if iverksattTidspunkt}}
