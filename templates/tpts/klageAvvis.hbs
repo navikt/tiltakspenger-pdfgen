@@ -1,0 +1,11 @@
+{{#> tpts/partials/base}}
+    <section>
+        <h1>
+            Vi har avvist klagen din på vedtak om tiltakspenger
+        </h1>
+        {{#each tilleggstekst}}
+            <h2>{{this.tittel}}</h2>
+            <p>{{this.tekst}}</p>
+        {{/each}}
+    </section>
+{{/tpts/partials/base}}
