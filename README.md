@@ -29,21 +29,31 @@ f.eks:
 ```
 {
   "personalia": {
-    "ident": "13548579854",
-    "fornavn": "Planet",
-    "etternavn": "Planetus"
+    "ident": "50485211165",
+    "fornavn": "Ola",
+    "etternavn": "Nordmann"
   },
-  "tiltaksnavn": "(tiltaksnavn)",
-  "rammevedtakFraDato": "2025-01-01",
-  "rammevedtakTilDato": "2025-02-02",
-  "saksnummer": "123456",
-  "barnetilegg": false,
-  "saksbehandlerNavn": "(saksbehandler)",
-  "beslutterNavn": "(beslutter)",
-  "kontor": "(kontor)",
-  "datoForUtsending": "2029-05-10",
-  "sats": "298",
-  "satsBarn": "55"
+  "saksnummer": "202501301001",
+  "saksbehandlerNavn": "Saksbehandler Navn",
+  "beslutterNavn": "Saksbehandler Navn",
+  "kontor": "Nav Tiltakspenger",
+  "harBarnetillegg": true,
+  "introTekst": "Du får tiltakspenger fra og med 1. november 2024 til og med 28. februar 2025 for fem dager per uke fordi du deltar på arbeidsmarkedstiltak. Du får barnetillegg for to barn fra og med 1. november 2024 til og med 28. februar 2025.",
+  "satser": [
+    {
+      "år": 2024,
+      "ordinær": 285,
+      "barnetillegg": 53
+    },
+    {
+      "år": 2025,
+      "ordinær": 298,
+      "barnetillegg": 55
+    }
+  ],
+  "tilleggstekst": "Dette er en vurdering",
+  "forhandsvisning": true,
+  "datoForUtsending": "31. januar 2025"
 }
 ```
 

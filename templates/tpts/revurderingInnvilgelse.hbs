@@ -2,15 +2,17 @@
     <section>
         <h1>Vedtaket ditt om tiltakspenger er endret</h1>
 
-        {{#if harBarnetillegg}}
-            <p>
-                {{breaklines introTekstMedBarnetillegg}}
-            </p>
-        {{else}}
-            <p>
-                Du får tiltakspenger fra og med {{fraDato}} til og med {{tilDato}} {{#if antallDagerTekst}} for {{antallDagerTekst}} {{/if}}.
-            </p>
-        {{/if}}
+        <p>
+            {{#if introTekst}}
+                {{introTekst}}
+            {{else}}
+                {{#if harBarnetillegg}}
+                    {{breaklines introTekstMedBarnetillegg}}
+                {{else}}
+                    Du får tiltakspenger fra og med {{fraDato}} til og med {{tilDato}}{{#if antallDagerTekst}} for {{antallDagerTekst}}{{/if}}.
+                {{/if}}
+            {{/if}}
+        </p>
 
         <p>
             {{#each satser}}
