@@ -1,16 +1,15 @@
 {
   "personalia": {
-    "ident": "12345678901",
-    "fornavn": "Planet",
-    "etternavn": "Planetus"
+    "ident": "50485211165",
+    "fornavn": "Ola",
+    "etternavn": "Nordmann"
   },
-  "datoForUtsending": "3. august 2023",
-  "saksnummer": "123456789",
-  "barnetillegg": true,
-  "barnetilleggTekst": "Du får barnetillegg for to barn fra 1. januar 2024 til og med 10. januar 2024 og for ett barn fra 15. januar 2024 til og med 20. januar 2024.",
-  "saksbehandlerNavn": "Kåre Kropp",
-  "beslutterNavn": "Pelle Parafin",
-  "kontor": "Nav Tiltak Øst Viken",
+  "saksnummer": "202501301001",
+  "saksbehandlerNavn": "Saksbehandler Navn",
+  "beslutterNavn": "Saksbehandler Navn",
+  "kontor": "Nav Tiltakspenger",
+  "harBarnetillegg": true,
+  "introTekst": "Du får tiltakspenger fra og med 1. november 2024 til og med 28. februar 2025 for fem dager per uke fordi du deltar på arbeidsmarkedstiltak. Du får barnetillegg for to barn fra og med 1. november 2024 til og med 28. februar 2025.",
   "satser": [
     {
       "år": 2024,
@@ -23,10 +22,7 @@
       "barnetillegg": 55
     }
   ],
-  "satsBarn": 55,
-  "rammevedtakFraDato": "1. januar 2024",
-  "rammevedtakTilDato": "31. desember 2024",
-  "tilleggstekst": "",
+  "tilleggstekst": "Dette er en vurdering",
   "forhandsvisning": true,
-  "antallDagerTekst": "4 dager per uke"
+  "datoForUtsending": "31. januar 2025"
 }

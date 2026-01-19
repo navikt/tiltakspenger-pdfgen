@@ -3,10 +3,14 @@
         <h1>Du har fått innvilget tiltakspenger</h1>
 
         <h2>Vedtak</h2>
-        <p>Du får tiltakspenger fra og med {{rammevedtakFraDato}} til og med {{rammevedtakTilDato}}
-            {{#if antallDagerTekst}} for {{antallDagerTekst}} {{/if}} fordi du deltar på
-            arbeidsmarkedstiltak. {{#if barnetillegg}} {{barnetilleggTekst}} {{/if}}</p>
-
+        <p>
+            {{#if introTekst}}
+                {{introTekst}}
+            {{else}}
+                Du får tiltakspenger fra og med {{rammevedtakFraDato}} til og med {{rammevedtakTilDato}}
+                {{#if antallDagerTekst}} for {{antallDagerTekst}} {{/if}} fordi du deltar på
+                arbeidsmarkedstiltak. {{#if barnetillegg}} {{barnetilleggTekst}} {{/if}}</p>
+            {{/if}}
         <p>
             {{#each satser}}
                 <span>Tiltakspengene for {{år}} er {{currency_no ordinær true}} kroner per dag.</span>
