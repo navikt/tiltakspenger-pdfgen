@@ -3,15 +3,7 @@
         <h1>Vedtaket ditt om tiltakspenger er endret</h1>
 
         <p>
-            {{#if introTekst}}
-                {{introTekst}}
-            {{else}}
-                {{#if harBarnetillegg}}
-                    {{breaklines introTekstMedBarnetillegg}}
-                {{else}}
-                    Du får tiltakspenger fra og med {{fraDato}} til og med {{tilDato}}{{#if antallDagerTekst}} for {{antallDagerTekst}}{{/if}}.
-                {{/if}}
-            {{/if}}
+            {{introTekst}}
         </p>
 
         <p>

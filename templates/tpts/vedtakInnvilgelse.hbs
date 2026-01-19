@@ -4,13 +4,9 @@
 
         <h2>Vedtak</h2>
         <p>
-            {{#if introTekst}}
-                {{introTekst}}
-            {{else}}
-                Du får tiltakspenger fra og med {{rammevedtakFraDato}} til og med {{rammevedtakTilDato}}
-                {{#if antallDagerTekst}} for {{antallDagerTekst}} {{/if}} fordi du deltar på
-                arbeidsmarkedstiltak. {{#if barnetillegg}} {{barnetilleggTekst}} {{/if}}</p>
-            {{/if}}
+            {{introTekst}}
+        </p>
+
         <p>
             {{#each satser}}
                 <span>Tiltakspengene for {{år}} er {{currency_no ordinær true}} kroner per dag.</span>
