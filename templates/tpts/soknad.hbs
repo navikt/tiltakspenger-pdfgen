@@ -55,10 +55,14 @@
         <div class="common-section">
             <h3>Tiltak</h3>
             <div class="svar">
-                {{#if spørsmålsbesvarelser.tiltak.arrangør}}
-                    <p>{{spørsmålsbesvarelser.tiltak.typeNavn}} - {{spørsmålsbesvarelser.tiltak.arrangør}}</p>
+                {{#if spørsmålsbesvarelser.tiltak.visningsnavn}}
+                    <p>{{spørsmålsbesvarelser.tiltak.visningsnavn}}</p>
                 {{else}}
-                    <p>{{spørsmålsbesvarelser.tiltak.typeNavn}}</p>
+                    {{#if spørsmålsbesvarelser.tiltak.arrangør}}
+                        <p>{{spørsmålsbesvarelser.tiltak.typeNavn}} - {{spørsmålsbesvarelser.tiltak.arrangør}}</p>
+                    {{else}}
+                        <p>{{spørsmålsbesvarelser.tiltak.typeNavn}}</p>
+                    {{/if}}
                 {{/if}}
                 <ul>
                     <li>

@@ -42,7 +42,8 @@
       "periode": {
         "fra": "2024-01-01",
         "til": "2024-01-02"
-      }
+      },
+      "visningsnavn": "Arbeidstrening hos Testarrangør"
     },
     "pensjonsordning": {
       "utbetaler": "Test",
