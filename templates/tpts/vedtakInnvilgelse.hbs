@@ -13,13 +13,14 @@
             {{/each}}
         </p>
 
-        <p>
-            {{#if barnetillegg}}
+        {{#if harBarnetillegg}}
+            <p>
                 {{#each satser}}
                     <span>Barnetillegget for {{år}} er {{currency_no barnetillegg true}} kroner per barn, per dag.</span>
                 {{/each}}
-            {{/if}}
-        </p>
+            </p>
+        {{/if}}
+
         <p>For å få tiltakspenger må du gjennomføre avtalt aktivitet og delta hele den avtalte tiden i tiltaket
             ditt.</p>
 
