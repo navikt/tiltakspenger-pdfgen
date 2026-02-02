@@ -3,67 +3,67 @@
   "saksnummer": "3424234132",
   "fnr": "12345678901",
   "periode": {
-    "fraOgMed": "30. September 2024",
-    "tilOgMed": "13. October 2024"
+    "fraOgMed": "30 September 2024",
+    "tilOgMed": "13 October 2024"
   },
   "uke1": "40",
   "uke2": "41",
   "mottatt": "2024-10-15 13:05:15",
   "dager": [
     {
-      "dag": "Monday 30. september",
+      "dag": "Monday 30 september",
       "status": "DELTATT_UTEN_LØNN_I_TILTAKET"
     },
     {
-      "dag": "Tuesday 1. October",
+      "dag": "Tuesday 1 October",
       "status": "FRAVÆR_SYK"
     },
     {
-      "dag": "Wednesday 2. October",
+      "dag": "Wednesday 2 October",
       "status": "FRAVÆR_SYKT_BARN"
     },
     {
-      "dag": "Thursday 3. October",
+      "dag": "Thursday 3 October",
       "status": "FRAVÆR_GODKJENT_AV_NAV"
     },
     {
-      "dag": "Friday 4. October",
+      "dag": "Friday 4 October",
       "status": "FRAVÆR_ANNET"
     },
     {
-      "dag": "Saturday 5. October",
+      "dag": "Saturday 5 October",
       "status": "IKKE_BESVART"
     },
     {
-      "dag": "Sunday 6. October",
+      "dag": "Sunday 6 October",
       "status": "IKKE_BESVART"
     },
     {
-      "dag": "Monday 7. October",
+      "dag": "Monday 7 October",
       "status": "IKKE_TILTAKSDAG"
     },
     {
-      "dag": "Tuesday 8. October",
+      "dag": "Tuesday 8 October",
       "status": "IKKE_RETT_TIL_TILTAKSPENGER"
     },
     {
-      "dag": "Wednesday 9. October",
+      "dag": "Wednesday 9 October",
       "status": "DELTATT_MED_LØNN_I_TILTAKET"
     },
     {
-      "dag": "Thursday 10. October",
+      "dag": "Thursday 10 October",
       "status": "DELTATT_MED_LØNN_I_TILTAKET"
     },
     {
-      "dag": "Friday 11. October",
+      "dag": "Friday 11 October",
       "status": "SYK"
     },
     {
-      "dag": "Saturday 12. October",
+      "dag": "Saturday 12 October",
       "status": "IKKE_BESVART"
     },
     {
-      "dag": "Sunday 13. October",
+      "dag": "Sunday 13 October",
       "status": "IKKE_BESVART"
     }
   ]
