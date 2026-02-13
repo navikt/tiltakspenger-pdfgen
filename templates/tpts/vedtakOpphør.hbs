@@ -1,0 +1,23 @@
+{{#> tpts/partials/base}}
+    <section>
+        <h1>Vedtaket ditt om tiltakspenger er endret</h1>
+
+        <p>
+            Nav har vurdert saken din og kommet til at du oppfyller ikke lenger vilkårene for
+            tiltakspenger {{#if barnetillegg}}og barnetillegg {{/if}}i arbeidsmarkedstiltak i
+            perioden fra og med {{vedtaksperiode.fraOgMed}} til og med {{vedtaksperiode.tilOgMed}} fordi
+            {{#each valgtHjemmelTekst}}
+                <!-- Vi støtter bare en hjemmel foreløpig -->
+                {{#eq @index 0}}
+                    {{this}}
+                {{/eq}}
+            {{/each}}
+        </p>
+
+        {{#if tilleggstekst}}
+            <h2>Slik har vi vurdert saken din</h2>
+            <!-- Om man ønsker linebreaks mellom tilleggstekstene (fordi bruker kan ha limt inn flere) må de skilles med '\n\n'-->
+            <p>{{breaklines tilleggstekst}}</p>
+        {{/if}}
+    </section>
+{{/tpts/partials/base}}
