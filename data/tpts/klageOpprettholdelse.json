@@ -1,0 +1,24 @@
+{
+  "personalia": {
+    "ident": "12345678901",
+    "fornavn": "Planet",
+    "etternavn": "Planetus"
+  },
+  "saksnummer": "123456789",
+  "saksbehandlerNavn": "Kåre Kropp",
+  "forhandsvisning": true,
+  "kontor": "Nav Tiltakspenger",
+  "innsendingsdato": "5. august 2023",
+  "vedtaksdato": "3. august 2023",
+  "tilleggstekst": [
+    {
+      "tittel": "Klagens anførsler",
+      "tekst": "Dette er en tekst. Denne teksten tilhører klagens anførsler. Det er viktig å lese denne teksten nøye for å forstå klagen."
+    },
+    {
+      "tittel": "Vurdering av klagen",
+      "tekst": "Dette er en tekst. Denne teksten tilhører vurderingen av klagen. Det er viktig å lese denne teksten nøye for å forstå vurderingen av klagen."
+    }
+  ],
+  "datoForUtsending": "3. august 2023"
+}
