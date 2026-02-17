@@ -74,7 +74,7 @@
             border-color: #AAB0BA; /*--a-gray-400*/
         }
 
-        td.deltatt, td.godkjentAvNav {
+        td.deltatt, td.godkjentAvNav, td.sterkeVelferdsgrunner {
             background: #CCF1D6; /*--a-green-100*/
             border-color: #2AA758; /*--a-green-400*/
         }
@@ -210,24 +210,19 @@
                 </li>
             </ul>
 
-            <b>When do I select “absence approved by Nav”?</b>
+            <b>When do I select “strong welfare reasons or job interview”?</b>
             <ul>
-                <li>You may be entitled to employment scheme benefits even if you have been absent. This applies if your
-                    absence is due to activities you have agreed with your Nav counsellor.
-                </li>
                 <li>
-                    Approved reasons for absence, where you will still be entitled to employment scheme benefits, include:
+                    You should choose this option if Nav has approved your absence from the programme on this day due to:
                     <ul>
-                        <li>job interviews</li>
-                        <li>appointment in the public health care service</li>
-                        <li>serious illness/burial/funeral service of close family member</li>
+                        <li>a job interview</li>
+                        <li>appointments with public support services</li>
+                        <li>a funeral or memorial service for an immediate family member</li>
+                        <li>other strong welfare reasons</li>
                     </ul>
                 </li>
                 <li>
-                    Only your Nav counsellor can approve your absence – the scheme organiser cannot.
-                </li>
-                <li>
-                    Please contact your Nav counsellor if you are not sure if your absence has been approved.
+                    Only your Nav counsellor can approve your absence – not the programme provider.
                 </li>
             </ul>
             <b>When do I select “other absence”?</b>
@@ -254,7 +249,7 @@
         <ul>
             <li><b>Sick: </b>You were too sick to participate in the employment scheme activity.</li>
             <li><b>Sick child or sick child carer: </b>You were unable to participate because your child or child carer was sick.</li>
-            <li><b>Absence approved by Nav: </b>You were absent from activities, and Nav has approved this absence.</li>
+            <li><b>Strong welfare reasons or job interview: </b>You have been absent from the programme due to strong welfare reasons or a job interview, and your Nav counsellor has approved the absence.</li>
             <li><b>Other absence: </b>You were absent from activities all day or part of the day, and this absence has not been approved by Nav. You are not entitled to employment scheme benefits for this day.</li>
         </ul>
     </section>
@@ -318,6 +313,10 @@
                     {{#eq status "FRAVÆR_SYKT_BARN"}}
                         <td class="statiskDag syktBarn">{{dag}}:</td>
                         <td class="statiskDag syktBarn"><b>Sick child or sick child carer</b></td>
+                    {{/eq}}
+                    {{#eq status "FRAVÆR_STERKE_VELFERDSGRUNNER_ELLER_JOBBINTERVJU"}}
+                        <td class="statiskDag sterkeVelferdsgrunner">{{dag}}:</td>
+                        <td class="statiskDag sterkeVelferdsgrunner"><b>Strong welfare reasons or job interview</b></td>
                     {{/eq}}
                     {{#eq status "FRAVÆR_GODKJENT_AV_NAV"}}
                         <td class="statiskDag godkjentAvNav">{{dag}}:</td>

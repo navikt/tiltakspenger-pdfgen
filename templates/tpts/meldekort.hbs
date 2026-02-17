@@ -74,7 +74,7 @@
             border-color: #AAB0BA; /*--a-gray-400*/
         }
 
-        td.deltatt, td.godkjentAvNav {
+        td.deltatt, td.godkjentAvNav, td.sterkeVelferdsgrunner {
             background: #CCF1D6; /*--a-green-100*/
             border-color: #2AA758; /*--a-green-400*/
         }
@@ -210,24 +210,19 @@
                 </li>
             </ul>
 
-            <b>Når skal du velge “fravær godkjent av Nav”</b>
+            <b>Når skal du velge "sterke velferdsgrunner eller jobbintervju"?</b>
             <ul>
-                <li>Du kan ha rett til tiltakspenger selv om du har hatt fravær. Det gjelder hvis fraværet skyldes
-                    aktiviteter som du har avtalt med Nav-veilederen din.
-                </li>
                 <li>
-                    Godkjente årsaker til fravær, som fortsatt gir deg tiltakspenger, er for eksempel:
+                    Du skal velge dette alternativet hvis Nav har godkjent at du har fravær fra tiltaket denne dagen på grunn av:
                     <ul>
                         <li>jobbintervju</li>
-                        <li>timeavtale i det offentlige hjelpeapparatet</li>
-                        <li>alvorlig sykdom/begravelse/bisettelse i nærmeste familie</li>
+                        <li>timeavtaler i det offentlige hjelpeapparatet</li>
+                        <li>begravelse eller bisettelse i den nærmeste familien din</li>
+                        <li>andre sterke velferdsgrunner</li>
                     </ul>
                 </li>
                 <li>
                     Det er kun Nav-veilederen din som kan godkjenne fraværet, ikke tiltaksarrangøren.
-                </li>
-                <li>
-                    Ta kontakt med Nav-veilederen din hvis du er i tvil om fraværet ditt er godkjent.
                 </li>
             </ul>
             <b>Når skal du velge “annet fravær”?</b>
@@ -254,7 +249,7 @@
         <ul>
             <li><b>Syk: </b>Du var for syk til å delta på tiltaksdagen.</li>
             <li><b>Sykt barn eller syk barnepasser: </b>Du kunne ikke delta på tiltaksdagen fordi barnet ditt eller barnepasseren var syk.</li>
-            <li><b>Fravær godkjent av Nav: </b>Du har hatt fravær fra tiltaket, og Nav har godkjent dette fraværet.</li>
+            <li><b>Sterke velferdsgrunner eller jobbintervju: </b>Du har hatt fravær fra tiltaket på grunn av sterke velferdsgrunner eller jobbintervju og Nav-veilederen har godkjent fraværet.</li>
             <li><b>Annet fravær: </b>Du har vært borte hele eller deler av tiltaksdagen, og fraværet er ikke godkjent av Nav. Dette gir ikke rett til tiltakspenger.</li>
         </ul>
     </section>
@@ -318,6 +313,10 @@
                     {{#eq status "FRAVÆR_SYKT_BARN"}}
                         <td class="statiskDag syktBarn">{{dag}}:</td>
                         <td class="statiskDag syktBarn"><b>Sykt barn eller syk barnepasser</b></td>
+                    {{/eq}}
+                    {{#eq status "FRAVÆR_STERKE_VELFERDSGRUNNER_ELLER_JOBBINTERVJU"}}
+                        <td class="statiskDag sterkeVelferdsgrunner">{{dag}}:</td>
+                        <td class="statiskDag sterkeVelferdsgrunner"><b>Sterke velferdsgrunner eller jobbintervju</b></td>
                     {{/eq}}
                     {{#eq status "FRAVÆR_GODKJENT_AV_NAV"}}
                         <td class="statiskDag godkjentAvNav">{{dag}}:</td>
