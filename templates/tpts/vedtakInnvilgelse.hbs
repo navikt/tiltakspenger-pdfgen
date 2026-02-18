@@ -5,7 +5,7 @@
         <h2>Vedtak</h2>
         {{#eq innvilgelsesperioder.perioder.length 1}}
             <p>
-                Du får tiltakspenger fra og med {{innvilgelsesperioder.perioder.[0].fraOgMed}} til og med {{innvilgelsesperioder.perioder.[0].tilOgMed}}{{#if innvilgelsesperioder.antallDagerTekst}} for {{innvilgelsesperioder.antallDagerTekst}} per uke{{/if}}.
+                Du får tiltakspenger fra og med {{innvilgelsesperioder.perioder.[0].fraOgMed}} til og med {{innvilgelsesperioder.perioder.[0].tilOgMed}}{{#if innvilgelsesperioder.antallDagerTekst}} for {{innvilgelsesperioder.antallDagerTekst}} per uke{{/if}} fordi du deltar på arbeidsmarkedstiltak.
             </p>
         {{/eq}}
         {{#gt innvilgelsesperioder.perioder.length 1}}
