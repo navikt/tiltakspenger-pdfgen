@@ -2,9 +2,33 @@
     <section>
         <h1>Vedtaket ditt om tiltakspenger er endret</h1>
 
-        <p>
-            {{breaklines introTekst}}
-        </p>
+        {{#eq innvilgelsesperioder.perioder.length 1}}
+            <p>
+                Du får tiltakspenger fra og med {{innvilgelsesperioder.perioder.[0].fraOgMed}} til og med {{innvilgelsesperioder.perioder.[0].tilOgMed}}{{#if innvilgelsesperioder.antallDagerTekst}} for {{innvilgelsesperioder.antallDagerTekst}} per uke{{/if}}.
+            </p>
+        {{/eq}}
+        {{#gt innvilgelsesperioder.perioder.length 1}}
+            <p>Du får tiltakspenger{{#if innvilgelsesperioder.antallDagerTekst}} for {{innvilgelsesperioder.antallDagerTekst}} per uke{{/if}} i disse periodene:</p>
+            <ul>
+                {{#each innvilgelsesperioder.perioder}}
+                    <li>Fra og med {{fraOgMed}} til og med {{tilOgMed}}.</li>
+                {{/each}}
+            </ul>
+        {{/gt}}
+
+        {{#eq barnetillegg.length 1}}
+            <p>
+                Du får barnetillegg fra og med {{barnetillegg.[0].periode.fraOgMed}} til og med {{barnetillegg.[0].periode.fraOgMed}} for {{barnetillegg.[0].antallBarnTekst}} barn.
+            </p>
+        {{/eq}}
+        {{#gt barnetillegg.length 1}}
+            <p>Du får barnetillegg i disse periodene:</p>
+            <ul>
+                {{#each barnetillegg}}
+                    <li>Fra og med {{periode.fraOgMed}} til og med {{periode.tilOgMed}} for {{antallBarnTekst}} barn.</li>
+                {{/each}}
+            </ul>
+        {{/gt}}
 
         <p>
             {{#each satser}}
