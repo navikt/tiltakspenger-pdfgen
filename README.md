@@ -38,7 +38,6 @@ f.eks:
   "beslutterNavn": "Saksbehandler Navn",
   "kontor": "Nav Tiltakspenger",
   "harBarnetillegg": true,
-  "introTekst": "Du får tiltakspenger fra og med 1. november 2024 til og med 28. februar 2025 for fem dager per uke fordi du deltar på arbeidsmarkedstiltak. Du får barnetillegg for to barn fra og med 1. november 2024 til og med 28. februar 2025.",
   "satser": [
     {
       "år": 2024,
@@ -53,7 +52,25 @@ f.eks:
   ],
   "tilleggstekst": "Dette er en vurdering",
   "forhandsvisning": true,
-  "datoForUtsending": "31. januar 2025"
+  "datoForUtsending": "31. januar 2025",
+    "innvilgelsesperioder": {
+    "antallDagerTekst": "fem dager",
+    "perioder": [
+      {
+        "fraOgMed": "1. november 2024",
+        "tilOgMed": "28. februar 2025"
+      }
+    ]
+  },
+  "barnetillegg": [
+    {
+      "antallBarnTekst": "ett",
+      "periode": {
+        "fraOgMed": "1. november 2024",
+        "tilOgMed": "28. februar 2025"
+      }
+    }
+  ]
 }
 ```
 
