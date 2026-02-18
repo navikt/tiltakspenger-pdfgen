@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="description" content="Meldekort for tiltakspenger"/>
+    <meta name="author" content="Team tiltakspenger"/>
+    <meta name="subject" content="Tiltakspenger"/>
+    <style>
+        * {
+            font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
+        }
+
+        header {
+            text-align: center;
+        }
+
+        /*Heading XLarge*/
+        h1 {
+            font-size: 2.5rem;
+            line-height: 3.25rem;
+        }
+
+        /*Custom størrelse fordi Aksel verdi for Heading Large skapte wrapping*/
+        h2 {
+            font-size: 1.75rem;
+            line-height: 2.25rem;
+        }
+
+        /*Heading Medium*/
+        h3 {
+            font-size: 1.5rem;
+            line-height: 2rem;
+        }
+
+        /*Heading Small*/
+        h4 {
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+            margin-bottom: 0;
+        }
+
+        b {
+            font-size: 1.125rem;
+            line-height: 1.5rem;
+            font-weight: 500;
+        }
+
+        .navLogo {
+            width: 10rem;
+            vertical-align: middle;
+            position: relative;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 0.5rem;
+            border-bottom: 1px solid;
+        }
+
+        td:first-child {
+            width: 35%;
+        }
+
+        td:nth-child(2) {
+            width: 65%;
+        }
+
+        td.ikkeBesvart {
+            background: #ECEEF0; /*--a-gray-100*/
+            border-color: #AAB0BA; /*--a-gray-400*/
+        }
+
+        td.deltatt, td.godkjentAvNav, td.sterkeVelferdsgrunner {
+            background: #CCF1D6; /*--a-green-100*/
+            border-color: #2AA758; /*--a-green-400*/
+        }
+
+        td.syk, td.syktBarn {
+            background: #FFECCC; /*--a-orange-100*/
+            border-color: #FFAA33; /*--a-orange-400*/
+        }
+
+        td.mottokLønn, td.annet {
+            background: #FFC2C2; /*--a-surface-danger-subtle*/
+            border-color: #C30000; /*--a-border-danger*/
+        }
+
+        td.ikkeTiltaksdag {
+            background: #E6F0FF; /*--a-surface-action-subtle*/
+            border-color: #0067C5; /*--a-surface-action*/
+        }
+
+        td.ikkeRettTilTiltakspenger {
+
+        }
+
+        td.statiskDag {
+            padding: 0.25rem 0.75rem;
+        }
+
+        p img {
+            vertical-align: middle;
+        }
+
+        p {
+            margin-top: 0.5rem;
+            font-size: 1rem;
+            line-height: 1.5rem;
+        }
+
+        div.readMore > p, div.readMore > ul, div.readMore > h4 {
+            margin-top: 0;
+            font-size: 0.875rem;
+            line-height: 1.375rem;
+        }
+
+        div.readMore {
+            background: #F2F3F5; /*--a-surface-subtle*/
+            padding: 1rem;
+            margin-left: 1rem;
+            margin-right: 1rem;
+        }
+    </style>
+
+    <title>Edited employment status form for employment scheme benefits</title>
+</head>
+<body>
+<article>
+    <header>
+        <img alt="Nav logo" class="navLogo" src="{{image "navlogo.png"}}"/>
+    </header>
+    <h1 class="tittel">Employment status form for employment scheme benefits</h1>
+    <section>
+        {{#with periode}}
+            <h2>{{fraOgMed}} - {{tilOgMed}} (week {{uke1}}-{{uke2}})</h2>
+        {{/with}}
+
+        <p>
+            <b>Norwegian national identification number:</b> {{fnr}}
+            <br/>
+            <b>Case number:</b> {{saksnummer}}
+            <br/>
+            <b>Received:</b> {{mottatt}}
+            <br/>
+            <b>Employment status form ID:</b> {{id}}
+        </p>
+    </section>
+    <section>
+        <h2>Edit employment status form </h2>
+        <div class="readMore">
+            <h3>When do I select "received pay"?</h3>
+            <p>If you receive pay (not employment scheme benefits) as part of your programme, choose "Received pay".</p>
+        </div>
+        <div class="readMore">
+            <h3>When do I select “sick”?</h3>
+            <b>Sick</b>
+            <ul>
+                <li>
+                    Please select “sick” if you were too sick to participate in the employment scheme activity. You may be entitled to employment scheme benefits when you are sick. It is therefore very important that you specify this on the form.
+                </li>
+                <li>
+                    You will be paid the full benefit for the first 3 days you are sick. If you are sick more than 3 days, you will receive 75 percent of the full benefit payment for the rest of the employer liability period. An employer liability period is a total of 16 business days.
+                </li>
+                <li>
+                    You need a medical certificate in order to be entitled to employment scheme benefits beyond 3 days.
+                </li>
+            </ul>
+            <b>Sick child or sick child carer</b>
+            <ul>
+                <li>
+                    Please select “Sick child or child carer” if you were unable to participate because your child or your child carer was sick.
+                </li>
+                <li>
+                    The same rules apply when your child or child carer is sick as when you are sick. This means you are entitled to full payment for the first three days and then 75 percent for the rest of the employer liability period.
+                </li>
+                <li>
+                    You must submit a medical certificate for your child or a certificate from your child carer from day 4 in order to be entitled to employment scheme benefits beyond 3 days.
+                </li>
+            </ul>
+        </div>
+        <div class="readMore">
+            <h3>When do I select absence?</h3>
+            <b>Strong welfare reasons or job interview</b>
+            <ul>
+                <li>
+                    You should choose this option if Nav has approved your absence from the programme on this day due to:
+                    <ul>
+                        <li>a job interview</li>
+                        <li>appointments with public support services</li>
+                        <li>a funeral or memorial service for an immediate family member</li>
+                        <li>other strong welfare reasons</li>
+                    </ul>
+                </li>
+                <li>
+                    Only your Nav counsellor can approve your absence – not the programme provider.
+                </li>
+            </ul>
+            <b>Other absence</b>
+            <ul>
+                <li>Please select “other absence” if you were absent for all or part of a day with employment scheme
+                    activities.
+                </li>
+                <li>Please select “other absence” if you do not attend the agreed programme or activity, or if you do
+                    not participate in other activities that have been agreed with Nav.
+                </li>
+                <li>Please select “other absence” if you worked instead of participating in employment scheme
+                    activities. For example: Your agreed employment scheme participation is from 09:00 to 15:00, and you
+                    worked from 09:00 to 10:00 instead of participating in employment scheme activities the entire day.
+                </li>
+                <li>Please select “other absence” if you took time off/went on holiday outside of the scheduled holiday
+                    periods for the employment scheme.
+                </li>
+                <li>Please select “other absence” if you are waiting for approval of your absence. You can always
+                    change your employment status form later after your Nav counsellor has approved your absence.
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>How to edit your employment status form</h2>
+        <p>
+            Below, you can see what you previously registered in the employment status form.
+            Update the selections on the days where the information is incorrect. After you submit the changes, they will
+            be processed before any adjustments are made to your payment. </p>
+    </section>
+
+    <section>
+        <h3>Summary of edited employment status form</h3>
+        <table>
+            <tbody>
+            {{#each dager}}
+                <tr>
+                    {{#eq status "DELTATT_UTEN_LØNN_I_TILTAKET"}}
+                        <td class="statiskDag deltatt">{{dag}}:</td>
+                        <td class="statiskDag deltatt"><b>Participated</b></td>
+                    {{/eq}}
+                    {{#eq status "DELTATT_MED_LØNN_I_TILTAKET"}}
+                        <td class="statiskDag mottokLønn">{{dag}}:</td>
+                        <td class="statiskDag mottokLønn"><b>Received pay</b></td>
+                    {{/eq}}
+                    {{#eq status "FRAVÆR_SYK"}}
+                        <td class="statiskDag syk">{{dag}}:</td>
+                        <td class="statiskDag syk"><b>Sick</b></td>
+                    {{/eq}}
+                    {{#eq status "FRAVÆR_SYKT_BARN"}}
+                        <td class="statiskDag syktBarn">{{dag}}:</td>
+                        <td class="statiskDag syktBarn"><b>Sick child or sick child carer</b></td>
+                    {{/eq}}
+                    {{#eq status "FRAVÆR_STERKE_VELFERDSGRUNNER_ELLER_JOBBINTERVJU"}}
+                        <td class="statiskDag sterkeVelferdsgrunner">{{dag}}:</td>
+                        <td class="statiskDag sterkeVelferdsgrunner"><b>Strong welfare reasons or job interview</b></td>
+                    {{/eq}}
+                    {{#eq status "FRAVÆR_GODKJENT_AV_NAV"}}
+                        <td class="statiskDag godkjentAvNav">{{dag}}:</td>
+                        <td class="statiskDag godkjentAvNav"><b>Absence approved by Nav</b></td>
+                    {{/eq}}
+                    {{#eq status "FRAVÆR_ANNET"}}
+                        <td class="statiskDag annet">{{dag}}:</td>
+                        <td class="statiskDag annet"><b>Other absence</b></td>
+                    {{/eq}}
+                    {{#eq status "IKKE_BESVART"}}
+                        <td class="statiskDag ikkeBesvart">{{dag}}:</td>
+                        <td class="statiskDag ikkeBesvart"><b>No report</b></td>
+                    {{/eq}}
+                    {{#eq status "IKKE_TILTAKSDAG"}}
+                        <td class="statiskDag ikkeTiltaksdag">{{dag}}:</td>
+                        <td class="statiskDag ikkeTiltaksdag"><b>No employment scheme activity</b></td>
+                    {{/eq}}
+                    {{#eq status "IKKE_RETT_TIL_TILTAKSPENGER"}}
+                        <td class="statiskDag ikkeBesvart">{{dag}}:</td>
+                        <td class="statiskDag ikkeBesvart"><b>Not entitled</b></td>
+                    {{/eq}}
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+        <p><img alt="Checked icon" src="{{image "Checkmark.svg"}}"/>I confirm that the above information is correct.</p>
+    </section>
+</article>
+</body>
+</html>
+
