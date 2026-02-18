@@ -9,7 +9,7 @@
             {{#each valgtHjemmelTekst}}
                 <!-- Vi støtter bare en hjemmel foreløpig -->
                 {{#eq @index 0}}
-                    {{this}}
+                    {{breaklines this}}
                 {{/eq}}
             {{/each}}
         </p>

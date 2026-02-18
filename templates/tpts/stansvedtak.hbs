@@ -9,7 +9,7 @@
             {{#each valgtHjemmelTekst}}
                 <!-- revurdering til stans skal bare støtte at man har valgt en hjemmel. Om flere skal støttes burde man kanskje brukt kulepunkter?-->
                 {{#eq @index 0}}
-                    {{this}}
+                    {{breaklines this}}
                 {{/eq}}
             {{/each}}
         </p>
