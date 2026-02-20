@@ -3,15 +3,29 @@
         <h1>Vedtaket ditt om tiltakspenger er endret</h1>
 
         <p>
-            Nav har vurdert saken din og kommet til at du oppfyller ikke lenger vilkårene for
-            tiltakspenger {{#if barnetillegg}}og barnetillegg {{/if}}i arbeidsmarkedstiltak i
-            perioden fra og med {{vedtaksperiode.fraOgMed}} til og med {{vedtaksperiode.tilOgMed}} fordi
-            {{#each valgtHjemmelTekst}}
-                <!-- Vi støtter bare en hjemmel foreløpig -->
-                {{#eq @index 0}}
-                    {{breaklines this}}
-                {{/eq}}
-            {{/each}}
+            Nav har vurdert saken din på nytt. Vi har omgjort vedtaket slik at du ikke har rett til
+            tiltakspenger {{#if barnetillegg}}og barnetillegg {{/if}}fra og med {{vedtaksperiode.fraOgMed}}
+            til og med {{vedtaksperiode.tilOgMed}}.
+        </p>
+
+        {{#if valgtHjemmelTekst}}
+            <p>
+                {{#each valgtHjemmelTekst}}
+                    <!-- Vi støtter bare en hjemmel foreløpig -->
+                    {{#eq @index 0}}
+                        {{breaklines this}}
+                    {{/eq}}
+                {{/each}}
+            </p>
+        {{/if}}
+
+        <p>
+            Når et vedtak bygger på et uriktig faktisk grunnlag, kan Nav omgjøre vedtaket til ugunst for deg.
+            Dette gjelder også, selv om det ikke var din skyld at vedtaket ble feil.
+        </p>
+
+        <p>
+            Dette kommer frem av forvaltningsloven § 35 første ledd bokstav c.
         </p>
 
         {{#if tilleggstekst}}
