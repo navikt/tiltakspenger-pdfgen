@@ -36,7 +36,7 @@ f.eks:
   "saksnummer": "202501301001",
   "saksbehandlerNavn": "Saksbehandler Navn",
   "beslutterNavn": "Saksbehandler Navn",
-  "kontor": "Nav Tiltakspenger",
+  "kontor": "Nav Tiltak Oslo",
   "harBarnetillegg": true,
   "satser": [
     {

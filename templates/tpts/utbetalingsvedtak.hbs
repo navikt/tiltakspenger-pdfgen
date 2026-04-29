@@ -327,14 +327,6 @@
 
 <div>
     <b>Saksbehandlere:</b>
-    {{#if saksbehandler}}
-        {{#eq saksbehandler.type "MANUELL"}}
-            {{saksbehandler.navn}}
-        {{/eq}}
-    {{else}}
-        <span class="placeholder">ingen saksbehandler tildelt</span>
-    {{/if}}
-
     {{#if beslutter}}
         {{#eq beslutter.type "MANUELL"}}
             {{#if saksbehandler}}
@@ -353,6 +345,14 @@
             {{/if}}
             ingen beslutter tildelt
         </span>
+    {{/if}}
+
+    {{#if saksbehandler}}
+        {{#eq saksbehandler.type "MANUELL"}}
+            {{saksbehandler.navn}}
+        {{/eq}}
+    {{else}}
+        <span class="placeholder">ingen saksbehandler tildelt</span>
     {{/if}}
 </div>
 
