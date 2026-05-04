@@ -348,6 +348,11 @@
                     <span class="placeholder">ingen beslutter tildelt</span> - {{saksbehandler.navn}}
                 </div>
             {{/eq}}
+            {{#eq saksbehandler.type "AUTOMATISK"}}
+                {{#eq beslutter.type "AUTOMATISK"}}
+                    <div>Automatisk behandlet</div>
+                {{/eq}}
+            {{/eq}}
         {{/if}}
     {{/eq}}
 {{else}}
