@@ -6,12 +6,12 @@
     "tom": "19. februar 2023"
   },
   "saksbehandler": {
-    "type": "AUTOMATISK",
-    "navn": "F_Z994380 E_Z994380"
+    "type": "MANUELL",
+    "navn": "Sak S. Behandleren"
   },
   "beslutter": {
     "type": "MANUELL",
-    "navn": "F_Z994127 E_Z994127"
+    "navn": "Bes B. Lutteren"
   },
   "tiltak": [
     {
