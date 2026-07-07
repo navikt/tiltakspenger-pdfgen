@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="description" content="Utbetalingsvedtak"/>
+    <meta name="author" content="Team tiltakspenger"/>
+    <meta name="subject" content="Tiltakspenger"/>
+    <style>
+        * {
+            font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
+        }
+
+        @page {
+            @top-right {
+                font-size: 1.5rem;
+                font-weight: bold;
+                color: red;
+                content: "{{#if forhandsvisning}}Forhåndsvisning{{/if}}";
+                font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro, ArialSystem, sans-serif;
+            }
+        }
+
+        header {
+            text-align: center;
+        }
+
+        /*Heading XLarge*/
+        h1 {
+            font-size: 2.5rem;
+            line-height: 3.25rem;
+        }
+
+        /*Custom størrelse fordi Aksel verdi for Heading Large skapte wrapping*/
+        h2 {
+            font-size: 1.5rem;
+            line-height: 2rem;
+        }
+
+        /*Heading Medium*/
+        h3 {
+            font-size: 1.5rem;
+            line-height: 2rem;
+        }
+
+        /*Heading Small*/
+        h4 {
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+            margin-bottom: 0;
+        }
+
+        b {
+            font-weight: 500;
+        }
+
+        .navLogo {
+            width: 10rem;
+            vertical-align: middle;
+            position: relative;
+        }
+
+        .korrigert-ikon {
+            width: 1.25rem;
+            vertical-align: middle;
+            position: relative;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            padding-left: 0.25rem;
+            border-bottom: 1px solid;
+            font-size: 0.9rem;
+        }
+
+        p img {
+            vertical-align: middle;
+        }
+
+        p {
+            margin-top: 0.5rem;
+            font-size: 1rem;
+            line-height: 1.5rem;
+        }
+
+        div.readMore > p, div.readMore > h3 {
+            margin-top: 0;
+            font-size: 1rem;
+        }
+
+        div.readMore {
+            padding: 1rem;
+            margin-top: 2rem;
+            border: #F2F3F5 0.1875rem solid; /*--a-surface-subtle*/
+        }
+
+        .endret {
+            background: #F2F3F5; /*--a-surface-subtle*/
+        }
+
+        td.status {
+            width: 15%;
+        }
+
+        span.column-spacing {
+            margin-left: 0.4rem;
+        }
+
+        .total-differanse {
+            width: 100%;
+            border-bottom: #F2F3F5 0.1875rem solid;
+            overflow: hidden;
+            padding-left: 1.75rem;
+            padding-right: 1.75rem;
+            margin-bottom: 2rem;
+        }
+
+        .total-differanse span:first-child,
+        .total-differanse span:nth-child(2) {
+            float: left;
+            margin-right: 7.5rem;
+            white-space: nowrap;
+        }
+
+        .total-differanse span:last-child {
+            float: right;
+            white-space: nowrap;
+            margin-right: 1.75rem;
+        }
+
+        .placeholder {
+            color: red;
+        }
+    </style>
+    <title>Utbetalingsvedtak</title>
+</head>
+<body>
+<header>
+    <img alt="Nav logo" class="navLogo" src="{{image "navlogo.png"}}"/>
+</header>
+
+<h1 class="tittel">Utbetalingsvedtak</h1>
+<b>Fødselsnummer:</b> {{fødselsnummer}}
+<br/>
+<b>Saksnummer:</b> {{saksnummer}}
+<br/>
+
+{{#if meldeperioder}}
+    {{#each meldeperioder}}
+        <p>
+            Totalt utbetalt for perioden
+            <span>{{periode.fraOgMed}} - {{periode.tilOgMed}}</span>:
+            {{#if korrigering}}
+                <b>{{beløpDiff}} kroner</b>
+                <br/>
+                Ny beregning for perioden
+                <span>{{periode.fraOgMed}} - {{periode.tilOgMed}}</span>:
+                <b>{{beløp}} kroner</b>
+            {{else}}
+                <b>{{beløp}} kroner</b>
+            {{/if}}
+        </p>
+    {{/each}}
+{{else}}
+    <span class="placeholder">Ingen meldeperioder</span>
+{{/if}}
+
+{{#if brevTekst}}
+    <div class="readMore">
+        <h3>Slik har vi vurdert saken din</h3>
+        <p>{{brevTekst}}</p>
+    </div>
+{{/if}}
+
+{{#each meldeperioder}}
+    {{#if korrigering}}
+        <h2>Korrigert meldekort {{periode.fraOgMed}} - {{periode.tilOgMed}}</h2>
+        <h3>Utfall av korrigeringen</h3>
+        <div class="total-differanse">
+            <span>Resultat</span>
+            {{#gt beløpDiff 0}}<span>Økning</span>{{/gt}}
+            {{#lt beløpDiff 0}}<span>Reduksjon</span>{{/lt}}
+            {{#eq beløpDiff 0}}<span>Ingen endring</span>{{/eq}}
+            <span>{{beløpDiff}} kroner</span>
+        </div>
+    {{else}}
+        <h2>Meldekort {{periode.fraOgMed}} - {{periode.tilOgMed}}</h2>
+    {{/if}}
+    <table>
+        <thead>
+        <tr>
+            <th></th>
+            <th>Dato</th>
+            <th>Status</th>
+            <th>{{#if korrigering}}Korrigert{{/if}}</th>
+            <th>Beløp</th>
+            {{#if harBarnetillegg}}
+                <th>Barnetillegg</th>
+            {{/if}}
+            <th>Prosent</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each dager}}
+            {{#if ../korrigering}}
+                <!-- Kun ved korrigering markeres endrede dager. Dager som korrigeres til "Ikke besvart"/"Ikke tiltaksdag" skal ikke markeres som endret. -->
+                {{#if harEndring}}
+                    {{#eq status.gjeldende "Ikke besvart"}}
+                        {{> tpts/partials/meldekortvedtakDagNormal harBarnetillegg=../harBarnetillegg}}
+                    {{else}}
+                        {{#eq status.gjeldende "Ikke tiltaksdag"}}
+                            {{> tpts/partials/meldekortvedtakDagNormal harBarnetillegg=../harBarnetillegg}}
+                        {{else}}
+                            {{> tpts/partials/meldekortvedtakDagEndret harBarnetillegg=../harBarnetillegg}}
+                        {{/eq}}
+                    {{/eq}}
+                {{else}}
+                    {{> tpts/partials/meldekortvedtakDagNormal harBarnetillegg=../harBarnetillegg}}
+                {{/if}}
+            {{else}}
+                {{> tpts/partials/meldekortvedtakDagNormal harBarnetillegg=../harBarnetillegg}}
+            {{/if}}
+        {{/each}}
+        </tbody>
+    </table>
+{{/each}}
+
+<br/>
+
+{{#if iverksattTidspunkt}}
+    <b>Iverksatt:</b> {{iverksattTidspunkt}}
+{{/if}}
+<br/>
+
+{{#if erAutomatiskBehandlet}}
+    <div>Automatisk behandlet</div>
+{{else}}
+    <div>
+        <b>Saksbehandlere:</b>
+        {{#if beslutterNavn}}{{beslutterNavn}}{{else}}<span class="placeholder">ingen beslutter tildelt</span>{{/if}}
+        -
+        {{#if saksbehandlerNavn}}{{saksbehandlerNavn}}{{else}}<span class="placeholder">ingen saksbehandler tildelt</span>{{/if}}
+    </div>
+{{/if}}
+
+{{#if tiltak}}
+    <h4>Tiltak</h4>
+    {{#each tiltak}}
+        {{this}}
+        <br/>
+    {{/each}}
+{{/if}}
+
+{{> tpts/partials/klagerett}}
+{{> tpts/partials/sporsmal}}
+</body>
+</html>
