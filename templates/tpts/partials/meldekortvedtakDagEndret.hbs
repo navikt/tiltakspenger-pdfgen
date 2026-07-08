@@ -1,0 +1,49 @@
+<tr>
+    <td class="endret">
+        {{#if status.harEndring}}
+            <img alt="Korrigert" class="korrigert-ikon" src="{{image "Pencil.svg"}}"/>
+        {{/if}}
+    </td>
+    <td class="endret">{{dato}}</td>
+
+    {{#if status.harEndring}}
+        <td class="status endret">{{status.forrige}}</td>
+        <td class="status endret"><b>{{status.gjeldende}}</b></td>
+    {{else}}
+        <td class="status endret">{{status.gjeldende}}</td>
+        <td class="status endret"></td>
+    {{/if}}
+
+    <!-- Beløp, barnetillegg og prosent samles i samme kolonne for å spare plass ettersom headingen tvinger en gitt kolonnebredde -->
+    <!-- Det samme er ikke gjort for status for det er mye høyere sannsynlighet for line wrap der -->
+    {{#if beløp.harEndring}}
+        <td class="endret">
+            {{beløp.forrige}}
+            <span class="column-spacing"><b>{{beløp.gjeldende}}</b></span>
+        </td>
+    {{else}}
+        <td class="endret">{{beløp.gjeldende}}</td>
+    {{/if}}
+
+    <!-- Nested if-statement hvor innerste if har en else gjør at dersom første if-statement er feil så hopper den feilaktig til elsen til det innerste if-statementet. Bruker dermed eq -->
+    {{#if harBarnetillegg}}
+        {{#eq barnetillegg.harEndring true}}
+            <td class="endret">
+                {{barnetillegg.forrige}}
+                <span class="column-spacing"><b>{{barnetillegg.gjeldende}}</b></span>
+            </td>
+        {{/eq}}
+        {{#eq barnetillegg.harEndring false}}
+            <td class="endret">{{barnetillegg.gjeldende}}</td>
+        {{/eq}}
+    {{/if}}
+
+    {{#if prosent.harEndring}}
+        <td class="endret">
+            {{prosent.forrige}}%
+            <span class="column-spacing"><b>{{prosent.gjeldende}}%</b></span>
+        </td>
+    {{else}}
+        <td class="endret">{{prosent.gjeldende}}%</td>
+    {{/if}}
+</tr>
