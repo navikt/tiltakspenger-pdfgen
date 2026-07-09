@@ -136,6 +136,28 @@
         .placeholder {
             color: red;
         }
+
+        .hilsen {
+            margin-top: 32px;
+        }
+
+        .hilsen p {
+            margin: 0;
+        }
+
+        .signatur {
+            margin-top: 13px;
+        }
+
+        .beslutter {
+            float: left;
+            margin-right: 50%;
+        }
+
+        .enhet {
+            clear: both;
+            margin-top: 26px !important;
+        }
     </style>
     {{#if korrigering}}
         <title>Korrigert utbetalingsvedtak</title>
@@ -326,44 +348,11 @@
 <br/>
 
 {{#if beslutter}}
-    {{#eq beslutter.type "MANUELL"}}
-        <div>
-            <b>Saksbehandlere:</b>
-            {{beslutter.navn}} -
-            {{#if saksbehandler}}
-                {{#eq saksbehandler.type "MANUELL"}}
-                    {{saksbehandler.navn}}
-                {{else}}
-                    <span class="placeholder">ingen saksbehandler tildelt</span>
-                {{/eq}}
-            {{else}}
-                <span class="placeholder">ingen saksbehandler tildelt</span>
-            {{/if}}
-        </div>
-    {{else}}
-        {{#if saksbehandler}}
-            {{#eq saksbehandler.type "MANUELL"}}
-                <div>
-                    <b>Saksbehandlere:</b>
-                    <span class="placeholder">ingen beslutter tildelt</span> - {{saksbehandler.navn}}
-                </div>
-            {{/eq}}
-            {{#eq saksbehandler.type "AUTOMATISK"}}
-                {{#eq beslutter.type "AUTOMATISK"}}
-                    <div>Automatisk behandlet</div>
-                {{/eq}}
-            {{/eq}}
-        {{/if}}
-    {{/eq}}
-{{else}}
-    {{#if saksbehandler}}
-        {{#eq saksbehandler.type "MANUELL"}}
-            <div>
-                <b>Saksbehandlere:</b>
-                <span class="placeholder">ingen beslutter tildelt</span> - {{saksbehandler.navn}}
-            </div>
+    {{#eq beslutter.type "AUTOMATISK"}}
+        {{#eq saksbehandler.type "AUTOMATISK"}}
+            <div>Automatisk behandlet</div>
         {{/eq}}
-    {{/if}}
+    {{/eq}}
 {{/if}}
 
 {{#if tiltak}}
@@ -376,5 +365,12 @@
 
 {{> tpts/partials/klagerett}}
 {{> tpts/partials/sporsmal}}
+{{#eq saksbehandler.type "MANUELL"}}
+    {{#eq beslutter.type "MANUELL"}}
+        {{> tpts/partials/signatur beslutterNavn=beslutter.navn saksbehandlerNavn=saksbehandler.navn}}
+    {{else}}
+        {{> tpts/partials/signatur saksbehandlerNavn=saksbehandler.navn}}
+    {{/eq}}
+{{/eq}}
 </body>
 </html>

@@ -136,6 +136,28 @@
         .placeholder {
             color: red;
         }
+
+        .hilsen {
+            margin-top: 32px;
+        }
+
+        .hilsen p {
+            margin: 0;
+        }
+
+        .signatur {
+            margin-top: 13px;
+        }
+
+        .beslutter {
+            float: left;
+            margin-right: 50%;
+        }
+
+        .enhet {
+            clear: both;
+            margin-top: 26px !important;
+        }
     </style>
     <title>Utbetalingsvedtak</title>
 </head>
@@ -239,13 +261,6 @@
 
 {{#if erAutomatiskBehandlet}}
     <div>Automatisk behandlet</div>
-{{else}}
-    <div>
-        <b>Saksbehandlere:</b>
-        {{#if beslutterNavn}}{{beslutterNavn}}{{else}}<span class="placeholder">ingen beslutter tildelt</span>{{/if}}
-        -
-        {{#if saksbehandlerNavn}}{{saksbehandlerNavn}}{{else}}<span class="placeholder">ingen saksbehandler tildelt</span>{{/if}}
-    </div>
 {{/if}}
 
 {{#if tiltak}}
@@ -258,5 +273,8 @@
 
 {{> tpts/partials/klagerett}}
 {{> tpts/partials/sporsmal}}
+{{#unless erAutomatiskBehandlet}}
+    {{> tpts/partials/signatur}}
+{{/unless}}
 </body>
 </html>
