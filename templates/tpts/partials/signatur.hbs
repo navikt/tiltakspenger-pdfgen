@@ -1,0 +1,18 @@
+<section class="hilsen">
+    <p>Med vennlig hilsen</p>
+    <div class="signatur">
+        {{#if beslutterNavn}}
+            <div class="beslutter">
+                <p>{{beslutterNavn}}</p>
+            </div>
+        {{/if}}
+        <div>
+            {{#if saksbehandlerNavn}}
+                <p>{{saksbehandlerNavn}}</p>
+            {{else}}
+                <p><span class="placeholder">ingen saksbehandler tildelt</span></p>
+            {{/if}}
+        </div>
+    </div>
+    <p class="enhet">Nav Tiltak Oslo</p>
+</section>
