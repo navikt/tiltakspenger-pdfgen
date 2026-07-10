@@ -1,17 +1,17 @@
 {
   "meldekortId": "meldekort_01JCQV1M22WR1D9VGC43MSRP0P",
-  "saksnummer": "3424234132",
+  "saksnummer": "202501011001",
   "meldekortPeriode": {
     "fom": "26. desember 2022",
     "tom": "19. februar 2023"
   },
   "saksbehandler": {
     "type": "MANUELL",
-    "navn": "Sak S. Behandleren"
+    "navn": "Ingrid Bakke"
   },
   "beslutter": {
     "type": "MANUELL",
-    "navn": "Bes B. Lutteren"
+    "navn": "Martin Holm"
   },
   "tiltak": [
     {
@@ -28,7 +28,7 @@
     }
   ],
   "iverksattTidspunkt": "7. april 2025 14:36:18",
-  "fødselsnummer": "50218274152",
+  "fødselsnummer": "25508631114",
   "totaltBelop": 4508,
   "forhandsvisning": true,
   "korrigering": true,

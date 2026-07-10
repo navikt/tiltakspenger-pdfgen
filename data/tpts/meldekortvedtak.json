@@ -1,19 +1,19 @@
 {
   "meldekortId": "meldekort_01JCQV1M22WR1D9VGC43MSRP0P",
-  "saksnummer": "3424234132",
+  "saksnummer": "202501011001",
   "periode": {
     "fraOgMed": "26. desember 2022",
     "tilOgMed": "6. januar 2023"
   },
   "erAutomatiskBehandlet": false,
-  "saksbehandlerNavn": "Sak S. Behandleren",
-  "beslutterNavn": "Bes B. Lutteren",
+  "saksbehandlerNavn": "Ingrid Bakke",
+  "beslutterNavn": "Martin Holm",
   "tiltak": [
     "Arbeidsmarkedsopplæring (gruppe)",
     "Jobbklubb"
   ],
   "iverksattTidspunkt": "7. april 2025 14:36:18",
-  "fødselsnummer": "50218274152",
+  "fødselsnummer": "25508631114",
   "totaltBelop": 2198,
   "totalDifferanse": -338,
   "brevTekst": "Bruker hadde registrert at han var syk, men deltok på tiltak disse dagene.",
