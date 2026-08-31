@@ -1,14 +1,15 @@
-version: 2
-updates:
-  - package-ecosystem: docker
-    directory: "/"
-    schedule:
-      interval: daily
-    cooldown:
-      default-days: 7
-  - package-ecosystem: github-actions
-    directory: "/"
-    schedule:
-      interval: daily
-    cooldown:
-      default-days: 7
+# Deaktivert 2026-08-31: repoet stenges ned og arkiveres, appen er erstattet av tiltakspenger-pdfgenrs.
+# version: 2
+# updates:
+#   - package-ecosystem: docker
+#     directory: "/"
+#     schedule:
+#       interval: daily
+#     cooldown:
+#       default-days: 7
+#   - package-ecosystem: github-actions
+#     directory: "/"
+#     schedule:
+#       interval: daily
+#     cooldown:
+#       default-days: 7

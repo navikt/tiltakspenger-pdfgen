@@ -1,31 +1,32 @@
-name: Build docker image
+# Deaktivert 2026-08-31: repoet stenges ned og arkiveres, appen er erstattet av tiltakspenger-pdfgenrs.
+# name: Build docker image
 
-on:
-  workflow_call:
-    outputs:
-      IMAGE:
-        description: "Docker image"
-        value: ${{ jobs.build.outputs.IMAGE }}
+# on:
+#   workflow_call:
+#     outputs:
+#       IMAGE:
+#         description: "Docker image"
+#         value: ${{ jobs.build.outputs.IMAGE }}
 
-jobs:
-  build:
-    name: Build docker image
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      id-token: write
-    outputs:
-      IMAGE: ${{ steps.docker-push.outputs.image }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          persist-credentials: false
+# jobs:
+#   build:
+#     name: Build docker image
+#     runs-on: ubuntu-latest
+#     permissions:
+#       contents: read
+#       id-token: write
+#     outputs:
+#       IMAGE: ${{ steps.docker-push.outputs.image }}
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+#         with:
+#           persist-credentials: false
 
-      - name: Build and push docker image
-        # Versjonsoversikt (tag -> SHA): https://github.com/nais/docker-build-push/tags
-        # Denne SHA-en: https://github.com/nais/docker-build-push/commit/31c3a7321909bcb20799fdf46153fec721fd9512
-        uses: nais/docker-build-push@8e41f1f58749b9248e376c25d33bfbdd2b1163c0 # v0
-        id: docker-push
-        with:
-          team: tpts
+#       - name: Build and push docker image
+#         # Versjonsoversikt (tag -> SHA): https://github.com/nais/docker-build-push/tags
+#         # Denne SHA-en: https://github.com/nais/docker-build-push/commit/31c3a7321909bcb20799fdf46153fec721fd9512
+#         uses: nais/docker-build-push@8e41f1f58749b9248e376c25d33bfbdd2b1163c0 # v0
+#         id: docker-push
+#         with:
+#           team: tpts

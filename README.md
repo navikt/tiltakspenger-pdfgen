@@ -1,4 +1,10 @@
 # tiltakspenger-pdfgen
+
+> **Arkivert** — dette repoet er under nedstenging og arkivering (august 2026).
+> Tjenesten er erstattet av [tiltakspenger-pdfgenrs](https://github.com/navikt/tiltakspenger-pdfgenrs).
+> Appen slettes fra dev og prod, og repoet arkiveres.
+> Innholdet under er beholdt som historikk.
+
 Generering av PDF for tiltakspenger sine applikasjoner.
 
 ## Starte tiltakspenger-pdfgen lokalt

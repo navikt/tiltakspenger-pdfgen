@@ -1,32 +1,33 @@
-name: Deploy to NAIS
+# Deaktivert 2026-08-31: repoet stenges ned og arkiveres, appen er erstattet av tiltakspenger-pdfgenrs.
+# name: Deploy to NAIS
 
-on:
-  workflow_call:
-    inputs:
-      NAIS_ENV:
-        required: true
-        type: string
-      IMAGE:
-        required: true
-        type: string
+# on:
+#   workflow_call:
+#     inputs:
+#       NAIS_ENV:
+#         required: true
+#         type: string
+#       IMAGE:
+#         required: true
+#         type: string
 
-jobs:
-  deploy:
-    name: Deploy to NAIS (${{ inputs.NAIS_ENV }})
-    runs-on: ubuntu-latest
-    environment: ${{ inputs.NAIS_ENV }}
-    permissions:
-      contents: read
-      id-token: write
-    steps:
-      - name: Checkout
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          persist-credentials: false
-      - name: Deploy to NAIS
-        uses: nais/deploy/actions/deploy@2d18f050f07b6a007864c6a57070ed915d571beb # v2
-        env:
-          CLUSTER: ${{ inputs.NAIS_ENV }}-gcp
-          RESOURCE: .nais/nais.yml
-          VAR: image=${{ inputs.IMAGE }}
-          VARS: .nais/vars/${{ inputs.NAIS_ENV }}.yml
+# jobs:
+#   deploy:
+#     name: Deploy to NAIS (${{ inputs.NAIS_ENV }})
+#     runs-on: ubuntu-latest
+#     environment: ${{ inputs.NAIS_ENV }}
+#     permissions:
+#       contents: read
+#       id-token: write
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+#         with:
+#           persist-credentials: false
+#       - name: Deploy to NAIS
+#         uses: nais/deploy/actions/deploy@027a91857992525139798892f2804b0ca21f4af6 # v2
+#         env:
+#           CLUSTER: ${{ inputs.NAIS_ENV }}-gcp
+#           RESOURCE: .nais/nais.yml
+#           VAR: image=${{ inputs.IMAGE }}
+#           VARS: .nais/vars/${{ inputs.NAIS_ENV }}.yml
