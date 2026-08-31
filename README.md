@@ -1,8 +1,8 @@
 # tiltakspenger-pdfgen
 
-> **Arkivert** — dette repoet er under nedstenging og arkivering (august 2026).
+> **Arkivert** — appen er slettet fra dev og prod (august 2026).
 > Tjenesten er erstattet av [tiltakspenger-pdfgenrs](https://github.com/navikt/tiltakspenger-pdfgenrs).
-> Appen slettes fra dev og prod, og repoet arkiveres.
+> Deploy-oppsettet er fjernet, og repoet arkiveres.
 > Innholdet under er beholdt som historikk.
 
 Generering av PDF for tiltakspenger sine applikasjoner.
@@ -15,8 +15,6 @@ Generering av PDF for tiltakspenger sine applikasjoner.
 
     Flagget `-d` brukes for at ikke terminalen skal låses til docker.
 Flagget `--build` brukes for å bygge imaget på nytt som vil si at applikasjonen som kjøres opp er lik koden du har lokalt.
-
-* Pdfgen er også en del av scriptet `up.sh` som ligger i metarepo og starter opp ved kjøring av det.
 
 
 ## Gjøre kall mot tiltakspenger-pdfgen lokalt
